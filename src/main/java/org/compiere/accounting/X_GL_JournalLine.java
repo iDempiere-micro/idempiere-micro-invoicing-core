@@ -54,7 +54,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Account used
      */
     public int getAccountId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Account_ID);
+        Integer ii = getValue(COLUMNNAME_Account_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -75,7 +75,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Performing or initiating organization
      */
     public int getTransactionOrganizationId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_OrgTrx_ID);
+        Integer ii = getValue(COLUMNNAME_AD_OrgTrx_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -107,7 +107,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Accounted Credit Amount
      */
     public BigDecimal getAmtAcctCr() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_AmtAcctCr);
+        BigDecimal bd = getValue(COLUMNNAME_AmtAcctCr);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -127,7 +127,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Accounted Debit Amount
      */
     public BigDecimal getAmtAcctDr() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_AmtAcctDr);
+        BigDecimal bd = getValue(COLUMNNAME_AmtAcctDr);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -147,7 +147,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Source Credit Amount
      */
     public BigDecimal getAmtSourceCr() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_AmtSourceCr);
+        BigDecimal bd = getValue(COLUMNNAME_AmtSourceCr);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -167,7 +167,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Source Debit Amount
      */
     public BigDecimal getAmtSourceDr() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_AmtSourceDr);
+        BigDecimal bd = getValue(COLUMNNAME_AmtSourceDr);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -187,7 +187,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Business Activity
      */
     public int getBusinessActivityId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Activity_ID);
+        Integer ii = getValue(COLUMNNAME_C_Activity_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -208,7 +208,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -229,7 +229,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Marketing Campaign
      */
     public int getCampaignId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Campaign_ID);
+        Integer ii = getValue(COLUMNNAME_C_Campaign_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -270,7 +270,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Location that inventory was moved from
      */
     public int getLocationFromId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_LocFrom_ID);
+        Integer ii = getValue(COLUMNNAME_C_LocFrom_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -291,7 +291,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Location that inventory was moved to
      */
     public int getLocationToId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_LocTo_ID);
+        Integer ii = getValue(COLUMNNAME_C_LocTo_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -312,7 +312,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Financial Project
      */
     public int getProjectId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Project_ID);
+        Integer ii = getValue(COLUMNNAME_C_Project_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -333,7 +333,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Sales coverage region
      */
     public int getSalesRegionId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_SalesRegion_ID);
+        Integer ii = getValue(COLUMNNAME_C_SalesRegion_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -354,7 +354,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Sub account for Element Value
      */
     public int getSubAccountId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_SubAcct_ID);
+        Integer ii = getValue(COLUMNNAME_C_SubAcct_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -385,7 +385,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Currency Conversion Rate
      */
     public BigDecimal getCurrencyRate() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_CurrencyRate);
+        BigDecimal bd = getValue(COLUMNNAME_CurrencyRate);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -405,7 +405,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Valid Account Combination
      */
     public int getValidAccountCombinationId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ValidCombination_ID);
+        Integer ii = getValue(COLUMNNAME_C_ValidCombination_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -444,7 +444,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return General Ledger Journal
      */
     public int getGLJournalId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_GL_Journal_ID);
+        Integer ii = getValue(COLUMNNAME_GL_Journal_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -465,7 +465,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return General Ledger Journal Line
      */
     public int getGLJournalLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_GL_JournalLine_ID);
+        Integer ii = getValue(COLUMNNAME_GL_JournalLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -485,7 +485,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Line);
+        Integer ii = getValue(COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -505,7 +505,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -535,7 +535,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return Quantity
      */
     public BigDecimal getQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Qty);
+        BigDecimal bd = getValue(COLUMNNAME_Qty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -555,7 +555,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return User defined list element #1
      */
     public int getUser1Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_User1_ID);
+        Integer ii = getValue(COLUMNNAME_User1_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -576,7 +576,7 @@ public abstract class X_GL_JournalLine extends PO implements I_GL_JournalLine {
      * @return User defined list element #2
      */
     public int getUser2Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_User2_ID);
+        Integer ii = getValue(COLUMNNAME_User2_ID);
         if (ii == null) return 0;
         return ii;
     }

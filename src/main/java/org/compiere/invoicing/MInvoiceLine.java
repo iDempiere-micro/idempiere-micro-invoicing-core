@@ -11,6 +11,7 @@ import org.compiere.model.I_C_OrderLine;
 import org.compiere.model.I_M_InOutLine;
 import org.compiere.model.I_M_PriceList;
 import org.compiere.model.I_M_Product;
+import org.compiere.model.I_M_RMALine;
 import org.compiere.order.MCharge;
 import org.compiere.order.MOrderLine;
 import org.compiere.order.MRMALine;
@@ -206,7 +207,7 @@ public class MInvoiceLine extends X_C_InvoiceLine implements I_C_InvoiceLine, ID
      * @return parent
      */
     public I_C_Invoice getParent() {
-        if (m_parent == null) m_parent = new MInvoice(getInvoiceId());
+        if (m_parent == null) m_parent = new MInvoice(null, getInvoiceId());
         return m_parent;
     } //	getParent
 
@@ -1145,7 +1146,7 @@ public class MInvoiceLine extends X_C_InvoiceLine implements I_C_InvoiceLine, ID
     /**
      * @param rmaLine
      */
-    public void setRMALine(MRMALine rmaLine) {
+    public void setRMALine(I_M_RMALine rmaLine) {
         // Check if this invoice is CreditMemo - teo_sarca [ 2804142 ]
         if (!getParent().isCreditMemo()) {
             throw new AdempiereException("InvoiceNotCreditMemo");

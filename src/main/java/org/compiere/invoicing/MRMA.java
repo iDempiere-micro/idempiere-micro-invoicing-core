@@ -1,15 +1,15 @@
 package org.compiere.invoicing;
 
 import kotliquery.Row;
-import org.compiere.crm.MBPartner;
 import org.compiere.docengine.DocumentEngine;
 import org.compiere.model.IDoc;
 import org.compiere.model.IPODoc;
+import org.compiere.model.I_C_BPartner;
 import org.compiere.model.I_C_Invoice;
 import org.compiere.model.I_M_RMALine;
+import org.compiere.model.I_M_RMATax;
 import org.compiere.order.MOrder;
 import org.compiere.order.MRMALine;
-import org.compiere.order.MRMATax;
 import org.compiere.order.X_M_RMA;
 import org.compiere.orm.MOrgKt;
 import org.compiere.orm.Query;
@@ -32,12 +32,11 @@ public class MRMA extends org.compiere.order.MRMA implements DocAction, IPODoc {
     /**
      * Lines
      */
-    protected MRMALine[] m_lines = null;
+    protected I_M_RMALine[] m_lines = null;
 
     /**
      * Standard Constructor
      *
-     * @param ctx      context
      * @param M_RMA_ID id
      */
     public MRMA(int M_RMA_ID) {
@@ -87,7 +86,7 @@ public class MRMA extends org.compiere.order.MRMA implements DocAction, IPODoc {
             return null;
         }
 
-        return new MInvoice(invId);
+        return new MInvoice(null, invId);
     }
 
     /**
@@ -112,7 +111,7 @@ public class MRMA extends org.compiere.order.MRMA implements DocAction, IPODoc {
                             new MOrder(m_inout.getOrderId());
                     setCurrencyId(order.getCurrencyId());
                 } else if (m_inout.getInvoiceId() != 0) {
-                    MInvoice invoice = new MInvoice(m_inout.getInvoiceId());
+                    MInvoice invoice = new MInvoice(null, m_inout.getInvoiceId());
                     setCurrencyId(invoice.getCurrencyId());
                 }
             }
@@ -151,13 +150,13 @@ public class MRMA extends org.compiere.order.MRMA implements DocAction, IPODoc {
                 ModelValidationEngine.get().fireDocValidate(this, ModelValidator.TIMING_BEFORE_PREPARE);
         if (m_processMsg != null) return DocAction.Companion.getSTATUS_Invalid();
 
-        MRMALine[] lines = getLines(false);
+        I_M_RMALine[] lines = getLines(false);
         if (lines.length == 0) {
             m_processMsg = "@NoLines@";
             return DocAction.Companion.getSTATUS_Invalid();
         }
 
-        for (MRMALine line : lines) {
+        for (I_M_RMALine line : lines) {
             if (line.getInOutLineId() != 0) {
                 if (!line.checkQty()) {
                     m_processMsg = "@AmtReturned>Shipped@";
@@ -249,7 +248,7 @@ public class MRMA extends org.compiere.order.MRMA implements DocAction, IPODoc {
         int counterC_BPartner_ID = org.getLinkedBusinessPartnerId();
         if (counterC_BPartner_ID == 0) return null;
         //	Business Partner needs to be linked to Org
-        org.compiere.crm.MBPartner bp = new MBPartner(getBusinessPartnerId());
+        I_C_BPartner bp = getBusinessPartnerService().getById(getBusinessPartnerId());
         int counterAD_Org_ID = bp.getLinkedOrganizationId();
         if (counterAD_Org_ID == 0) return null;
 
@@ -276,8 +275,8 @@ public class MRMA extends org.compiere.order.MRMA implements DocAction, IPODoc {
         counter.saveEx();
 
         //	Update copied lines
-        MRMALine[] counterLines = counter.getLines(true);
-        for (MRMALine counterLine : counterLines) {
+        I_M_RMALine[] counterLines = counter.getLines(true);
+        for (I_M_RMALine counterLine : counterLines) {
             counterLine.setClientOrg(counter);
             //
             counterLine.saveEx();
@@ -320,9 +319,9 @@ public class MRMA extends org.compiere.order.MRMA implements DocAction, IPODoc {
         int count = getSQLValueEx(validation, getRMAId());
 
         if (count == 0) {
-            MRMALine[] lines = getLines(true);
+            I_M_RMALine[] lines = getLines(true);
             // Set Qty and Amt on all lines to be Zero
-            for (MRMALine rmaLine : lines) {
+            for (I_M_RMALine rmaLine : lines) {
                 rmaLine.addDescription(MsgKt.getMsg("Voided") + " (" + rmaLine.getQty() + ")");
                 rmaLine.setQty(Env.ZERO);
                 rmaLine.setAmt(Env.ZERO);
@@ -337,8 +336,8 @@ public class MRMA extends org.compiere.order.MRMA implements DocAction, IPODoc {
         }
 
         // update taxes
-        MRMATax[] taxes = getTaxes(true);
-        for (MRMATax tax : taxes) {
+        I_M_RMATax[] taxes = getTaxes(true);
+        for (I_M_RMATax tax : taxes) {
             if (!(tax.calculateTaxFromLines() && tax.save())) return false;
         }
 
@@ -462,12 +461,12 @@ public class MRMA extends org.compiere.order.MRMA implements DocAction, IPODoc {
      * @param requery requery
      * @return lines
      */
-    public MRMALine[] getLines(boolean requery) {
+    public I_M_RMALine[] getLines(boolean requery) {
         if (m_lines != null && !requery) {
             return m_lines;
         }
-        List<MRMALine> list =
-                new Query(I_M_RMALine.Table_Name, "M_RMA_ID=?")
+        List<I_M_RMALine> list =
+                new Query<I_M_RMALine>(I_M_RMALine.Table_Name, "M_RMA_ID=?")
                         .setParameters(getRMAId())
                         .setOrderBy(MRMALine.COLUMNNAME_Line)
                         .list();

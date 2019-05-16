@@ -114,7 +114,7 @@ public class X_S_ResourceAssignment extends BasePOName
      * @return Quantity
      */
     public BigDecimal getQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Qty);
+        BigDecimal bd = getValue(COLUMNNAME_Qty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -134,7 +134,7 @@ public class X_S_ResourceAssignment extends BasePOName
      * @return Resource
      */
     public int getResourceID() {
-        Integer ii = (Integer) getValue(COLUMNNAME_S_Resource_ID);
+        Integer ii = getValue(COLUMNNAME_S_Resource_ID);
         if (ii == null) return 0;
         return ii;
     }

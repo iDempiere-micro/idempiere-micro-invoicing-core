@@ -40,7 +40,6 @@ public class MAllocationLine extends X_C_AllocationLine implements IDocLine {
     /**
      * Standard Constructor
      *
-     * @param ctx                 context
      * @param C_AllocationLine_ID id
      */
     public MAllocationLine(int C_AllocationLine_ID) {
@@ -56,7 +55,6 @@ public class MAllocationLine extends X_C_AllocationLine implements IDocLine {
     /**
      * Load Constructor
      *
-     * @param ctx ctx
      */
     public MAllocationLine(Row row) {
         super(row);
@@ -103,7 +101,7 @@ public class MAllocationLine extends X_C_AllocationLine implements IDocLine {
      */
     public MAllocationHdr getParent() {
         if (m_parent == null)
-            m_parent = new MAllocationHdr(getPaymentAllocationHeaderId());
+            m_parent = new MAllocationHdr(null, getPaymentAllocationHeaderId());
         return m_parent;
     } //	getParent
 
@@ -147,7 +145,7 @@ public class MAllocationLine extends X_C_AllocationLine implements IDocLine {
      */
     public MInvoice getInvoice() {
         if (m_invoice == null && getInvoiceId() != 0)
-            m_invoice = new MInvoice(getInvoiceId());
+            m_invoice = new MInvoice(null, getInvoiceId());
         return m_invoice;
     } //	getInvoice
 

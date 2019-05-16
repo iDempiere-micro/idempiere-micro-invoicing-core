@@ -62,7 +62,7 @@ public class X_M_BOM extends BasePOName implements I_M_BOM {
      * @return Type of BOM
      */
     public String getBOMType() {
-        return (String) getValue(COLUMNNAME_BOMType);
+        return getValue(COLUMNNAME_BOMType);
     }
 
     /**
@@ -81,7 +81,7 @@ public class X_M_BOM extends BasePOName implements I_M_BOM {
      * @return The use of the Bill of Material
      */
     public String getBOMUse() {
-        return (String) getValue(COLUMNNAME_BOMUse);
+        return getValue(COLUMNNAME_BOMUse);
     }
 
     /**
@@ -100,7 +100,7 @@ public class X_M_BOM extends BasePOName implements I_M_BOM {
      * @return Bill of Material
      */
     public int getBOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_BOM_ID);
+        Integer ii = getValue(COLUMNNAME_M_BOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -111,7 +111,7 @@ public class X_M_BOM extends BasePOName implements I_M_BOM {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }

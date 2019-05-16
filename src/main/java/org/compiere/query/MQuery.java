@@ -3,10 +3,10 @@ package org.compiere.query;
 import org.compiere.model.Column;
 import org.compiere.model.Table;
 import org.compiere.orm.MTableKt;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.KeyNamePair;
 import org.idempiere.common.util.ValueNamePair;
+import software.hsharp.core.orm.MBaseTableKt;
 import software.hsharp.core.util.DBKt;
 
 import java.io.Serializable;

@@ -60,7 +60,7 @@ public class X_C_PaySelection extends BasePOName implements I_C_PaySelection {
      * @return Account at the Bank
      */
     public int getBankAccountId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BankAccount_ID);
+        Integer ii = getValue(COLUMNNAME_C_BankAccount_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -71,7 +71,7 @@ public class X_C_PaySelection extends BasePOName implements I_C_PaySelection {
      * @return Payment Selection
      */
     public int getPaySelectionId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_PaySelection_ID);
+        Integer ii = getValue(COLUMNNAME_C_PaySelection_ID);
         if (ii == null) return 0;
         return ii;
     }

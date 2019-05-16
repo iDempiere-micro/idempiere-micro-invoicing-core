@@ -4,10 +4,10 @@ import kotliquery.Row;
 import org.compiere.model.AccountingElementValue;
 import org.compiere.model.DocumentType;
 import org.compiere.model.User;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.eevolution.model.I_DD_Order;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -113,7 +113,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Performing or initiating organization
      */
     public int getTransactionOrganizationId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_OrgTrx_ID);
+        Integer ii = getValue(COLUMNNAME_AD_OrgTrx_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -140,7 +140,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return User within the system - Internal or Business Partner Contact
      */
     public int getUserId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_User_ID);
+        Integer ii = getValue(COLUMNNAME_AD_User_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -167,7 +167,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Business Activity
      */
     public int getBusinessActivityId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Activity_ID);
+        Integer ii = getValue(COLUMNNAME_C_Activity_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -194,7 +194,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -221,7 +221,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Identifies the (ship to) address for this Business Partner
      */
     public int getBusinessPartnerLocationId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_Location_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_Location_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -248,7 +248,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Marketing Campaign
      */
     public int getCampaignId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Campaign_ID);
+        Integer ii = getValue(COLUMNNAME_C_Campaign_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -275,7 +275,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Additional document charges
      */
     public int getChargeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Charge_ID);
+        Integer ii = getValue(COLUMNNAME_C_Charge_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -302,7 +302,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Document type or rules
      */
     public int getDocumentTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -323,7 +323,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Charge Amount
      */
     public BigDecimal getChargeAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ChargeAmt);
+        BigDecimal bd = getValue(COLUMNNAME_ChargeAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -349,7 +349,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Invoice Identifier
      */
     public int getInvoiceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Invoice_ID);
+        Integer ii = getValue(COLUMNNAME_C_Invoice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -376,7 +376,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Order
      */
     public int getOrderId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Order_ID);
+        Integer ii = getValue(COLUMNNAME_C_Order_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -403,7 +403,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Financial Project
      */
     public int getProjectId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Project_ID);
+        Integer ii = getValue(COLUMNNAME_C_Project_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -424,7 +424,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Create Confirm
      */
     public String getCreateConfirm() {
-        return (String) getValue(COLUMNNAME_CreateConfirm);
+        return getValue(COLUMNNAME_CreateConfirm);
     }
 
     /**
@@ -442,7 +442,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Process which will generate a new document lines based on an existing document
      */
     public String getCreateFrom() {
-        return (String) getValue(COLUMNNAME_CreateFrom);
+        return getValue(COLUMNNAME_CreateFrom);
     }
 
     /**
@@ -461,7 +461,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Create Package
      */
     public String getCreatePackage() {
-        return (String) getValue(COLUMNNAME_CreatePackage);
+        return getValue(COLUMNNAME_CreatePackage);
     }
 
     /**
@@ -551,7 +551,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Distribution Order
      */
     public int getDistributionOrderId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_DD_Order_ID);
+        Integer ii = getValue(COLUMNNAME_DD_Order_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -572,7 +572,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return DD_Order_UU
      */
     public String getOrder_UU() {
-        return (String) getValue(COLUMNNAME_DD_Order_UU);
+        return getValue(COLUMNNAME_DD_Order_UU);
     }
 
     /**
@@ -590,7 +590,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Defines the timing of Delivery
      */
     public String getDeliveryRule() {
-        return (String) getValue(COLUMNNAME_DeliveryRule);
+        return getValue(COLUMNNAME_DeliveryRule);
     }
 
     /**
@@ -609,7 +609,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return How the order will be delivered
      */
     public String getDeliveryViaRule() {
-        return (String) getValue(COLUMNNAME_DeliveryViaRule);
+        return getValue(COLUMNNAME_DeliveryViaRule);
     }
 
     /**
@@ -628,7 +628,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -646,7 +646,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return The targeted status of the document
      */
     public String getDocAction() {
-        return (String) getValue(COLUMNNAME_DocAction);
+        return getValue(COLUMNNAME_DocAction);
     }
 
     /**
@@ -665,7 +665,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return The current status of the document
      */
     public String getDocStatus() {
-        return (String) getValue(COLUMNNAME_DocStatus);
+        return getValue(COLUMNNAME_DocStatus);
     }
 
     /**
@@ -684,7 +684,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**
@@ -702,7 +702,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Freight Amount
      */
     public BigDecimal getFreightAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_FreightAmt);
+        BigDecimal bd = getValue(COLUMNNAME_FreightAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -722,7 +722,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Method for charging Freight
      */
     public String getFreightCostRule() {
-        return (String) getValue(COLUMNNAME_FreightCostRule);
+        return getValue(COLUMNNAME_FreightCostRule);
     }
 
     /**
@@ -741,7 +741,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Generate To
      */
     public String getGenerateTo() {
-        return (String) getValue(COLUMNNAME_GenerateTo);
+        return getValue(COLUMNNAME_GenerateTo);
     }
 
     /**
@@ -949,7 +949,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Method or manner of product delivery
      */
     public int getShipperId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Shipper_ID);
+        Integer ii = getValue(COLUMNNAME_M_Shipper_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -976,7 +976,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Storage Warehouse and Service Point
      */
     public int getWarehouseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Warehouse_ID);
+        Integer ii = getValue(COLUMNNAME_M_Warehouse_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -997,7 +997,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Number of packages shipped
      */
     public int getNoPackages() {
-        Integer ii = (Integer) getValue(COLUMNNAME_NoPackages);
+        Integer ii = getValue(COLUMNNAME_NoPackages);
         if (ii == null) return 0;
         return ii;
     }
@@ -1035,7 +1035,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Transaction Reference Number (Sales Order, Purchase Order) of your Business Partner
      */
     public String getPOReference() {
-        return (String) getValue(COLUMNNAME_POReference);
+        return getValue(COLUMNNAME_POReference);
     }
 
     /**
@@ -1077,7 +1077,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Priority of a document
      */
     public String getPriorityRule() {
-        return (String) getValue(COLUMNNAME_PriorityRule);
+        return getValue(COLUMNNAME_PriorityRule);
     }
 
     /**
@@ -1119,7 +1119,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return The date+time (expressed in decimal format) when the document has been processed
      */
     public BigDecimal getProcessedOn() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ProcessedOn);
+        BigDecimal bd = getValue(COLUMNNAME_ProcessedOn);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -1169,7 +1169,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Reference to corresponding Sales/Purchase Order
      */
     public int getReferencedOrderId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Ref_Order_ID);
+        Integer ii = getValue(COLUMNNAME_Ref_Order_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -1196,7 +1196,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Sales Representative or Company Agent
      */
     public int getSalesRepresentativeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_SalesRep_ID);
+        Integer ii = getValue(COLUMNNAME_SalesRep_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -1258,7 +1258,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Number to track the shipment
      */
     public String getTrackingNo() {
-        return (String) getValue(COLUMNNAME_TrackingNo);
+        return getValue(COLUMNNAME_TrackingNo);
     }
 
     /**
@@ -1282,7 +1282,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return User defined list element #1
      */
     public int getUser1Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_User1_ID);
+        Integer ii = getValue(COLUMNNAME_User1_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -1309,7 +1309,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return User defined list element #2
      */
     public int getUser2Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_User2_ID);
+        Integer ii = getValue(COLUMNNAME_User2_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -1330,7 +1330,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Volume of a product
      */
     public BigDecimal getVolume() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Volume);
+        BigDecimal bd = getValue(COLUMNNAME_Volume);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -1350,7 +1350,7 @@ public class X_DD_Order extends PO implements I_DD_Order {
      * @return Weight of a product
      */
     public BigDecimal getWeight() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Weight);
+        BigDecimal bd = getValue(COLUMNNAME_Weight);
         if (bd == null) return Env.ZERO;
         return bd;
     }

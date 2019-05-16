@@ -54,7 +54,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Account at the Bank
      */
     public int getBankAccountId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BankAccount_ID);
+        Integer ii = getValue(COLUMNNAME_C_BankAccount_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -85,7 +85,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -106,7 +106,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Additional document charges
      */
     public int getChargeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Charge_ID);
+        Integer ii = getValue(COLUMNNAME_C_Charge_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -117,7 +117,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -138,7 +138,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Charge Amount
      */
     public BigDecimal getChargeAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ChargeAmt);
+        BigDecimal bd = getValue(COLUMNNAME_ChargeAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -149,7 +149,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Invoice Identifier
      */
     public int getInvoiceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Invoice_ID);
+        Integer ii = getValue(COLUMNNAME_C_Invoice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -170,7 +170,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Payment identifier
      */
     public int getPaymentId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Payment_ID);
+        Integer ii = getValue(COLUMNNAME_C_Payment_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -200,7 +200,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -209,7 +209,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Electronic Funds Transfer Amount
      */
     public BigDecimal getEftAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_EftAmt);
+        BigDecimal bd = getValue(COLUMNNAME_EftAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -220,7 +220,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Electronic Funds Transfer Check No
      */
     public String getEftCheckNo() {
-        return (String) getValue(COLUMNNAME_EftCheckNo);
+        return getValue(COLUMNNAME_EftCheckNo);
     }
 
     /**
@@ -229,7 +229,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Electronic Funds Transfer Currency
      */
     public String getEftCurrency() {
-        return (String) getValue(COLUMNNAME_EftCurrency);
+        return getValue(COLUMNNAME_EftCurrency);
     }
 
     /**
@@ -238,7 +238,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Electronic Funds Transfer Memo
      */
     public String getEftMemo() {
-        return (String) getValue(COLUMNNAME_EftMemo);
+        return getValue(COLUMNNAME_EftMemo);
     }
 
     /**
@@ -247,7 +247,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Electronic Funds Transfer Payee information
      */
     public String getEftPayee() {
-        return (String) getValue(COLUMNNAME_EftPayee);
+        return getValue(COLUMNNAME_EftPayee);
     }
 
     /**
@@ -256,7 +256,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Electronic Funds Transfer Payee Account Information
      */
     public String getEftPayeeAccount() {
-        return (String) getValue(COLUMNNAME_EftPayeeAccount);
+        return getValue(COLUMNNAME_EftPayeeAccount);
     }
 
     /**
@@ -265,7 +265,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Electronic Funds Transfer Reference
      */
     public String getEftReference() {
-        return (String) getValue(COLUMNNAME_EftReference);
+        return getValue(COLUMNNAME_EftReference);
     }
 
     /**
@@ -292,7 +292,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Electronic Funds Transfer Statement Reference
      */
     public String getEftStatementReference() {
-        return (String) getValue(COLUMNNAME_EftStatementReference);
+        return getValue(COLUMNNAME_EftStatementReference);
     }
 
     /**
@@ -301,7 +301,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Electronic Funds Transfer Transaction ID
      */
     public String getEftTrxID() {
-        return (String) getValue(COLUMNNAME_EftTrxID);
+        return getValue(COLUMNNAME_EftTrxID);
     }
 
     /**
@@ -310,7 +310,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Electronic Funds Transfer Transaction Type
      */
     public String getEftTrxType() {
-        return (String) getValue(COLUMNNAME_EftTrxType);
+        return getValue(COLUMNNAME_EftTrxType);
     }
 
     /**
@@ -337,7 +337,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Interest Amount
      */
     public BigDecimal getInterestAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_InterestAmt);
+        BigDecimal bd = getValue(COLUMNNAME_InterestAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -362,7 +362,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Description of the Line
      */
     public String getLineDescription() {
-        return (String) getValue(COLUMNNAME_LineDescription);
+        return getValue(COLUMNNAME_LineDescription);
     }
 
     /**
@@ -371,7 +371,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Memo Text
      */
     public String getMemo() {
-        return (String) getValue(COLUMNNAME_Memo);
+        return getValue(COLUMNNAME_Memo);
     }
 
     /**
@@ -389,7 +389,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Your customer or vendor number at the Business Partner's site
      */
     public String getReferenceNo() {
-        return (String) getValue(COLUMNNAME_ReferenceNo);
+        return getValue(COLUMNNAME_ReferenceNo);
     }
 
     /**
@@ -416,7 +416,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Statement Amount
      */
     public BigDecimal getStmtAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_StmtAmt);
+        BigDecimal bd = getValue(COLUMNNAME_StmtAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -427,7 +427,7 @@ public class X_I_BankStatement extends BasePOName implements I_I_BankStatement {
      * @return Amount of a transaction
      */
     public BigDecimal getTrxAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_TrxAmt);
+        BigDecimal bd = getValue(COLUMNNAME_TrxAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }

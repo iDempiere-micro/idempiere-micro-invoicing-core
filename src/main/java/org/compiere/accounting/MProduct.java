@@ -35,7 +35,7 @@ public class MProduct extends org.compiere.product.MProduct {
      */
     private static CCache<Integer, org.compiere.product.MProduct> s_cache =
             new CCache<>(
-                    I_M_Product.Table_Name, 40, 5); // 	5 minutes
+                    I_M_Product.Table_Name, 5); // 	5 minutes
 
     /**
      * Import Constructor
@@ -160,14 +160,14 @@ public class MProduct extends org.compiere.product.MProduct {
 
         //	New - Acct, Tree, Old Costing
         if (newRecord) {
-            insert_Accounting(
+            insertAccounting(
                     "M_Product_Acct",
                     "M_Product_Category_Acct",
                     "p.M_Product_Category_ID=" + getProductCategoryId());
-            insert_Tree(TREETYPE_Product);
+            insertTree(TREETYPE_Product);
         }
         if (newRecord || isValueChanged(I_M_Product.COLUMNNAME_Value))
-            update_Tree(TREETYPE_Product);
+            updateTree(TREETYPE_Product);
 
         //	New Costing
         if (newRecord || isValueChanged("M_Product_Category_ID")) MCost.create(this);

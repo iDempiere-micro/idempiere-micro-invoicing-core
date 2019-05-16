@@ -19,7 +19,6 @@ import org.compiere.accounting.MPeriodControl;
 import org.compiere.model.IProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.AdempiereUserError;
-import org.idempiere.common.util.CacheMgt;
 
 import java.util.logging.Level;
 
@@ -92,9 +91,8 @@ public class PeriodStatus extends SvrProcess {
 
         int no = executeUpdate(sql.toString());
 
-        CacheMgt.get().reset("C_PeriodControl", 0);
-        CacheMgt.get().reset("C_Period", p_C_Period_ID);
-        StringBuilder msgreturn = new StringBuilder("@Updated@ #").append(no);
-        return msgreturn.toString();
+        // DAP: CacheMgt.get().reset();
+        // DAP: CacheMgt.get().reset();
+        return "@Updated@ #" + no;
     } //	doIt
 } //	PeriodStatus

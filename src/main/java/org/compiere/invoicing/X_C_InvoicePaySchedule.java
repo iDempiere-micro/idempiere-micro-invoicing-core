@@ -54,7 +54,7 @@ public class X_C_InvoicePaySchedule extends PO implements I_C_InvoicePaySchedule
      * @return Invoice Identifier
      */
     public int getInvoiceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Invoice_ID);
+        Integer ii = getValue(COLUMNNAME_C_Invoice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -85,7 +85,7 @@ public class X_C_InvoicePaySchedule extends PO implements I_C_InvoicePaySchedule
      * @return Calculated amount of discount
      */
     public BigDecimal getDiscountAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DiscountAmt);
+        BigDecimal bd = getValue(COLUMNNAME_DiscountAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -123,7 +123,7 @@ public class X_C_InvoicePaySchedule extends PO implements I_C_InvoicePaySchedule
      * @return Amount of the payment due
      */
     public BigDecimal getDueAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DueAmt);
+        BigDecimal bd = getValue(COLUMNNAME_DueAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }

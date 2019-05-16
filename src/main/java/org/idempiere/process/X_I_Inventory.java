@@ -55,7 +55,7 @@ public class X_I_Inventory extends PO implements I_I_Inventory {
      * @return Additional document charges
      */
     public int getChargeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Charge_ID);
+        Integer ii = getValue(COLUMNNAME_C_Charge_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -66,7 +66,7 @@ public class X_I_Inventory extends PO implements I_I_Inventory {
      * @return Document type or rules
      */
     public int getDocumentTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -77,7 +77,7 @@ public class X_I_Inventory extends PO implements I_I_Inventory {
      * @return The currently used cost price
      */
     public BigDecimal getCurrentCostPrice() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_CurrentCostPrice);
+        BigDecimal bd = getValue(COLUMNNAME_CurrentCostPrice);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -88,7 +88,7 @@ public class X_I_Inventory extends PO implements I_I_Inventory {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -115,7 +115,7 @@ public class X_I_Inventory extends PO implements I_I_Inventory {
      * @return Lot number (alphanumeric)
      */
     public String getLot() {
-        return (String) getValue(COLUMNNAME_Lot);
+        return getValue(COLUMNNAME_Lot);
     }
 
     /**
@@ -154,7 +154,7 @@ public class X_I_Inventory extends PO implements I_I_Inventory {
      * @return Warehouse Locator
      */
     public int getLocatorId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Locator_ID);
+        Integer ii = getValue(COLUMNNAME_M_Locator_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -174,7 +174,7 @@ public class X_I_Inventory extends PO implements I_I_Inventory {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -185,7 +185,7 @@ public class X_I_Inventory extends PO implements I_I_Inventory {
      * @return Storage Warehouse and Service Point
      */
     public int getWarehouseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Warehouse_ID);
+        Integer ii = getValue(COLUMNNAME_M_Warehouse_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -205,7 +205,7 @@ public class X_I_Inventory extends PO implements I_I_Inventory {
      * @return Book Quantity
      */
     public BigDecimal getQtyBook() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyBook);
+        BigDecimal bd = getValue(COLUMNNAME_QtyBook);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -216,7 +216,7 @@ public class X_I_Inventory extends PO implements I_I_Inventory {
      * @return Counted Quantity
      */
     public BigDecimal getQtyCount() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyCount);
+        BigDecimal bd = getValue(COLUMNNAME_QtyCount);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -227,7 +227,7 @@ public class X_I_Inventory extends PO implements I_I_Inventory {
      * @return Internal Use Quantity removed from Inventory
      */
     public BigDecimal getQtyInternalUse() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyInternalUse);
+        BigDecimal bd = getValue(COLUMNNAME_QtyInternalUse);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -238,7 +238,7 @@ public class X_I_Inventory extends PO implements I_I_Inventory {
      * @return Product Serial Number
      */
     public String getSerNo() {
-        return (String) getValue(COLUMNNAME_SerNo);
+        return getValue(COLUMNNAME_SerNo);
     }
 
 }

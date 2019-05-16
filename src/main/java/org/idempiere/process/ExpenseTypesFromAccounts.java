@@ -17,8 +17,8 @@ package org.idempiere.process;
 import org.compiere.accounting.MAccount;
 import org.compiere.accounting.MElementValue;
 import org.compiere.accounting.MProduct;
-import org.compiere.model.IProcessInfoParameter;
 import org.compiere.model.AccountingElementValue;
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.model.I_M_PriceList_Version;
 import org.compiere.model.I_M_Product;
@@ -186,7 +186,7 @@ public class ExpenseTypesFromAccounts extends SvrProcess {
 
                 // Add a zero product price to the price list so it shows up in the price list
                 priceRec = new MProductPrice(pv.getId(), product.getId());
-                priceRec.set_ValueOfColumn("AD_Client_ID", m_clientId);
+                priceRec.setValueOfColumn("AD_Client_ID", m_clientId);
                 priceRec.setPrices(zero, zero, zero);
                 priceRec.saveEx();
 

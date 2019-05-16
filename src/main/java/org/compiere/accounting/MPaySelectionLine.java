@@ -99,7 +99,7 @@ public class MPaySelectionLine extends X_C_PaySelectionLine {
      * @return invoice
      */
     public MInvoice getInvoice() {
-        if (m_invoice == null) m_invoice = new MInvoice(getInvoiceId());
+        if (m_invoice == null) m_invoice = new MInvoice(null, getInvoiceId());
         return m_invoice;
     } //	getInvoice
 

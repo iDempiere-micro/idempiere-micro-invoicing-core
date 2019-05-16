@@ -53,7 +53,7 @@ public abstract class X_M_ProductionPlan extends PO implements I_M_ProductionPla
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -62,7 +62,7 @@ public abstract class X_M_ProductionPlan extends PO implements I_M_ProductionPla
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Line);
+        Integer ii = getValue(COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -73,7 +73,7 @@ public abstract class X_M_ProductionPlan extends PO implements I_M_ProductionPla
      * @return Warehouse Locator
      */
     public int getLocatorId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Locator_ID);
+        Integer ii = getValue(COLUMNNAME_M_Locator_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -84,7 +84,7 @@ public abstract class X_M_ProductionPlan extends PO implements I_M_ProductionPla
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -105,7 +105,7 @@ public abstract class X_M_ProductionPlan extends PO implements I_M_ProductionPla
      * @return Plan for how a product is produced
      */
     public int getProductionPlanId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_ProductionPlan_ID);
+        Integer ii = getValue(COLUMNNAME_M_ProductionPlan_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -125,7 +125,7 @@ public abstract class X_M_ProductionPlan extends PO implements I_M_ProductionPla
      * @return Quantity of products to produce
      */
     public BigDecimal getProductionQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ProductionQty);
+        BigDecimal bd = getValue(COLUMNNAME_ProductionQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }

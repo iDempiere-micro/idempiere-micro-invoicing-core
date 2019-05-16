@@ -3,8 +3,8 @@ package org.compiere.production;
 import kotliquery.Row;
 import org.compiere.crm.MBPGroup;
 import org.compiere.crm.MBPGroupKt;
-import org.compiere.crm.MBPartner;
 import org.compiere.crm.X_C_BP_Group;
+import org.compiere.model.I_C_BPartner;
 import org.compiere.model.I_R_Request;
 import org.compiere.model.I_R_RequestType;
 import org.compiere.model.I_R_RequestUpdate;
@@ -35,7 +35,7 @@ public class MRequest extends X_R_Request {
     /**
      * BPartner
      */
-    private MBPartner m_partner = null;
+    private I_C_BPartner m_partner = null;
 
     /**
      * ************************************************************************ Constructor
@@ -192,10 +192,10 @@ public class MRequest extends X_R_Request {
      *
      * @return Sales Rep User
      */
-    public MBPartner getBPartner() {
+    public I_C_BPartner getBPartner() {
         if (getBusinessPartnerId() == 0) return null;
         if (m_partner != null && m_partner.getBusinessPartnerId() != getBusinessPartnerId()) m_partner = null;
-        if (m_partner == null) m_partner = new MBPartner(getBusinessPartnerId());
+        if (m_partner == null) m_partner = getBusinessPartnerService().getById(getBusinessPartnerId());
         return m_partner;
     } //	getBPartner
 

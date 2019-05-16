@@ -55,7 +55,7 @@ public class MRequestUpdate extends X_R_RequestUpdate {
             final String columnName = col.getColumnName();
             final int i = parent.getColumnIndex(columnName);
             if (i >= 0) {
-                set_ValueOfColumn(columnName, parent.getValue(i));
+                setValueOfColumn(columnName, parent.getValue(i));
             }
         }
     } //	MRequestUpdate

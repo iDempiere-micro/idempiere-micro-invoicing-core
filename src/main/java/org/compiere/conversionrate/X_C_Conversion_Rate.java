@@ -54,7 +54,7 @@ public class X_C_Conversion_Rate extends PO implements I_C_Conversion_Rate {
      * @return Rate used for converting currencies
      */
     public int getConversionRateId() {
-        Integer ii = (Integer) getValue(I_C_Conversion_Rate.COLUMNNAME_C_Conversion_Rate_ID);
+        Integer ii = getValue(I_C_Conversion_Rate.COLUMNNAME_C_Conversion_Rate_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -78,7 +78,7 @@ public class X_C_Conversion_Rate extends PO implements I_C_Conversion_Rate {
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(I_C_Conversion_Rate.COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(I_C_Conversion_Rate.COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -99,7 +99,7 @@ public class X_C_Conversion_Rate extends PO implements I_C_Conversion_Rate {
      * @return Target currency
      */
     public int getTargetCurrencyId() {
-        Integer ii = (Integer) getValue(I_C_Conversion_Rate.COLUMNNAME_C_Currency_ID_To);
+        Integer ii = getValue(I_C_Conversion_Rate.COLUMNNAME_C_Currency_ID_To);
         if (ii == null) return 0;
         return ii;
     }
@@ -119,7 +119,7 @@ public class X_C_Conversion_Rate extends PO implements I_C_Conversion_Rate {
      * @return To convert Source number to Target number, the Source is divided
      */
     public BigDecimal getDivideRate() {
-        BigDecimal bd = (BigDecimal) getValue(I_C_Conversion_Rate.COLUMNNAME_DivideRate);
+        BigDecimal bd = getValue(I_C_Conversion_Rate.COLUMNNAME_DivideRate);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -139,7 +139,7 @@ public class X_C_Conversion_Rate extends PO implements I_C_Conversion_Rate {
      * @return Rate to multiple the source by to calculate the target.
      */
     public BigDecimal getMultiplyRate() {
-        BigDecimal bd = (BigDecimal) getValue(I_C_Conversion_Rate.COLUMNNAME_MultiplyRate);
+        BigDecimal bd = getValue(I_C_Conversion_Rate.COLUMNNAME_MultiplyRate);
         if (bd == null) return Env.ZERO;
         return bd;
     }

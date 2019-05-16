@@ -75,7 +75,7 @@ public class X_C_LandedCost extends PO implements I_C_LandedCost {
      * @return Invoice Detail Line
      */
     public int getInvoiceLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_InvoiceLine_ID);
+        Integer ii = getValue(COLUMNNAME_C_InvoiceLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -96,7 +96,7 @@ public class X_C_LandedCost extends PO implements I_C_LandedCost {
      * @return Landed Cost Distribution
      */
     public String getLandedCostDistribution() {
-        return (String) getValue(COLUMNNAME_LandedCostDistribution);
+        return getValue(COLUMNNAME_LandedCostDistribution);
     }
 
     /**
@@ -115,7 +115,7 @@ public class X_C_LandedCost extends PO implements I_C_LandedCost {
      * @return Product Cost Element
      */
     public int getCostElementId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_CostElement_ID);
+        Integer ii = getValue(COLUMNNAME_M_CostElement_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -126,7 +126,7 @@ public class X_C_LandedCost extends PO implements I_C_LandedCost {
      * @return Material Shipment Document
      */
     public int getInOutId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_InOut_ID);
+        Integer ii = getValue(COLUMNNAME_M_InOut_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -137,7 +137,7 @@ public class X_C_LandedCost extends PO implements I_C_LandedCost {
      * @return Line on Shipment or Receipt document
      */
     public int getInOutLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_InOutLine_ID);
+        Integer ii = getValue(COLUMNNAME_M_InOutLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -148,7 +148,7 @@ public class X_C_LandedCost extends PO implements I_C_LandedCost {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }

@@ -90,7 +90,7 @@ public abstract class X_C_Cash extends BasePOName implements I_C_Cash {
      * @return Balance prior to any transactions
      */
     public BigDecimal getBeginningBalance() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_BeginningBalance);
+        BigDecimal bd = getValue(COLUMNNAME_BeginningBalance);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -110,7 +110,7 @@ public abstract class X_C_Cash extends BasePOName implements I_C_Cash {
      * @return Cash Book for recording petty cash transactions
      */
     public int getCashBookId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_CashBook_ID);
+        Integer ii = getValue(COLUMNNAME_C_CashBook_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -131,7 +131,7 @@ public abstract class X_C_Cash extends BasePOName implements I_C_Cash {
      * @return Cash Journal
      */
     public int getCashId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Cash_ID);
+        Integer ii = getValue(COLUMNNAME_C_Cash_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -160,7 +160,7 @@ public abstract class X_C_Cash extends BasePOName implements I_C_Cash {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -178,7 +178,7 @@ public abstract class X_C_Cash extends BasePOName implements I_C_Cash {
      * @return The targeted status of the document
      */
     public String getDocAction() {
-        return (String) getValue(COLUMNNAME_DocAction);
+        return getValue(COLUMNNAME_DocAction);
     }
 
     /**
@@ -197,7 +197,7 @@ public abstract class X_C_Cash extends BasePOName implements I_C_Cash {
      * @return The current status of the document
      */
     public String getDocStatus() {
-        return (String) getValue(COLUMNNAME_DocStatus);
+        return getValue(COLUMNNAME_DocStatus);
     }
 
     /**
@@ -216,7 +216,7 @@ public abstract class X_C_Cash extends BasePOName implements I_C_Cash {
      * @return Ending or closing balance
      */
     public BigDecimal getEndingBalance() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_EndingBalance);
+        BigDecimal bd = getValue(COLUMNNAME_EndingBalance);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -304,7 +304,7 @@ public abstract class X_C_Cash extends BasePOName implements I_C_Cash {
      * @return Difference between statement ending balance and actual ending balance
      */
     public BigDecimal getStatementDifference() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_StatementDifference);
+        BigDecimal bd = getValue(COLUMNNAME_StatementDifference);
         if (bd == null) return Env.ZERO;
         return bd;
     }

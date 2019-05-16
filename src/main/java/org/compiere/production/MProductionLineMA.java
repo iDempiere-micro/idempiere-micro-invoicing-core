@@ -4,9 +4,9 @@ import kotliquery.Row;
 import org.compiere.accounting.MStorageOnHand;
 import org.compiere.model.I_M_ProductionLineMA;
 import org.compiere.model.TypedQuery;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Util;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;

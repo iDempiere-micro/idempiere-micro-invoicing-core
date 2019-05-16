@@ -71,7 +71,7 @@ public class X_AD_Schedule extends BasePOName implements Schedule {
      * @return Cron pattern to define when the process should be invoked.
      */
     public String getCronPattern() {
-        return (String) getValue(Schedule.COLUMNNAME_CronPattern);
+        return getValue(Schedule.COLUMNNAME_CronPattern);
     }
 
     /**
@@ -89,7 +89,7 @@ public class X_AD_Schedule extends BasePOName implements Schedule {
      * @return Frequency of events
      */
     public int getFrequency() {
-        Integer ii = (Integer) getValue(Schedule.COLUMNNAME_Frequency);
+        Integer ii = getValue(Schedule.COLUMNNAME_Frequency);
         if (ii == null) return 0;
         return ii;
     }
@@ -109,7 +109,7 @@ public class X_AD_Schedule extends BasePOName implements Schedule {
      * @return Frequency of event
      */
     public String getFrequencyType() {
-        return (String) getValue(Schedule.COLUMNNAME_FrequencyType);
+        return getValue(Schedule.COLUMNNAME_FrequencyType);
     }
 
     /**
@@ -142,7 +142,7 @@ public class X_AD_Schedule extends BasePOName implements Schedule {
      * @return Run only on IP
      */
     public String getRunOnlyOnIP() {
-        return (String) getValue(Schedule.COLUMNNAME_RunOnlyOnIP);
+        return getValue(Schedule.COLUMNNAME_RunOnlyOnIP);
     }
 
     /**
@@ -151,7 +151,7 @@ public class X_AD_Schedule extends BasePOName implements Schedule {
      * @return Type of schedule
      */
     public String getScheduleType() {
-        return (String) getValue(Schedule.COLUMNNAME_ScheduleType);
+        return getValue(Schedule.COLUMNNAME_ScheduleType);
     }
 
     @Override

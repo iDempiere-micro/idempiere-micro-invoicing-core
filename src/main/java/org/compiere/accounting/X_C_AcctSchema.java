@@ -122,7 +122,7 @@ public class X_C_AcctSchema extends BasePOName {
      * @return Create posting entries only for this organization
      */
     public int getOrganizationOnlyId() {
-        Integer ii = (Integer) getValue(AccountingSchema.COLUMNNAME_AD_OrgOnly_ID);
+        Integer ii = getValue(AccountingSchema.COLUMNNAME_AD_OrgOnly_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -166,7 +166,7 @@ public class X_C_AcctSchema extends BasePOName {
      * @return Rules for accounting
      */
     public int getAccountingSchemaId() {
-        Integer ii = (Integer) getValue(AccountingSchema.COLUMNNAME_C_AcctSchema_ID);
+        Integer ii = getValue(AccountingSchema.COLUMNNAME_C_AcctSchema_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -177,7 +177,7 @@ public class X_C_AcctSchema extends BasePOName {
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(AccountingSchema.COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(AccountingSchema.COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -198,7 +198,7 @@ public class X_C_AcctSchema extends BasePOName {
      * @return Create Commitment and/or Reservations for Budget Control
      */
     public String getCommitmentType() {
-        return (String) getValue(AccountingSchema.COLUMNNAME_CommitmentType);
+        return getValue(AccountingSchema.COLUMNNAME_CommitmentType);
     }
 
     /**
@@ -217,7 +217,7 @@ public class X_C_AcctSchema extends BasePOName {
      * @return The lowest level to accumulate Costing Information
      */
     public String getCostingLevel() {
-        return (String) getValue(AccountingSchema.COLUMNNAME_CostingLevel);
+        return getValue(AccountingSchema.COLUMNNAME_CostingLevel);
     }
 
     /**
@@ -236,7 +236,7 @@ public class X_C_AcctSchema extends BasePOName {
      * @return Indicates how Costs will be calculated
      */
     public String getCostingMethod() {
-        return (String) getValue(AccountingSchema.COLUMNNAME_CostingMethod);
+        return getValue(AccountingSchema.COLUMNNAME_CostingMethod);
     }
 
     /**
@@ -265,7 +265,7 @@ public class X_C_AcctSchema extends BasePOName {
      * @return Generally Accepted Accounting Principles
      */
     public String getGAAP() {
-        return (String) getValue(AccountingSchema.COLUMNNAME_GAAP);
+        return getValue(AccountingSchema.COLUMNNAME_GAAP);
     }
 
     /**
@@ -455,7 +455,7 @@ public class X_C_AcctSchema extends BasePOName {
      * @return Type of Cost (e.g. Current, Plan, Future)
      */
     public int getCostTypeId() {
-        Integer ii = (Integer) getValue(AccountingSchema.COLUMNNAME_M_CostType_ID);
+        Integer ii = getValue(AccountingSchema.COLUMNNAME_M_CostType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -476,7 +476,7 @@ public class X_C_AcctSchema extends BasePOName {
      * @return Number of days to be able to post to a future date (based on system date)
      */
     public int getPeriodOpenFuture() {
-        Integer ii = (Integer) getValue(AccountingSchema.COLUMNNAME_Period_OpenFuture);
+        Integer ii = getValue(AccountingSchema.COLUMNNAME_Period_OpenFuture);
         if (ii == null) return 0;
         return ii;
     }
@@ -497,7 +497,7 @@ public class X_C_AcctSchema extends BasePOName {
      * @return Number of days to be able to post in the past (based on system date)
      */
     public int getPeriodOpenHistory() {
-        Integer ii = (Integer) getValue(AccountingSchema.COLUMNNAME_Period_OpenHistory);
+        Integer ii = getValue(AccountingSchema.COLUMNNAME_Period_OpenHistory);
         if (ii == null) return 0;
         return ii;
     }
@@ -517,7 +517,7 @@ public class X_C_AcctSchema extends BasePOName {
      * @return Element Separator
      */
     public String getSeparator() {
-        return (String) getValue(AccountingSchema.COLUMNNAME_Separator);
+        return getValue(AccountingSchema.COLUMNNAME_Separator);
     }
 
     /**
@@ -535,7 +535,7 @@ public class X_C_AcctSchema extends BasePOName {
      * @return Type of Tax Correction
      */
     public String getTaxCorrectionType() {
-        return (String) getValue(AccountingSchema.COLUMNNAME_TaxCorrectionType);
+        return getValue(AccountingSchema.COLUMNNAME_TaxCorrectionType);
     }
 
     /**

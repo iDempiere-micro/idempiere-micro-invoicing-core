@@ -107,7 +107,7 @@ public class X_PA_Goal extends BasePOName implements I_PA_Goal {
      * @return Responsibility Role
      */
     public int getRoleId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_Role_ID);
+        Integer ii = getValue(COLUMNNAME_AD_Role_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -128,7 +128,7 @@ public class X_PA_Goal extends BasePOName implements I_PA_Goal {
      * @return User within the system - Internal or Business Partner Contact
      */
     public int getUserId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_User_ID);
+        Integer ii = getValue(COLUMNNAME_AD_User_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -166,7 +166,7 @@ public class X_PA_Goal extends BasePOName implements I_PA_Goal {
      * @return Target achievement from 0..1
      */
     public BigDecimal getGoalPerformance() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_GoalPerformance);
+        BigDecimal bd = getValue(COLUMNNAME_GoalPerformance);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -209,7 +209,7 @@ public class X_PA_Goal extends BasePOName implements I_PA_Goal {
      * @return Actual value that has been measured.
      */
     public BigDecimal getMeasureActual() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_MeasureActual);
+        BigDecimal bd = getValue(COLUMNNAME_MeasureActual);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -229,7 +229,7 @@ public class X_PA_Goal extends BasePOName implements I_PA_Goal {
      * @return Measure Scope initially displayed
      */
     public String getMeasureDisplay() {
-        return (String) getValue(COLUMNNAME_MeasureDisplay);
+        return getValue(COLUMNNAME_MeasureDisplay);
     }
 
     /**
@@ -238,7 +238,7 @@ public class X_PA_Goal extends BasePOName implements I_PA_Goal {
      * @return Performance Measure Scope
      */
     public String getMeasureScope() {
-        return (String) getValue(COLUMNNAME_MeasureScope);
+        return getValue(COLUMNNAME_MeasureScope);
     }
 
     /**
@@ -257,7 +257,7 @@ public class X_PA_Goal extends BasePOName implements I_PA_Goal {
      * @return Target value for measure
      */
     public BigDecimal getMeasureTarget() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_MeasureTarget);
+        BigDecimal bd = getValue(COLUMNNAME_MeasureTarget);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -277,7 +277,7 @@ public class X_PA_Goal extends BasePOName implements I_PA_Goal {
      * @return Performance Goal
      */
     public int getGoalId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PA_Goal_ID);
+        Integer ii = getValue(COLUMNNAME_PA_Goal_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -288,7 +288,7 @@ public class X_PA_Goal extends BasePOName implements I_PA_Goal {
      * @return Concrete Performance Measurement
      */
     public int getMeasureId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PA_Measure_ID);
+        Integer ii = getValue(COLUMNNAME_PA_Measure_ID);
         if (ii == null) return 0;
         return ii;
     }

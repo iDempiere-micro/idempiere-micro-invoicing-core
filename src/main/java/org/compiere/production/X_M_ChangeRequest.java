@@ -68,7 +68,7 @@ public class X_M_ChangeRequest extends BasePOName implements I_M_ChangeRequest {
      * @return Bill of Materials (Engineering) Change Notice (Version)
      */
     public int getChangeNoticeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_ChangeNotice_ID);
+        Integer ii = getValue(COLUMNNAME_M_ChangeNotice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -89,7 +89,7 @@ public class X_M_ChangeRequest extends BasePOName implements I_M_ChangeRequest {
      * @return Fixed in Change Notice
      */
     public int getFixChangeNoticeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_FixChangeNotice_ID);
+        Integer ii = getValue(COLUMNNAME_M_FixChangeNotice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -100,7 +100,7 @@ public class X_M_ChangeRequest extends BasePOName implements I_M_ChangeRequest {
      * @return BOM & Formula
      */
     public int getProductBOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PP_Product_BOM_ID);
+        Integer ii = getValue(COLUMNNAME_PP_Product_BOM_ID);
         if (ii == null) return 0;
         return ii;
     }

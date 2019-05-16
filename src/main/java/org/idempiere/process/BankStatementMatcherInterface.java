@@ -1,6 +1,5 @@
 package org.idempiere.process;
 
-import org.compiere.accounting.MBankStatementLine;
 import org.compiere.accounting.X_I_BankStatement;
 import org.compiere.model.I_C_BankStatementLine;
 

@@ -57,28 +57,28 @@ public class Scheduler extends AdempiereServer {
 
         // Prepare a ctx for the report/process - BF [1966880]
         ClientWithAccounting schedclient = MClientKt.getClientWithAccounting(m_model.getClientId());
-        Env.setContext("#clientId", schedclient.getClientId());
-        Env.setContext("#AD_Language", schedclient.getADLanguage());
-        Env.setContext("#orgId", m_model.getOrgId());
+        // DAP: Env.setContext("#clientId", schedclient.getClientId());
+        // DAP: Env.setContext("#AD_Language", schedclient.getADLanguage());
+        // DAP: Env.setContext("#orgId", m_model.getOrgId());
         if (m_model.getOrgId() != 0) {
             MOrgInfo schedorg = MOrgInfoKt.getOrganizationInfo(m_model.getOrgId());
-            if (schedorg.getWarehouseId() > 0)
-                Env.setContext("#M_Warehouse_ID", schedorg.getWarehouseId());
+            if (schedorg.getWarehouseId() > 0);
+            // DAP: Env.setContext("#M_Warehouse_ID", schedorg.getWarehouseId());
         }
-        Env.setContext("#AD_User_ID", getUserId());
-        Env.setContext("#SalesRep_ID", getUserId());
+        // DAP: Env.setContext("#AD_User_ID", getUserId());
+        // DAP: Env.setContext("#SalesRep_ID", getUserId());
         // TODO: It can be convenient to add  AD_Scheduler.AD_Role_ID
         MUser scheduser = MUserKt.getUser(getUserId());
         MRole[] schedroles = scheduser.getRoles(m_model.getOrgId());
         if (schedroles.length > 0) {
-            Env.setContext(
-                    "#AD_Role_ID",
-                    schedroles[0].getRoleId()); // first role, ordered by AD_Role_ID
+            // DAP: Env.setContext(
+            // DAP:         "#AD_Role_ID",
+            // DAP:         schedroles[0].getRoleId()); // first role, ordered by AD_Role_ID
         }
         Timestamp ts = new Timestamp(System.currentTimeMillis());
         SimpleDateFormat dateFormat4Timestamp = new SimpleDateFormat("yyyy-MM-dd");
-        Env.setContext(
-                "#Date", dateFormat4Timestamp.format(ts) + " 00:00:00"); //  JDBC format
+        // DAP: Env.setContext(
+        // DAP:         "#Date", dateFormat4Timestamp.format(ts) + " 00:00:00"); //  JDBC format
 
         MProcess process = new MProcess(m_model.getProcessId());
         try {

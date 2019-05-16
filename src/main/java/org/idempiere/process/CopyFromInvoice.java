@@ -42,8 +42,8 @@ public class CopyFromInvoice extends SvrProcess {
             log.info("From C_Invoice_ID=" + m_C_Invoice_ID + " to " + To_C_Invoice_ID);
         if (To_C_Invoice_ID == 0) throw new IllegalArgumentException("Target C_Invoice_ID == 0");
         if (m_C_Invoice_ID == 0) throw new IllegalArgumentException("Source C_Invoice_ID == 0");
-        MInvoice from = new MInvoice(m_C_Invoice_ID);
-        MInvoice to = new MInvoice(To_C_Invoice_ID);
+        MInvoice from = new MInvoice(null, m_C_Invoice_ID);
+        MInvoice to = new MInvoice(null, To_C_Invoice_ID);
         //
         int no = to.copyLinesFrom(from, false, false);
         //

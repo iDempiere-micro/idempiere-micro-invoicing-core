@@ -3,9 +3,9 @@ package org.compiere.invoicing;
 import kotliquery.Row;
 import org.compiere.model.DocumentType;
 import org.compiere.model.I_M_Inventory;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -115,7 +115,7 @@ public abstract class X_M_Inventory extends PO implements I_M_Inventory {
      * @return Document Approval Amount
      */
     public BigDecimal getApprovalAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ApprovalAmt);
+        BigDecimal bd = getValue(COLUMNNAME_ApprovalAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -126,7 +126,7 @@ public abstract class X_M_Inventory extends PO implements I_M_Inventory {
      * @return Business Activity
      */
     public int getBusinessActivityId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Activity_ID);
+        Integer ii = getValue(COLUMNNAME_C_Activity_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -137,7 +137,7 @@ public abstract class X_M_Inventory extends PO implements I_M_Inventory {
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -154,7 +154,7 @@ public abstract class X_M_Inventory extends PO implements I_M_Inventory {
      * @return Document type or rules
      */
     public int getDocumentTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -175,7 +175,7 @@ public abstract class X_M_Inventory extends PO implements I_M_Inventory {
      * @return Indicates how Costs will be calculated
      */
     public String getCostingMethod() {
-        return (String) getValue(COLUMNNAME_CostingMethod);
+        return getValue(COLUMNNAME_CostingMethod);
     }
 
     /**
@@ -194,7 +194,7 @@ public abstract class X_M_Inventory extends PO implements I_M_Inventory {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -212,7 +212,7 @@ public abstract class X_M_Inventory extends PO implements I_M_Inventory {
      * @return The targeted status of the document
      */
     public String getDocAction() {
-        return (String) getValue(COLUMNNAME_DocAction);
+        return getValue(COLUMNNAME_DocAction);
     }
 
     /**
@@ -231,7 +231,7 @@ public abstract class X_M_Inventory extends PO implements I_M_Inventory {
      * @return The current status of the document
      */
     public String getDocStatus() {
-        return (String) getValue(COLUMNNAME_DocStatus);
+        return getValue(COLUMNNAME_DocStatus);
     }
 
     /**
@@ -250,7 +250,7 @@ public abstract class X_M_Inventory extends PO implements I_M_Inventory {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**
@@ -291,7 +291,7 @@ public abstract class X_M_Inventory extends PO implements I_M_Inventory {
      * @return Parameters for a Physical Inventory
      */
     public int getInventoryId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Inventory_ID);
+        Integer ii = getValue(COLUMNNAME_M_Inventory_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -320,7 +320,7 @@ public abstract class X_M_Inventory extends PO implements I_M_Inventory {
      * @return Storage Warehouse and Service Point
      */
     public int getWarehouseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Warehouse_ID);
+        Integer ii = getValue(COLUMNNAME_M_Warehouse_ID);
         if (ii == null) return 0;
         return ii;
     }

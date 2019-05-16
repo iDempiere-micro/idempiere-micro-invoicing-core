@@ -1,9 +1,9 @@
 package org.compiere.accounting;
 
-import org.compiere.model.IFact;
-import org.compiere.model.AccountingSchema;
 import org.compiere.model.AccountSchemaElement;
 import org.compiere.model.AccountingElementValue;
+import org.compiere.model.AccountingSchema;
+import org.compiere.model.IFact;
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.model.I_Fact_Acct;
 import org.compiere.model.I_GL_Distribution;

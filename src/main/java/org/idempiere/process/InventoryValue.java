@@ -16,9 +16,9 @@ package org.idempiere.process;
 
 import org.compiere.accounting.MClientKt;
 import org.compiere.accounting.MWarehouse;
+import org.compiere.model.AccountingSchema;
 import org.compiere.model.ClientWithAccounting;
 import org.compiere.model.IProcessInfoParameter;
-import org.compiere.model.AccountingSchema;
 import org.compiere.process.SvrProcess;
 
 import java.sql.Timestamp;

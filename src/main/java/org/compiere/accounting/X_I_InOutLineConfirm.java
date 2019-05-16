@@ -52,7 +52,7 @@ public class X_I_InOutLineConfirm extends PO implements I_I_InOutLineConfirm {
      * @return Confirmation Number
      */
     public String getConfirmationNo() {
-        return (String) getValue(COLUMNNAME_ConfirmationNo);
+        return getValue(COLUMNNAME_ConfirmationNo);
     }
 
     /**
@@ -61,7 +61,7 @@ public class X_I_InOutLineConfirm extends PO implements I_I_InOutLineConfirm {
      * @return Confirmation of a received quantity
      */
     public BigDecimal getConfirmedQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ConfirmedQty);
+        BigDecimal bd = getValue(COLUMNNAME_ConfirmedQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -72,7 +72,7 @@ public class X_I_InOutLineConfirm extends PO implements I_I_InOutLineConfirm {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -81,7 +81,7 @@ public class X_I_InOutLineConfirm extends PO implements I_I_InOutLineConfirm {
      * @return Difference Quantity
      */
     public BigDecimal getDifferenceQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DifferenceQty);
+        BigDecimal bd = getValue(COLUMNNAME_DifferenceQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -110,7 +110,7 @@ public class X_I_InOutLineConfirm extends PO implements I_I_InOutLineConfirm {
      * @return Material Shipment or Receipt Confirmation Line
      */
     public int getInOutLineConfirmId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_InOutLineConfirm_ID);
+        Integer ii = getValue(COLUMNNAME_M_InOutLineConfirm_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -130,7 +130,7 @@ public class X_I_InOutLineConfirm extends PO implements I_I_InOutLineConfirm {
      * @return The Quantity scrapped due to QA issues
      */
     public BigDecimal getScrappedQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ScrappedQty);
+        BigDecimal bd = getValue(COLUMNNAME_ScrappedQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }

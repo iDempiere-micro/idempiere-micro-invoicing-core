@@ -18,8 +18,8 @@ import org.compiere.accounting.MOrder;
 import org.compiere.accounting.MOrderLine;
 import org.compiere.invoicing.MRMA;
 import org.compiere.model.I_C_Invoice;
+import org.compiere.model.I_M_RMALine;
 import org.compiere.order.MInOut;
-import org.compiere.order.MRMALine;
 import org.compiere.process.SvrProcess;
 
 /**
@@ -58,9 +58,9 @@ public class RMACreateOrder extends SvrProcess {
         order.setBusinessPartnerId(originalOrder.getBusinessPartnerId());
         order.setBusinessPartnerLocationId(originalOrder.getBusinessPartnerLocationId());
         order.setUserId(originalOrder.getUserId());
-        order.setBill_BPartnerId(originalOrder.getBill_BPartnerId());
+        order.setBill_BPartnerId(originalOrder.getInvoiceBusinessPartnerId());
         order.setBusinessPartnerInvoicingLocationId(originalOrder.getBusinessPartnerInvoicingLocationId());
-        order.setBill_UserId(originalOrder.getBill_UserId());
+        order.setBill_UserId(originalOrder.getInvoiceUserId());
         order.setSalesRepresentativeId(rma.getSalesRepresentativeId());
         order.setPriceListId(originalOrder.getPriceListId());
         order.setIsSOTrx(originalOrder.isSOTrx());
@@ -76,8 +76,8 @@ public class RMACreateOrder extends SvrProcess {
         MInOut originalShipment = rma.getShipment();
         I_C_Invoice originalInvoice = rma.getOriginalInvoice();
 
-        MRMALine[] lines = rma.getLines(true);
-        for (MRMALine line : lines) {
+        I_M_RMALine[] lines = rma.getLines(true);
+        for (I_M_RMALine line : lines) {
             if (line.getShipLine() != null
                     && line.getShipLine().getOrderLineId() != 0
                     && line.getProductId() != 0) {

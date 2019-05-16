@@ -7,10 +7,10 @@ import org.compiere.model.I_M_InOutLine;
 import org.compiere.model.I_M_InOutLineMA;
 import org.compiere.model.TypedQuery;
 import org.compiere.order.MInOutLine;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.Query;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Util;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;

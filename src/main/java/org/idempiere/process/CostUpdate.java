@@ -8,11 +8,10 @@ import org.compiere.accounting.MProduct;
 import org.compiere.docengine.DocumentEngine;
 import org.compiere.invoicing.MInventory;
 import org.compiere.invoicing.MInventoryLine;
+import org.compiere.model.AccountingSchema;
 import org.compiere.model.ClientWithAccounting;
 import org.compiere.model.HasName;
 import org.compiere.model.IProcessInfoParameter;
-import org.compiere.model.AccountingSchema;
-import org.compiere.model.DocumentType;
 import org.compiere.model.I_M_Cost;
 import org.compiere.model.I_M_CostElement;
 import org.compiere.model.I_M_Inventory;
@@ -283,16 +282,16 @@ public class CostUpdate extends SvrProcess {
             if (!DocumentEngine.processIt(inventoryDoc, DocAction.Companion.getACTION_Complete())) {
                 StringBuilder msg = new StringBuilder();
                 msg.append(MsgKt.getMsg("ProcessFailed")).append(": ");
-                if (Env.isBaseLanguage(DocumentType.Table_Name)) msg.append(m_docType.getName());
-                else msg.append(m_docType.get_Translation(HasName.COLUMNNAME_Name));
+                if (Env.isBaseLanguage()) msg.append(m_docType.getName());
+                else msg.append(m_docType.getTranslation(HasName.COLUMNNAME_Name));
                 throw new AdempiereUserError(msg.toString());
             } else {
                 inventoryDoc.saveEx();
                 StringBuilder msg = new StringBuilder();
-                if (Env.isBaseLanguage(DocumentType.Table_Name))
+                if (Env.isBaseLanguage())
                     msg.append(m_docType.getName()).append(" ").append(inventoryDoc.getDocumentNo());
                 else
-                    msg.append(m_docType.get_Translation(HasName.COLUMNNAME_Name))
+                    msg.append(m_docType.getTranslation(HasName.COLUMNNAME_Name))
                             .append(" ")
                             .append(inventoryDoc.getDocumentNo());
                 addBufferLog(

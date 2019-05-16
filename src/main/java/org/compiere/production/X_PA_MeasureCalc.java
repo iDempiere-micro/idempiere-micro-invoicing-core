@@ -57,7 +57,7 @@ public class X_PA_MeasureCalc extends BasePOName implements I_PA_MeasureCalc {
      * @return Database Table information
      */
     public int getRowTableId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_Table_ID);
+        Integer ii = getValue(COLUMNNAME_AD_Table_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -68,7 +68,7 @@ public class X_PA_MeasureCalc extends BasePOName implements I_PA_MeasureCalc {
      * @return Fully qualified Business Partner key column (C_BPartner_ID)
      */
     public String getBPartnerColumn() {
-        return (String) getValue(COLUMNNAME_BPartnerColumn);
+        return getValue(COLUMNNAME_BPartnerColumn);
     }
 
     /**
@@ -77,7 +77,7 @@ public class X_PA_MeasureCalc extends BasePOName implements I_PA_MeasureCalc {
      * @return Fully qualified date column
      */
     public String getDateColumn() {
-        return (String) getValue(COLUMNNAME_DateColumn);
+        return getValue(COLUMNNAME_DateColumn);
     }
 
     /**
@@ -86,7 +86,7 @@ public class X_PA_MeasureCalc extends BasePOName implements I_PA_MeasureCalc {
      * @return Fully qualified Organization column (orgId)
      */
     public String getOrgColumn() {
-        return (String) getValue(COLUMNNAME_OrgColumn);
+        return getValue(COLUMNNAME_OrgColumn);
     }
 
     /**
@@ -95,7 +95,7 @@ public class X_PA_MeasureCalc extends BasePOName implements I_PA_MeasureCalc {
      * @return Fully qualified Product column (M_Product_ID)
      */
     public String getProductColumn() {
-        return (String) getValue(COLUMNNAME_ProductColumn);
+        return getValue(COLUMNNAME_ProductColumn);
     }
 
     /**
@@ -104,7 +104,7 @@ public class X_PA_MeasureCalc extends BasePOName implements I_PA_MeasureCalc {
      * @return SQL SELECT clause
      */
     public String getSelectClause() {
-        return (String) getValue(COLUMNNAME_SelectClause);
+        return getValue(COLUMNNAME_SelectClause);
     }
 
     /**
@@ -113,7 +113,7 @@ public class X_PA_MeasureCalc extends BasePOName implements I_PA_MeasureCalc {
      * @return Fully qualified SQL WHERE clause
      */
     public String getWhereClause() {
-        return (String) getValue(COLUMNNAME_WhereClause);
+        return getValue(COLUMNNAME_WhereClause);
     }
 
     @Override

@@ -58,7 +58,7 @@ public class X_C_InvoiceTax extends PO {
      * @return Invoice Identifier
      */
     public int getInvoiceId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceTax.COLUMNNAME_C_Invoice_ID);
+        Integer ii = getValue(I_C_InvoiceTax.COLUMNNAME_C_Invoice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -79,7 +79,7 @@ public class X_C_InvoiceTax extends PO {
      * @return Tax identifier
      */
     public int getTaxId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceTax.COLUMNNAME_C_Tax_ID);
+        Integer ii = getValue(I_C_InvoiceTax.COLUMNNAME_C_Tax_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -123,7 +123,7 @@ public class X_C_InvoiceTax extends PO {
      * @return Tax Amount for a document
      */
     public BigDecimal getTaxAmt() {
-        BigDecimal bd = (BigDecimal) getValue(I_C_InvoiceTax.COLUMNNAME_TaxAmt);
+        BigDecimal bd = getValue(I_C_InvoiceTax.COLUMNNAME_TaxAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -143,7 +143,7 @@ public class X_C_InvoiceTax extends PO {
      * @return Base for calculating the tax amount
      */
     public BigDecimal getTaxBaseAmt() {
-        BigDecimal bd = (BigDecimal) getValue(I_C_InvoiceTax.COLUMNNAME_TaxBaseAmt);
+        BigDecimal bd = getValue(I_C_InvoiceTax.COLUMNNAME_TaxBaseAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }

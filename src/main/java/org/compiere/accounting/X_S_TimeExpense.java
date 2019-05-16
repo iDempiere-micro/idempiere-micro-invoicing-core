@@ -79,7 +79,7 @@ public class X_S_TimeExpense extends PO implements I_S_TimeExpense {
      * @return Document Approval Amount
      */
     public BigDecimal getApprovalAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ApprovalAmt);
+        BigDecimal bd = getValue(COLUMNNAME_ApprovalAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -99,7 +99,7 @@ public class X_S_TimeExpense extends PO implements I_S_TimeExpense {
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -128,7 +128,7 @@ public class X_S_TimeExpense extends PO implements I_S_TimeExpense {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -137,7 +137,7 @@ public class X_S_TimeExpense extends PO implements I_S_TimeExpense {
      * @return The targeted status of the document
      */
     public String getDocAction() {
-        return (String) getValue(COLUMNNAME_DocAction);
+        return getValue(COLUMNNAME_DocAction);
     }
 
     /**
@@ -156,7 +156,7 @@ public class X_S_TimeExpense extends PO implements I_S_TimeExpense {
      * @return The current status of the document
      */
     public String getDocStatus() {
-        return (String) getValue(COLUMNNAME_DocStatus);
+        return getValue(COLUMNNAME_DocStatus);
     }
 
     /**
@@ -165,7 +165,7 @@ public class X_S_TimeExpense extends PO implements I_S_TimeExpense {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**
@@ -197,7 +197,7 @@ public class X_S_TimeExpense extends PO implements I_S_TimeExpense {
      * @return Unique identifier of a Price List
      */
     public int getPriceListId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_PriceList_ID);
+        Integer ii = getValue(COLUMNNAME_M_PriceList_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -208,7 +208,7 @@ public class X_S_TimeExpense extends PO implements I_S_TimeExpense {
      * @return Storage Warehouse and Service Point
      */
     public int getWarehouseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Warehouse_ID);
+        Integer ii = getValue(COLUMNNAME_M_Warehouse_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -251,7 +251,7 @@ public class X_S_TimeExpense extends PO implements I_S_TimeExpense {
      * @return Time and Expense Report
      */
     public int getTimeExpenseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_S_TimeExpense_ID);
+        Integer ii = getValue(COLUMNNAME_S_TimeExpense_ID);
         if (ii == null) return 0;
         return ii;
     }

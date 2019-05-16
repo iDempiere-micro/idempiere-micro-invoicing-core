@@ -6,8 +6,9 @@ import org.compiere.conversionrate.MConversionRate;
 import org.compiere.invoicing.MInOut;
 import org.compiere.invoicing.MInOutLine;
 import org.compiere.invoicing.MInOutLineMA;
-import org.compiere.model.IFact;
 import org.compiere.model.AccountingSchema;
+import org.compiere.model.IFact;
+import org.compiere.model.IPODoc;
 import org.compiere.model.I_C_OrderLandedCostAllocation;
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.model.I_M_InOutLine;
@@ -53,6 +54,11 @@ public class Doc_InOut extends Doc {
     public Doc_InOut(MAcctSchema as, Row rs) {
         super(as, MInOut.class, rs, null);
     } //  DocInOut
+
+    @Override
+    protected IPODoc createNewInstance(Row rs) {
+        return new MInOut(rs);
+    }
 
     /**
      * Load Document Details

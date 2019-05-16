@@ -170,14 +170,14 @@ public class MDepreciationWorkfile extends X_A_Depreciation_Workfile implements 
     public static void updateFinantare(SetGetModel m, String changedColumnName) {
         // Own contribution:
         BigDecimal valCofinantare =
-                SetGetUtil.get_AttrValueAsBigDecimal(
+                SetGetUtil.getAttrValueAsBigDecimal(
                         m, DepreciationWorkfile.COLUMNNAME_A_Valoare_Cofinantare);
         // Asset Value:
         BigDecimal assetCost =
-                SetGetUtil.get_AttrValueAsBigDecimal(m, DepreciationWorkfile.COLUMNNAME_A_Asset_Cost);
+                SetGetUtil.getAttrValueAsBigDecimal(m, DepreciationWorkfile.COLUMNNAME_A_Asset_Cost);
         // Third value:
         BigDecimal valTert =
-                SetGetUtil.get_AttrValueAsBigDecimal(
+                SetGetUtil.getAttrValueAsBigDecimal(
                         m, DepreciationWorkfile.COLUMNNAME_A_Valoare_Tert);
 
         // Calculate values

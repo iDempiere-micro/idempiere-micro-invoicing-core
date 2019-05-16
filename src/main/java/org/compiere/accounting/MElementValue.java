@@ -1,8 +1,8 @@
 package org.compiere.accounting;
 
 import kotliquery.Row;
-import org.compiere.model.HasName;
 import org.compiere.model.AccountingElementValue;
+import org.compiere.model.HasName;
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.model.I_Fact_Acct;
 import org.compiere.orm.MTree_Base;
@@ -182,9 +182,9 @@ public class MElementValue extends X_C_ElementValue {
             int ad_Tree_ID = (new MElement(getElementId())).getTreeId();
             String treeType = (new MTree(ad_Tree_ID)).getTreeType();
 
-            if (newRecord) insert_Tree(treeType, getElementId());
+            if (newRecord) insertTree(treeType, getElementId());
 
-            update_Tree(treeType);
+            updateTree(treeType);
         }
 
         //	Value/Name change
@@ -206,7 +206,7 @@ public class MElementValue extends X_C_ElementValue {
 
     @Override
     protected boolean afterDelete(boolean success) {
-        if (success) delete_Tree(MTree_Base.TREETYPE_ElementValue);
+        if (success) deleteTree(MTree_Base.TREETYPE_ElementValue);
         return success;
     } //	afterDelete
 

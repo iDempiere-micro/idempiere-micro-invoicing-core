@@ -54,7 +54,7 @@ public class X_C_Task extends BasePOName implements I_C_Task {
      * @return Standard Project Type Task
      */
     public int getTaskId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Task_ID);
+        Integer ii = getValue(COLUMNNAME_C_Task_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -65,7 +65,7 @@ public class X_C_Task extends BasePOName implements I_C_Task {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -74,7 +74,7 @@ public class X_C_Task extends BasePOName implements I_C_Task {
      * @return Comment or Hint
      */
     public String getHelp() {
-        return (String) getValue(COLUMNNAME_Help);
+        return getValue(COLUMNNAME_Help);
     }
 
     /**
@@ -83,7 +83,7 @@ public class X_C_Task extends BasePOName implements I_C_Task {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -94,7 +94,7 @@ public class X_C_Task extends BasePOName implements I_C_Task {
      * @return Method of ordering records; lowest number comes first
      */
     public int getSeqNo() {
-        Integer ii = (Integer) getValue(COLUMNNAME_SeqNo);
+        Integer ii = getValue(COLUMNNAME_SeqNo);
         if (ii == null) return 0;
         return ii;
     }
@@ -114,7 +114,7 @@ public class X_C_Task extends BasePOName implements I_C_Task {
      * @return Standard Quantity
      */
     public BigDecimal getStandardQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_StandardQty);
+        BigDecimal bd = getValue(COLUMNNAME_StandardQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }

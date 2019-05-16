@@ -75,17 +75,17 @@ public class OrderRePrice extends SvrProcess {
                             .append(newPrice);
         }
         if (p_C_Invoice_ID != 0) {
-            MInvoice invoice = new MInvoice(p_C_Invoice_ID);
+            MInvoice invoice = new MInvoice(null, p_C_Invoice_ID);
             BigDecimal oldPrice = invoice.getGrandTotal();
             I_C_InvoiceLine[] lines = invoice.getLines(false);
             for (I_C_InvoiceLine line : lines) {
                 line.setPrice(invoice.getPriceListId());
-                if (line.is_Changed()) {
+                if (line.isChanged()) {
                     line.setTaxAmt();
                     line.saveEx();
                 }
             }
-            invoice = new MInvoice(p_C_Invoice_ID);
+            invoice = new MInvoice(null, p_C_Invoice_ID);
             BigDecimal newPrice = invoice.getGrandTotal();
             if (retValue.length() > 0) retValue.append(Env.NL);
             retValue

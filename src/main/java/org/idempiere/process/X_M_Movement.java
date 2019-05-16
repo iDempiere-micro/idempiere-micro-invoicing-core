@@ -115,7 +115,7 @@ public class X_M_Movement extends PO implements I_M_Movement {
      * @return Document Approval Amount
      */
     public BigDecimal getApprovalAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ApprovalAmt);
+        BigDecimal bd = getValue(COLUMNNAME_ApprovalAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -126,7 +126,7 @@ public class X_M_Movement extends PO implements I_M_Movement {
      * @return Document type or rules
      */
     public int getDocumentTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -147,7 +147,7 @@ public class X_M_Movement extends PO implements I_M_Movement {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -165,7 +165,7 @@ public class X_M_Movement extends PO implements I_M_Movement {
      * @return The targeted status of the document
      */
     public String getDocAction() {
-        return (String) getValue(COLUMNNAME_DocAction);
+        return getValue(COLUMNNAME_DocAction);
     }
 
     /**
@@ -184,7 +184,7 @@ public class X_M_Movement extends PO implements I_M_Movement {
      * @return The current status of the document
      */
     public String getDocStatus() {
-        return (String) getValue(COLUMNNAME_DocStatus);
+        return getValue(COLUMNNAME_DocStatus);
     }
 
     /**
@@ -203,7 +203,7 @@ public class X_M_Movement extends PO implements I_M_Movement {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**
@@ -253,7 +253,7 @@ public class X_M_Movement extends PO implements I_M_Movement {
      * @return Movement of Inventory
      */
     public int getMovementId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Movement_ID);
+        Integer ii = getValue(COLUMNNAME_M_Movement_ID);
         if (ii == null) return 0;
         return ii;
     }

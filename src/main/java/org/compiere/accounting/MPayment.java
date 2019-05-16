@@ -3,7 +3,6 @@ package org.compiere.accounting;
 import kotliquery.Row;
 import org.compiere.bank.IBAN;
 import org.compiere.bank.MBankAccount;
-import org.compiere.crm.MBPartner;
 import org.compiere.crm.X_C_BPartner;
 import org.compiere.docengine.DocumentEngine;
 import org.compiere.invoicing.MBPBankAccount;
@@ -17,13 +16,14 @@ import org.compiere.model.IDoc;
 import org.compiere.model.IPODoc;
 import org.compiere.model.IPaymentProcessor;
 import org.compiere.model.IProcessInfo;
+import org.compiere.model.I_C_BPartner;
 import org.compiere.model.I_C_Cash;
 import org.compiere.model.I_C_Invoice;
 import org.compiere.model.I_C_Payment;
 import org.compiere.model.I_C_PaymentAllocate;
 import org.compiere.model.PaymentInterface;
 import org.compiere.order.MOnlineTrxHistory;
-import org.compiere.order.X_C_Order;
+import org.compiere.order.OrderConstants;
 import org.compiere.orm.MDocType;
 import org.compiere.orm.MDocTypeKt;
 import org.compiere.orm.MOrg;
@@ -135,7 +135,7 @@ public class MPayment extends X_C_Payment
      * @param C_Payment_ID payment to load, (0 create new payment)
      */
     public MPayment(int C_Payment_ID) {
-        super(C_Payment_ID);
+        super(null, C_Payment_ID);
         //  New
         if (C_Payment_ID == 0) {
             setDocAction(X_C_Payment.DOCACTION_Complete);
@@ -174,7 +174,7 @@ public class MPayment extends X_C_Payment
      * Load Constructor
      */
     public MPayment(Row row) {
-        super(row);
+        super(row, -1);
     } //	MPayment
 
     /**
@@ -233,7 +233,7 @@ public class MPayment extends X_C_Payment
         setSwiftCode(ba.getSwiftCode());
         setDescription(preparedPayment.getPaySelection().getName());
         setIsReceipt(
-                X_C_Order.PAYMENTRULE_DirectDebit.equals // 	AR only
+                OrderConstants.PAYMENTRULE_DirectDebit.equals // 	AR only
                         (preparedPayment.getPaymentRule()));
         if (MPaySelectionCheck.PAYMENTRULE_DirectDebit.equals(preparedPayment.getPaymentRule()))
             setTenderType(MPayment.TENDERTYPE_DirectDebit);
@@ -585,7 +585,7 @@ public class MPayment extends X_C_Payment
         // there is bp and (invoice or order)
         if (getBusinessPartnerId() != 0 && (getInvoiceId() != 0 || getOrderId() != 0)) {
             if (getInvoiceId() != 0) {
-                MInvoice inv = new MInvoice(getInvoiceId());
+                MInvoice inv = new MInvoice(null, getInvoiceId());
                 if (inv.getBusinessPartnerId() != getBusinessPartnerId()) {
                     log.saveError("Error", MsgKt.parseTranslation("BP different from BP Invoice"));
                     return false;
@@ -1324,9 +1324,9 @@ public class MPayment extends X_C_Payment
             MOrder order = new MOrder(getOrderId());
             if (X_C_Payment.DOCSTATUS_WaitingPayment.equals(order.getDocStatus())) {
                 order.setPaymentId(getPaymentId());
-                order.setDocAction(X_C_Order.DOCACTION_WaitComplete);
+                order.setDocAction(OrderConstants.DOCACTION_WaitComplete);
                 // added AdempiereException by zuhri
-                if (!order.processIt(X_C_Order.DOCACTION_WaitComplete))
+                if (!order.processIt(OrderConstants.DOCACTION_WaitComplete))
                     throw new AdempiereException(
                             "Failed when processing document - " + order.getProcessMsg());
                 // end added
@@ -1367,7 +1367,7 @@ public class MPayment extends X_C_Payment
 
         //	Do not pay when Credit Stop/Hold
         if (!isReceipt()) {
-            MBPartner bp = new MBPartner(getBusinessPartnerId());
+            I_C_BPartner bp = getBusinessPartnerService().getById(getBusinessPartnerId());
             if (X_C_BPartner.SOCREDITSTATUS_CreditStop.equals(bp.getSOCreditStatus())) {
                 m_processMsg =
                         "@BPartnerCreditStop@ - @TotalOpenBalance@="
@@ -1462,7 +1462,7 @@ public class MPayment extends X_C_Payment
                 && getChargeId() == 0
                 && MPaymentAllocate.get(this).length == 0
                 && !createdAllocationRecords) {
-            MBPartner bp = new MBPartner(getBusinessPartnerId());
+            I_C_BPartner bp = getBusinessPartnerService().getById(getBusinessPartnerId());
             forUpdate(bp);
             //	Update total balance to include this payment
             BigDecimal payAmt =
@@ -1541,7 +1541,7 @@ public class MPayment extends X_C_Payment
 
         //	update C_Invoice.C_Payment_ID and C_Order.C_Payment_ID reference
         if (getInvoiceId() != 0) {
-            MInvoice inv = new MInvoice(getInvoiceId());
+            MInvoice inv = new MInvoice(null, getInvoiceId());
             if (inv.getPaymentId() != getPaymentId()) {
                 inv.setPaymentId(getPaymentId());
                 inv.saveEx();
@@ -1601,11 +1601,11 @@ public class MPayment extends X_C_Payment
         int counterC_BPartner_ID = org.getLinkedBusinessPartnerId();
         if (counterC_BPartner_ID == 0) return null;
         //	Business Partner needs to be linked to Org
-        MBPartner bp = new MBPartner(getBusinessPartnerId());
+        I_C_BPartner bp = getBusinessPartnerService().getById(getBusinessPartnerId());
         int counterAD_Org_ID = bp.getLinkedOrganizationId();
         if (counterAD_Org_ID == 0) return null;
 
-        MBPartner counterBP = new MBPartner(counterC_BPartner_ID);
+        I_C_BPartner counterBP = getBusinessPartnerService().getById(counterC_BPartner_ID);
         //	MOrgInfo counterOrgInfo = MOrgInfoKt.getOrganizationInfo(counterAD_Org_ID);
         if (log.isLoggable(Level.INFO)) log.info("Counter BP=" + counterBP.getName());
 
@@ -2166,7 +2166,7 @@ public class MPayment extends X_C_Payment
 
         //	Update BPartner
         if (getBusinessPartnerId() != 0) {
-            MBPartner bp = new MBPartner(getBusinessPartnerId());
+            I_C_BPartner bp = getBusinessPartnerService().getById(getBusinessPartnerId());
             bp.setTotalOpenBalance();
             bp.saveEx();
         }
@@ -2408,7 +2408,7 @@ public class MPayment extends X_C_Payment
         }
 
         if (getInvoiceId() != 0) {
-            MInvoice inv = new MInvoice(getInvoiceId());
+            MInvoice inv = new MInvoice(null, getInvoiceId());
             inv.setPaymentId(0);
             inv.saveEx();
         }

@@ -2,10 +2,10 @@ package org.compiere.production;
 
 import kotliquery.Row;
 import org.compiere.model.I_M_AttributeSetInstance;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.eevolution.model.I_PP_Product_BOMLine;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -64,7 +64,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Indicated the Quantity Assay to use into Quality Order
      */
     public BigDecimal getAssay() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Assay);
+        BigDecimal bd = getValue(COLUMNNAME_Assay);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -84,7 +84,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return The Grouping Components to the Backflush
      */
     public String getBackflushGroup() {
-        return (String) getValue(COLUMNNAME_BackflushGroup);
+        return getValue(COLUMNNAME_BackflushGroup);
     }
 
     /**
@@ -102,7 +102,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Component Type for a Bill of Material or Formula
      */
     public String getComponentType() {
-        return (String) getValue(COLUMNNAME_ComponentType);
+        return getValue(COLUMNNAME_ComponentType);
     }
 
     /**
@@ -121,7 +121,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Cost allocation percent in case of a co-product.
      */
     public BigDecimal getCostAllocationPerc() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_CostAllocationPerc);
+        BigDecimal bd = getValue(COLUMNNAME_CostAllocationPerc);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -147,7 +147,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Unit of Measure
      */
     public int getUOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_UOM_ID);
+        Integer ii = getValue(COLUMNNAME_C_UOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -168,7 +168,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -186,7 +186,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Indicated the Feature for Product Configure
      */
     public String getFeature() {
-        return (String) getValue(COLUMNNAME_Feature);
+        return getValue(COLUMNNAME_Feature);
     }
 
     /**
@@ -204,7 +204,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Indicated the % of participation this component into a of the BOM Planning
      */
     public BigDecimal getForecast() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Forecast);
+        BigDecimal bd = getValue(COLUMNNAME_Forecast);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -224,7 +224,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Comment or Hint
      */
     public String getHelp() {
-        return (String) getValue(COLUMNNAME_Help);
+        return getValue(COLUMNNAME_Help);
     }
 
     /**
@@ -288,7 +288,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return There are two methods for issue the components to Manufacturing Order
      */
     public String getIssueMethod() {
-        return (String) getValue(COLUMNNAME_IssueMethod);
+        return getValue(COLUMNNAME_IssueMethod);
     }
 
     /**
@@ -307,7 +307,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Optional Lead Time offset before starting production
      */
     public int getLeadTimeOffset() {
-        Integer ii = (Integer) getValue(COLUMNNAME_LeadTimeOffset);
+        Integer ii = getValue(COLUMNNAME_LeadTimeOffset);
         if (ii == null) return 0;
         return ii;
     }
@@ -327,7 +327,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Line);
+        Integer ii = getValue(COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -353,7 +353,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -381,7 +381,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Bill of Materials (Engineering) Change Notice (Version)
      */
     public int getChangeNoticeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_ChangeNotice_ID);
+        Integer ii = getValue(COLUMNNAME_M_ChangeNotice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -408,7 +408,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -435,7 +435,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return BOM & Formula
      */
     public int getProductBOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PP_Product_BOM_ID);
+        Integer ii = getValue(COLUMNNAME_PP_Product_BOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -456,7 +456,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return BOM Line
      */
     public int getProductBOMLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PP_Product_BOMLine_ID);
+        Integer ii = getValue(COLUMNNAME_PP_Product_BOMLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -477,7 +477,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return PP_Product_BOMLine_UU
      */
     public String getProductBOMLine_UU() {
-        return (String) getValue(COLUMNNAME_PP_Product_BOMLine_UU);
+        return getValue(COLUMNNAME_PP_Product_BOMLine_UU);
     }
 
     /**
@@ -495,7 +495,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Indicate the Quantity % use in this Formula
      */
     public BigDecimal getQtyBatch() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyBatch);
+        BigDecimal bd = getValue(COLUMNNAME_QtyBatch);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -515,7 +515,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Indicate the Quantity use in this BOM
      */
     public BigDecimal getQtyBOM() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyBOM);
+        BigDecimal bd = getValue(COLUMNNAME_QtyBOM);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -535,7 +535,7 @@ public class X_PP_Product_BOMLine extends PO implements I_PP_Product_BOMLine {
      * @return Indicate the Scrap % for calculate the Scrap Quantity
      */
     public BigDecimal getScrap() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Scrap);
+        BigDecimal bd = getValue(COLUMNNAME_Scrap);
         if (bd == null) return Env.ZERO;
         return bd;
     }

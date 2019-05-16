@@ -289,7 +289,7 @@ public class X_C_PaymentProcessor extends BasePOName implements I_C_PaymentProce
      * @return Account at the Bank
      */
     public int getBankAccountId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BankAccount_ID);
+        Integer ii = getValue(COLUMNNAME_C_BankAccount_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -328,7 +328,7 @@ public class X_C_PaymentProcessor extends BasePOName implements I_C_PaymentProce
      * @return Payment Processor Java Class
      */
     public String getPayProcessorClass() {
-        return (String) getValue(COLUMNNAME_PayProcessorClass);
+        return getValue(COLUMNNAME_PayProcessorClass);
     }
 
     /**

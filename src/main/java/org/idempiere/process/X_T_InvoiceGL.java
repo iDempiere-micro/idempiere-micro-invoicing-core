@@ -47,7 +47,7 @@ public class X_T_InvoiceGL extends PO implements I_T_InvoiceGL {
      * @return Revaluated Cr Amount Difference
      */
     public BigDecimal getAmtRevalCrDiff() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_AmtRevalCrDiff);
+        BigDecimal bd = getValue(COLUMNNAME_AmtRevalCrDiff);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -58,7 +58,7 @@ public class X_T_InvoiceGL extends PO implements I_T_InvoiceGL {
      * @return Revaluated Dr Amount Difference
      */
     public BigDecimal getAmtRevalDrDiff() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_AmtRevalDrDiff);
+        BigDecimal bd = getValue(COLUMNNAME_AmtRevalDrDiff);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -69,7 +69,7 @@ public class X_T_InvoiceGL extends PO implements I_T_InvoiceGL {
      * @return Invoice Identifier
      */
     public int getInvoiceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Invoice_ID);
+        Integer ii = getValue(COLUMNNAME_C_Invoice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -80,7 +80,7 @@ public class X_T_InvoiceGL extends PO implements I_T_InvoiceGL {
      * @return Accounting Fact
      */
     public int getFactAcctId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Fact_Acct_ID);
+        Integer ii = getValue(COLUMNNAME_Fact_Acct_ID);
         if (ii == null) return 0;
         return ii;
     }

@@ -55,7 +55,7 @@ public class X_C_PaymentBatch extends BasePOName implements I_C_PaymentBatch {
      * @return Payment batch for EFT
      */
     public int getPaymentBatchId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_PaymentBatch_ID);
+        Integer ii = getValue(COLUMNNAME_C_PaymentBatch_ID);
         if (ii == null) return 0;
         return ii;
     }

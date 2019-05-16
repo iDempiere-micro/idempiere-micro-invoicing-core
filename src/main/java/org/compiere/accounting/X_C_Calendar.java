@@ -50,7 +50,7 @@ public class X_C_Calendar extends BasePOName implements I_C_Calendar {
      * @return Accounting Calendar Name
      */
     public int getCalendarId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Calendar_ID);
+        Integer ii = getValue(COLUMNNAME_C_Calendar_ID);
         if (ii == null) return 0;
         return ii;
     }

@@ -73,7 +73,7 @@ public abstract class X_C_CashLine extends PO implements I_C_CashLine {
      * @return Amount in a defined currency
      */
     public BigDecimal getAmount() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Amount);
+        BigDecimal bd = getValue(COLUMNNAME_Amount);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -93,7 +93,7 @@ public abstract class X_C_CashLine extends PO implements I_C_CashLine {
      * @return Source of Cash
      */
     public String getCashType() {
-        return (String) getValue(COLUMNNAME_CashType);
+        return getValue(COLUMNNAME_CashType);
     }
 
     /**
@@ -112,7 +112,7 @@ public abstract class X_C_CashLine extends PO implements I_C_CashLine {
      * @return Account at the Bank
      */
     public int getBankAccountId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BankAccount_ID);
+        Integer ii = getValue(COLUMNNAME_C_BankAccount_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -133,7 +133,7 @@ public abstract class X_C_CashLine extends PO implements I_C_CashLine {
      * @return Cash Journal
      */
     public int getCashId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Cash_ID);
+        Integer ii = getValue(COLUMNNAME_C_Cash_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -154,7 +154,7 @@ public abstract class X_C_CashLine extends PO implements I_C_CashLine {
      * @return Cash Journal Line
      */
     public int getCashLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_CashLine_ID);
+        Integer ii = getValue(COLUMNNAME_C_CashLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -165,7 +165,7 @@ public abstract class X_C_CashLine extends PO implements I_C_CashLine {
      * @return Additional document charges
      */
     public int getChargeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Charge_ID);
+        Integer ii = getValue(COLUMNNAME_C_Charge_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -176,7 +176,7 @@ public abstract class X_C_CashLine extends PO implements I_C_CashLine {
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -197,7 +197,7 @@ public abstract class X_C_CashLine extends PO implements I_C_CashLine {
      * @return Invoice Identifier
      */
     public int getInvoiceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Invoice_ID);
+        Integer ii = getValue(COLUMNNAME_C_Invoice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -208,7 +208,7 @@ public abstract class X_C_CashLine extends PO implements I_C_CashLine {
      * @return Payment identifier
      */
     public int getPaymentId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Payment_ID);
+        Integer ii = getValue(COLUMNNAME_C_Payment_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -229,7 +229,7 @@ public abstract class X_C_CashLine extends PO implements I_C_CashLine {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -247,7 +247,7 @@ public abstract class X_C_CashLine extends PO implements I_C_CashLine {
      * @return Calculated amount of discount
      */
     public BigDecimal getDiscountAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DiscountAmt);
+        BigDecimal bd = getValue(COLUMNNAME_DiscountAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -276,7 +276,7 @@ public abstract class X_C_CashLine extends PO implements I_C_CashLine {
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Line);
+        Integer ii = getValue(COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -296,7 +296,7 @@ public abstract class X_C_CashLine extends PO implements I_C_CashLine {
      * @return Amount to write-off
      */
     public BigDecimal getWriteOffAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_WriteOffAmt);
+        BigDecimal bd = getValue(COLUMNNAME_WriteOffAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }

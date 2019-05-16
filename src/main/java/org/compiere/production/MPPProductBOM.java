@@ -27,7 +27,7 @@ public class MPPProductBOM extends X_PP_Product_BOM {
      * Cache
      */
     private static CCache<Integer, I_PP_Product_BOM> s_cache =
-            new CCache<>(I_PP_Product_BOM.Table_Name, 40, 5);
+            new CCache<>(I_PP_Product_BOM.Table_Name, 5);
     /**
      * BOM Lines
      */

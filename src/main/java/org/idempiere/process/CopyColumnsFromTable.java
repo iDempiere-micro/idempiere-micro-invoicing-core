@@ -1,8 +1,8 @@
 package org.idempiere.process;
 
-import org.compiere.model.IProcessInfoParameter;
 import org.compiere.model.Column;
 import org.compiere.model.Element;
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.orm.MColumn;
 import org.compiere.orm.MTable;
 import org.compiere.orm.M_Element;

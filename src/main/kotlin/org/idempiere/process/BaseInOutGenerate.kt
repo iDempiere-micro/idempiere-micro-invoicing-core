@@ -2,11 +2,15 @@ package org.idempiere.process
 
 import kotliquery.Row
 import org.compiere.accounting.MOrder
-import org.compiere.accounting.MOrderLine
 import org.compiere.accounting.MStorageOnHand
 import org.compiere.invoicing.MInOut
 import org.compiere.invoicing.MInOutLine
 import org.compiere.model.I_C_OrderLine
+import org.compiere.order.OrderConstants.DELIVERYRULE_Availability
+import org.compiere.order.OrderConstants.DELIVERYRULE_CompleteLine
+import org.compiere.order.OrderConstants.DELIVERYRULE_CompleteOrder
+import org.compiere.order.OrderConstants.DELIVERYRULE_Force
+import org.compiere.order.OrderConstants.DELIVERYRULE_Manual
 import org.compiere.orm.MClient.Companion.MMPOLICY_FiFo
 import org.compiere.process.SvrProcess
 import org.idempiere.common.util.AdempiereUserError
@@ -110,7 +114,7 @@ abstract class BaseInOutGenerate : SvrProcess() {
                 log.fine("check: " + order + " - DeliveryRule=" + order.deliveryRule)
             //
             val minGuaranteeDate = m_movementDate
-            var completeOrder = MOrder.DELIVERYRULE_CompleteOrder == order.deliveryRule
+            var completeOrder = DELIVERYRULE_CompleteOrder == order.deliveryRule
             // 	OrderLine WHERE
             val where = StringBuilder(" AND M_Warehouse_ID=").append(p_M_Warehouse_ID)
             if (p_DatePromised != null)
@@ -119,7 +123,7 @@ abstract class BaseInOutGenerate : SvrProcess() {
                     .append(convertDate(p_DatePromised, true))
                     .append(" OR DatePromised IS NULL)")
             // 	Exclude Auto Delivery if not Force
-            if (MOrder.DELIVERYRULE_Force != order.deliveryRule)
+            if (DELIVERYRULE_Force != order.deliveryRule)
                 where
                     .append(" AND (C_OrderLine.M_Product_ID IS NULL")
                     .append(" OR EXISTS (SELECT * FROM M_Product p ")
@@ -178,7 +182,7 @@ abstract class BaseInOutGenerate : SvrProcess() {
                 )
                 // 	lines w/o product
                 {
-                    if (MOrder.DELIVERYRULE_CompleteOrder != order.deliveryRule)
+                    if (DELIVERYRULE_CompleteOrder != order.deliveryRule)
                     // 	printed later
                         createLine(order, line, toDeliver, null, false)
                     continue
@@ -216,7 +220,7 @@ abstract class BaseInOutGenerate : SvrProcess() {
                         )
                     completeOrder = false
                     break
-                } else if (fullLine && MOrder.DELIVERYRULE_CompleteLine == order.deliveryRule) {
+                } else if (fullLine && DELIVERYRULE_CompleteLine == order.deliveryRule) {
                     if (log.isLoggable(Level.FINE))
                         log.fine(
                             ("CompleteLine - OnHand=" +
@@ -230,7 +234,7 @@ abstract class BaseInOutGenerate : SvrProcess() {
                         )
                     //
                     createLine(order, line, toDeliver, storages, false)
-                } else if ((MOrder.DELIVERYRULE_Availability == order.deliveryRule && (onHand.signum() > 0 || toDeliver.signum() < 0))) {
+                } else if ((DELIVERYRULE_Availability == order.deliveryRule && (onHand.signum() > 0 || toDeliver.signum() < 0))) {
                     var deliver = toDeliver
                     if (deliver > onHand) deliver = onHand
                     if (log.isLoggable(Level.FINE))
@@ -248,7 +252,7 @@ abstract class BaseInOutGenerate : SvrProcess() {
                         )
                     //
                     createLine(order, line, deliver, storages, false)
-                } else if (MOrder.DELIVERYRULE_Force == order.deliveryRule) {
+                } else if (DELIVERYRULE_Force == order.deliveryRule) {
                     val deliver = toDeliver
                     if (log.isLoggable(Level.FINE))
                         log.fine(
@@ -265,7 +269,7 @@ abstract class BaseInOutGenerate : SvrProcess() {
                         )
                     //
                     createLine(order, line, deliver, storages, true)
-                } else if (MOrder.DELIVERYRULE_Manual == order.deliveryRule) {
+                } else if (DELIVERYRULE_Manual == order.deliveryRule) {
                     if (log.isLoggable(Level.FINE))
                         log.fine(
                             ("Manual - OnHand=" +
@@ -296,7 +300,7 @@ abstract class BaseInOutGenerate : SvrProcess() {
             } // 	for all order lines
 
             // 	Complete Order successful
-            if (completeOrder && MOrder.DELIVERYRULE_CompleteOrder == order.deliveryRule) {
+            if (completeOrder && DELIVERYRULE_CompleteOrder == order.deliveryRule) {
                 for (i in lines.indices) {
                     val line = lines[i]
                     if (line.warehouseId != p_M_Warehouse_ID) continue

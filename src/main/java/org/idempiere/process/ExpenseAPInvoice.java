@@ -81,7 +81,7 @@ public class ExpenseAPInvoice extends SvrProcess {
                 MBPartner bp = new MBPartner(te.getBusinessPartnerId());
                 //
                 if (log.isLoggable(Level.INFO)) log.info("New Invoice for " + bp);
-                invoice = new MInvoice(0);
+                invoice = new MInvoice(null, 0);
                 invoice.setClientOrg(te.getClientId(), te.getOrgId());
                 invoice.setTargetDocumentTypeId(MDocType.DOCBASETYPE_APInvoice); // 	API
                 invoice.setDocumentNo(te.getDocumentNo());

@@ -64,7 +64,7 @@ public class X_C_DepositBatch extends PO implements I_C_DepositBatch {
      * @return Deposit Batch
      */
     public int getDepositBatchId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DepositBatch_ID);
+        Integer ii = getValue(COLUMNNAME_C_DepositBatch_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -85,7 +85,7 @@ public class X_C_DepositBatch extends PO implements I_C_DepositBatch {
      * @return Document type or rules
      */
     public int getDocumentTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -142,7 +142,7 @@ public class X_C_DepositBatch extends PO implements I_C_DepositBatch {
      * @return Deposit Amount
      */
     public BigDecimal getDepositAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DepositAmt);
+        BigDecimal bd = getValue(COLUMNNAME_DepositAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -162,7 +162,7 @@ public class X_C_DepositBatch extends PO implements I_C_DepositBatch {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**

@@ -33,7 +33,7 @@ public final class NaturalAccountMap<K, V> extends CCache<K, V> {
      * Constructor. Parse File does the processing
      */
     public NaturalAccountMap() {
-        super(null, "NaturalAccountMap", 100, false);
+        super(null, "NaturalAccountMap", 100);
     } //  NaturalAccountMap
 
     /**

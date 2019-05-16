@@ -2,11 +2,10 @@ package org.idempiere.process;
 
 import org.compiere.invoicing.MInOut;
 import org.compiere.invoicing.MInOutLine;
-import org.compiere.invoicing.MInvoiceLine;
 import org.compiere.invoicing.MRMA;
 import org.compiere.model.IProcessInfoParameter;
 import org.compiere.model.I_C_InvoiceLine;
-import org.compiere.order.MRMALine;
+import org.compiere.model.I_M_RMALine;
 import org.compiere.orm.Query;
 import org.compiere.process.DocAction;
 import org.compiere.process.SvrProcess;
@@ -152,8 +151,8 @@ public class InOutGenerateRMA extends SvrProcess {
     private MInOutLine[] createShipmentLines(MRMA rma, MInOut shipment) {
         ArrayList<MInOutLine> shipLineList = new ArrayList<MInOutLine>();
 
-        MRMALine[] rmaLines = rma.getLines(true);
-        for (MRMALine rmaLine : rmaLines) {
+        I_M_RMALine[] rmaLines = rma.getLines(true);
+        for (I_M_RMALine rmaLine : rmaLines) {
             if (rmaLine.getInOutLineId() != 0
                     || rmaLine.getChargeId() != 0
                     || rmaLine.getProductId() != 0) {

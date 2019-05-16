@@ -89,7 +89,7 @@ public class X_PA_Measure extends BasePOName implements I_PA_Measure {
      * @return Java Class for calculation, implementing Interface Measure
      */
     public String getCalculationClass() {
-        return (String) getValue(COLUMNNAME_CalculationClass);
+        return getValue(COLUMNNAME_CalculationClass);
     }
 
     /**
@@ -98,7 +98,7 @@ public class X_PA_Measure extends BasePOName implements I_PA_Measure {
      * @return Type of the project
      */
     public int getProjectTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ProjectType_ID);
+        Integer ii = getValue(COLUMNNAME_C_ProjectType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -109,7 +109,7 @@ public class X_PA_Measure extends BasePOName implements I_PA_Measure {
      * @return Manually entered actual value
      */
     public BigDecimal getManualActual() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ManualActual);
+        BigDecimal bd = getValue(COLUMNNAME_ManualActual);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -120,7 +120,7 @@ public class X_PA_Measure extends BasePOName implements I_PA_Measure {
      * @return Type of data - Status or in Time
      */
     public String getMeasureDataType() {
-        return (String) getValue(COLUMNNAME_MeasureDataType);
+        return getValue(COLUMNNAME_MeasureDataType);
     }
 
     /**
@@ -129,7 +129,7 @@ public class X_PA_Measure extends BasePOName implements I_PA_Measure {
      * @return Determines how the actual performance is derived
      */
     public String getMeasureType() {
-        return (String) getValue(COLUMNNAME_MeasureType);
+        return getValue(COLUMNNAME_MeasureType);
     }
 
     /**
@@ -138,7 +138,7 @@ public class X_PA_Measure extends BasePOName implements I_PA_Measure {
      * @return Calculation method for measuring performance
      */
     public int getMeasureCalcId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PA_MeasureCalc_ID);
+        Integer ii = getValue(COLUMNNAME_PA_MeasureCalc_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -149,7 +149,7 @@ public class X_PA_Measure extends BasePOName implements I_PA_Measure {
      * @return Concrete Performance Measurement
      */
     public int getMeasureId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PA_Measure_ID);
+        Integer ii = getValue(COLUMNNAME_PA_Measure_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -160,7 +160,7 @@ public class X_PA_Measure extends BasePOName implements I_PA_Measure {
      * @return Performance Ratio
      */
     public int getRatioId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PA_Ratio_ID);
+        Integer ii = getValue(COLUMNNAME_PA_Ratio_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -171,7 +171,7 @@ public class X_PA_Measure extends BasePOName implements I_PA_Measure {
      * @return Type of request (e.g. Inquiry, Complaint, ..)
      */
     public int getRequestTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_R_RequestType_ID);
+        Integer ii = getValue(COLUMNNAME_R_RequestType_ID);
         if (ii == null) return 0;
         return ii;
     }

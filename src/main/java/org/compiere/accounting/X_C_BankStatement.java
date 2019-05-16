@@ -114,7 +114,7 @@ public class X_C_BankStatement extends BasePOName implements I_C_BankStatement {
      * @return Balance prior to any transactions
      */
     public BigDecimal getBeginningBalance() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_BeginningBalance);
+        BigDecimal bd = getValue(COLUMNNAME_BeginningBalance);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -134,7 +134,7 @@ public class X_C_BankStatement extends BasePOName implements I_C_BankStatement {
      * @return Account at the Bank
      */
     public int getBankAccountId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BankAccount_ID);
+        Integer ii = getValue(COLUMNNAME_C_BankAccount_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -155,7 +155,7 @@ public class X_C_BankStatement extends BasePOName implements I_C_BankStatement {
      * @return Bank Statement of account
      */
     public int getBankStatementId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BankStatement_ID);
+        Integer ii = getValue(COLUMNNAME_C_BankStatement_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -184,7 +184,7 @@ public class X_C_BankStatement extends BasePOName implements I_C_BankStatement {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -202,7 +202,7 @@ public class X_C_BankStatement extends BasePOName implements I_C_BankStatement {
      * @return The targeted status of the document
      */
     public String getDocAction() {
-        return (String) getValue(COLUMNNAME_DocAction);
+        return getValue(COLUMNNAME_DocAction);
     }
 
     /**
@@ -221,7 +221,7 @@ public class X_C_BankStatement extends BasePOName implements I_C_BankStatement {
      * @return The current status of the document
      */
     public String getDocStatus() {
-        return (String) getValue(COLUMNNAME_DocStatus);
+        return getValue(COLUMNNAME_DocStatus);
     }
 
     /**
@@ -249,7 +249,7 @@ public class X_C_BankStatement extends BasePOName implements I_C_BankStatement {
      * @return Electronic Funds Transfer Statement Reference
      */
     public String getEftStatementReference() {
-        return (String) getValue(COLUMNNAME_EftStatementReference);
+        return getValue(COLUMNNAME_EftStatementReference);
     }
 
     /**
@@ -367,7 +367,7 @@ public class X_C_BankStatement extends BasePOName implements I_C_BankStatement {
      * @return Difference between statement ending balance and actual ending balance
      */
     public BigDecimal getStatementDifference() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_StatementDifference);
+        BigDecimal bd = getValue(COLUMNNAME_StatementDifference);
         if (bd == null) return Env.ZERO;
         return bd;
     }

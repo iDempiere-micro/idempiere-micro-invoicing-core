@@ -2,9 +2,9 @@ package org.compiere.accounting;
 
 import kotliquery.Row;
 import org.compiere.model.I_M_CostDetail;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 
@@ -60,7 +60,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Amount
      */
     public BigDecimal getAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Amt);
+        BigDecimal bd = getValue(COLUMNNAME_Amt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -80,7 +80,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Rules for accounting
      */
     public int getAccountingSchemaId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_AcctSchema_ID);
+        Integer ii = getValue(COLUMNNAME_C_AcctSchema_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -101,7 +101,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Invoice Detail Line
      */
     public int getInvoiceLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_InvoiceLine_ID);
+        Integer ii = getValue(COLUMNNAME_C_InvoiceLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -122,7 +122,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Sales Order Line
      */
     public int getOrderLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_OrderLine_ID);
+        Integer ii = getValue(COLUMNNAME_C_OrderLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -133,7 +133,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Project Issues (Material, Labor)
      */
     public int getProjectIssueId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ProjectIssue_ID);
+        Integer ii = getValue(COLUMNNAME_C_ProjectIssue_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -180,7 +180,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Difference Amount
      */
     public BigDecimal getDeltaAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DeltaAmt);
+        BigDecimal bd = getValue(COLUMNNAME_DeltaAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -200,7 +200,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Quantity Difference
      */
     public BigDecimal getDeltaQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DeltaQty);
+        BigDecimal bd = getValue(COLUMNNAME_DeltaQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -252,7 +252,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -275,7 +275,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Cost Detail Information
      */
     public int getCostDetailId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_CostDetail_ID);
+        Integer ii = getValue(COLUMNNAME_M_CostDetail_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -286,7 +286,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Product Cost Element
      */
     public int getCostElementId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_CostElement_ID);
+        Integer ii = getValue(COLUMNNAME_M_CostElement_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -307,7 +307,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Line on Shipment or Receipt document
      */
     public int getInOutLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_InOutLine_ID);
+        Integer ii = getValue(COLUMNNAME_M_InOutLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -334,7 +334,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Unique line in an Inventory document
      */
     public int getInventoryLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_InventoryLine_ID);
+        Integer ii = getValue(COLUMNNAME_M_InventoryLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -355,7 +355,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Match Shipment/Receipt to Invoice
      */
     public int getMatchInvoiceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_MatchInv_ID);
+        Integer ii = getValue(COLUMNNAME_M_MatchInv_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -366,7 +366,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Inventory Move document Line
      */
     public int getMovementLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_MovementLine_ID);
+        Integer ii = getValue(COLUMNNAME_M_MovementLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -377,7 +377,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -398,7 +398,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Document Line representing a production
      */
     public int getProductionLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_ProductionLine_ID);
+        Integer ii = getValue(COLUMNNAME_M_ProductionLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -409,7 +409,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Manufacturing Cost Collector
      */
     public int getManufacturingCostCollectorId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PP_Cost_Collector_ID);
+        Integer ii = getValue(COLUMNNAME_PP_Cost_Collector_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -443,7 +443,7 @@ public abstract class X_M_CostDetail extends PO implements I_M_CostDetail {
      * @return Quantity
      */
     public BigDecimal getQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Qty);
+        BigDecimal bd = getValue(COLUMNNAME_Qty);
         if (bd == null) return Env.ZERO;
         return bd;
     }

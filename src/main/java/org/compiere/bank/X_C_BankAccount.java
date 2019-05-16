@@ -58,7 +58,7 @@ public class X_C_BankAccount extends BasePONameValue implements I_C_BankAccount 
      * @return Account Number
      */
     public String getAccountNo() {
-        return (String) getValue(COLUMNNAME_AccountNo);
+        return getValue(COLUMNNAME_AccountNo);
     }
 
     /**
@@ -86,7 +86,7 @@ public class X_C_BankAccount extends BasePONameValue implements I_C_BankAccount 
      * @return Account at the Bank
      */
     public int getBankAccountId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BankAccount_ID);
+        Integer ii = getValue(COLUMNNAME_C_BankAccount_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -97,7 +97,7 @@ public class X_C_BankAccount extends BasePONameValue implements I_C_BankAccount 
      * @return Bank
      */
     public int getBankId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Bank_ID);
+        Integer ii = getValue(COLUMNNAME_C_Bank_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -118,7 +118,7 @@ public class X_C_BankAccount extends BasePONameValue implements I_C_BankAccount 
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -148,7 +148,7 @@ public class X_C_BankAccount extends BasePONameValue implements I_C_BankAccount 
      * @return Current Balance
      */
     public BigDecimal getCurrentBalance() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_CurrentBalance);
+        BigDecimal bd = getValue(COLUMNNAME_CurrentBalance);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -168,7 +168,7 @@ public class X_C_BankAccount extends BasePONameValue implements I_C_BankAccount 
      * @return International Bank Account Number
      */
     public String getIBAN() {
-        return (String) getValue(COLUMNNAME_IBAN);
+        return getValue(COLUMNNAME_IBAN);
     }
 
     /**

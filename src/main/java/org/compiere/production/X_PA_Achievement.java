@@ -92,7 +92,7 @@ public class X_PA_Achievement extends BasePOName implements I_PA_Achievement {
      * @return Manually entered actual value
      */
     public BigDecimal getManualActual() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ManualActual);
+        BigDecimal bd = getValue(COLUMNNAME_ManualActual);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -112,7 +112,7 @@ public class X_PA_Achievement extends BasePOName implements I_PA_Achievement {
      * @return Concrete Performance Measurement
      */
     public int getMeasureId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PA_Measure_ID);
+        Integer ii = getValue(COLUMNNAME_PA_Measure_ID);
         if (ii == null) return 0;
         return ii;
     }

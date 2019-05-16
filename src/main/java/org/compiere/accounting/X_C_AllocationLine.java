@@ -2,9 +2,9 @@ package org.compiere.accounting;
 
 import kotliquery.Row;
 import org.compiere.model.I_C_AllocationLine;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 
@@ -59,7 +59,7 @@ public class X_C_AllocationLine extends PO implements I_C_AllocationLine {
      * @return Amount in a defined currency
      */
     public BigDecimal getAmount() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Amount);
+        BigDecimal bd = getValue(COLUMNNAME_Amount);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -79,7 +79,7 @@ public class X_C_AllocationLine extends PO implements I_C_AllocationLine {
      * @return Payment allocation
      */
     public int getPaymentAllocationHeaderId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_AllocationHdr_ID);
+        Integer ii = getValue(COLUMNNAME_C_AllocationHdr_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -100,7 +100,7 @@ public class X_C_AllocationLine extends PO implements I_C_AllocationLine {
      * @return Allocation Line
      */
     public int getAllocationLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_AllocationLine_ID);
+        Integer ii = getValue(COLUMNNAME_C_AllocationLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -111,7 +111,7 @@ public class X_C_AllocationLine extends PO implements I_C_AllocationLine {
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -132,7 +132,7 @@ public class X_C_AllocationLine extends PO implements I_C_AllocationLine {
      * @return Cash Journal Line
      */
     public int getCashLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_CashLine_ID);
+        Integer ii = getValue(COLUMNNAME_C_CashLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -159,7 +159,7 @@ public class X_C_AllocationLine extends PO implements I_C_AllocationLine {
      * @return Invoice Identifier
      */
     public int getInvoiceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Invoice_ID);
+        Integer ii = getValue(COLUMNNAME_C_Invoice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -180,7 +180,7 @@ public class X_C_AllocationLine extends PO implements I_C_AllocationLine {
      * @return Order
      */
     public int getOrderId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Order_ID);
+        Integer ii = getValue(COLUMNNAME_C_Order_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -207,7 +207,7 @@ public class X_C_AllocationLine extends PO implements I_C_AllocationLine {
      * @return Payment identifier
      */
     public int getPaymentId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Payment_ID);
+        Integer ii = getValue(COLUMNNAME_C_Payment_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -228,7 +228,7 @@ public class X_C_AllocationLine extends PO implements I_C_AllocationLine {
      * @return Calculated amount of discount
      */
     public BigDecimal getDiscountAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DiscountAmt);
+        BigDecimal bd = getValue(COLUMNNAME_DiscountAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -248,7 +248,7 @@ public class X_C_AllocationLine extends PO implements I_C_AllocationLine {
      * @return Over-Payment (unallocated) or Under-Payment (partial payment) Amount
      */
     public BigDecimal getOverUnderAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_OverUnderAmt);
+        BigDecimal bd = getValue(COLUMNNAME_OverUnderAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -268,7 +268,7 @@ public class X_C_AllocationLine extends PO implements I_C_AllocationLine {
      * @return Amount to write-off
      */
     public BigDecimal getWriteOffAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_WriteOffAmt);
+        BigDecimal bd = getValue(COLUMNNAME_WriteOffAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }

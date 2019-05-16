@@ -2,9 +2,9 @@ package org.compiere.accounting;
 
 import kotliquery.Row;
 import org.compiere.model.I_M_RequisitionLine;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 
@@ -138,7 +138,7 @@ public abstract class X_M_RequisitionLine extends PO implements I_M_RequisitionL
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**

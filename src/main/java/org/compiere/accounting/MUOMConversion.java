@@ -280,7 +280,7 @@ public class MUOMConversion extends X_C_UOM_Conversion {
                 precision = rs.getInt(StdPrecision ? 2 : 3);
             }
         } catch (SQLException e) {
-            throw new DBException(e, sql);
+            throw new DBException(e);
         }
         if (retValue == null) {
             if (s_log.isLoggable(Level.INFO))

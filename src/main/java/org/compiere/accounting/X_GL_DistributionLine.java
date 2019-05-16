@@ -242,7 +242,7 @@ public abstract class X_GL_DistributionLine extends PO implements I_GL_Distribut
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**

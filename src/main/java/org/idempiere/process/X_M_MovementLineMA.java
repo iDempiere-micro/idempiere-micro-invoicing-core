@@ -2,9 +2,9 @@ package org.idempiere.process;
 
 import kotliquery.Row;
 import org.compiere.model.I_M_MovementLineMA;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -99,7 +99,7 @@ public class X_M_MovementLineMA extends PO implements I_M_MovementLineMA {
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -128,7 +128,7 @@ public class X_M_MovementLineMA extends PO implements I_M_MovementLineMA {
      * @return Inventory Move document Line
      */
     public int getMovementLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_MovementLine_ID);
+        Integer ii = getValue(COLUMNNAME_M_MovementLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -149,7 +149,7 @@ public class X_M_MovementLineMA extends PO implements I_M_MovementLineMA {
      * @return Quantity of a product moved.
      */
     public BigDecimal getMovementQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_MovementQty);
+        BigDecimal bd = getValue(COLUMNNAME_MovementQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }

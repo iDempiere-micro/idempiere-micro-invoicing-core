@@ -3,8 +3,8 @@ package org.compiere.accounting;
 import kotliquery.Row;
 import org.compiere.model.AccountingElementValue;
 import org.compiere.model.I_C_ValidCombination;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
+import software.hsharp.core.orm.MBaseTableKt;
 
 /**
  * Generated Model for C_ValidCombination
@@ -63,7 +63,7 @@ public class X_C_ValidCombination extends PO {
      * @return Account used
      */
     public int getAccountId() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_Account_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_Account_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -84,7 +84,7 @@ public class X_C_ValidCombination extends PO {
      * @return Performing or initiating organization
      */
     public int getTransactionOrganizationId() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_AD_OrgTrx_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_AD_OrgTrx_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -105,7 +105,7 @@ public class X_C_ValidCombination extends PO {
      * @return Defines an alternate method of indicating an account combination.
      */
     public String getAlias() {
-        return (String) getValue(I_C_ValidCombination.COLUMNNAME_Alias);
+        return getValue(I_C_ValidCombination.COLUMNNAME_Alias);
     }
 
     /**
@@ -123,7 +123,7 @@ public class X_C_ValidCombination extends PO {
      * @return Rules for accounting
      */
     public int getAccountingSchemaId() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_C_AcctSchema_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_C_AcctSchema_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -144,7 +144,7 @@ public class X_C_ValidCombination extends PO {
      * @return Business Activity
      */
     public int getBusinessActivityId() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_C_Activity_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_C_Activity_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -165,7 +165,7 @@ public class X_C_ValidCombination extends PO {
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -186,7 +186,7 @@ public class X_C_ValidCombination extends PO {
      * @return Marketing Campaign
      */
     public int getCampaignId() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_C_Campaign_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_C_Campaign_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -207,7 +207,7 @@ public class X_C_ValidCombination extends PO {
      * @return Location that inventory was moved from
      */
     public int getLocationFromId() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_C_LocFrom_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_C_LocFrom_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -228,7 +228,7 @@ public class X_C_ValidCombination extends PO {
      * @return Location that inventory was moved to
      */
     public int getLocationToId() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_C_LocTo_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_C_LocTo_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -249,7 +249,7 @@ public class X_C_ValidCombination extends PO {
      * @return Unique combination of account elements
      */
     public String getCombination() {
-        return (String) getValue(I_C_ValidCombination.COLUMNNAME_Combination);
+        return getValue(I_C_ValidCombination.COLUMNNAME_Combination);
     }
 
     /**
@@ -267,7 +267,7 @@ public class X_C_ValidCombination extends PO {
      * @return Financial Project
      */
     public int getProjectId() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_C_Project_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_C_Project_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -288,7 +288,7 @@ public class X_C_ValidCombination extends PO {
      * @return Sales coverage region
      */
     public int getSalesRegionId() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_C_SalesRegion_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_C_SalesRegion_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -309,7 +309,7 @@ public class X_C_ValidCombination extends PO {
      * @return Sub account for Element Value
      */
     public int getSubAccountId() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_C_SubAcct_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_C_SubAcct_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -330,7 +330,7 @@ public class X_C_ValidCombination extends PO {
      * @return Valid Account Combination
      */
     public int getValidAccountCombinationId() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_C_ValidCombination_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_C_ValidCombination_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -341,7 +341,7 @@ public class X_C_ValidCombination extends PO {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(I_C_ValidCombination.COLUMNNAME_Description);
+        return getValue(I_C_ValidCombination.COLUMNNAME_Description);
     }
 
     /**
@@ -382,7 +382,7 @@ public class X_C_ValidCombination extends PO {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -403,7 +403,7 @@ public class X_C_ValidCombination extends PO {
      * @return User defined list element #1
      */
     public int getUser1Id() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_User1_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_User1_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -424,7 +424,7 @@ public class X_C_ValidCombination extends PO {
      * @return User defined list element #2
      */
     public int getUser2Id() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_User2_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_User2_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -445,7 +445,7 @@ public class X_C_ValidCombination extends PO {
      * @return User defined accounting Element
      */
     public int getUserElement1Id() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_UserElement1_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_UserElement1_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -466,7 +466,7 @@ public class X_C_ValidCombination extends PO {
      * @return User defined accounting Element
      */
     public int getUserElement2Id() {
-        Integer ii = (Integer) getValue(I_C_ValidCombination.COLUMNNAME_UserElement2_ID);
+        Integer ii = getValue(I_C_ValidCombination.COLUMNNAME_UserElement2_ID);
         if (ii == null) return 0;
         return ii;
     }

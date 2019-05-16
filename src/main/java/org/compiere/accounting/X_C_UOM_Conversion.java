@@ -59,7 +59,7 @@ public class X_C_UOM_Conversion extends PO implements I_C_UOM_Conversion {
      * @return Unit of Measure
      */
     public int getUOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_UOM_ID);
+        Integer ii = getValue(COLUMNNAME_C_UOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -80,7 +80,7 @@ public class X_C_UOM_Conversion extends PO implements I_C_UOM_Conversion {
      * @return Target or destination Unit of Measure
      */
     public int getTargetUOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_UOM_To_ID);
+        Integer ii = getValue(COLUMNNAME_C_UOM_To_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -101,7 +101,7 @@ public class X_C_UOM_Conversion extends PO implements I_C_UOM_Conversion {
      * @return To convert Source number to Target number, the Source is divided
      */
     public BigDecimal getDivideRate() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DivideRate);
+        BigDecimal bd = getValue(COLUMNNAME_DivideRate);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -121,7 +121,7 @@ public class X_C_UOM_Conversion extends PO implements I_C_UOM_Conversion {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -142,7 +142,7 @@ public class X_C_UOM_Conversion extends PO implements I_C_UOM_Conversion {
      * @return Rate to multiple the source by to calculate the target.
      */
     public BigDecimal getMultiplyRate() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_MultiplyRate);
+        BigDecimal bd = getValue(COLUMNNAME_MultiplyRate);
         if (bd == null) return Env.ZERO;
         return bd;
     }

@@ -62,7 +62,7 @@ public class X_C_Period extends BasePOName implements I_C_Period {
      * @return Period of the Calendar
      */
     public int getPeriodId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Period_ID);
+        Integer ii = getValue(COLUMNNAME_C_Period_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -79,7 +79,7 @@ public class X_C_Period extends BasePOName implements I_C_Period {
      * @return Calendar Year
      */
     public int getYearId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Year_ID);
+        Integer ii = getValue(COLUMNNAME_C_Year_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -127,7 +127,7 @@ public class X_C_Period extends BasePOName implements I_C_Period {
      * @return Period Type
      */
     public String getPeriodType() {
-        return (String) getValue(COLUMNNAME_PeriodType);
+        return getValue(COLUMNNAME_PeriodType);
     }
 
     /**

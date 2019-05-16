@@ -65,10 +65,10 @@ public class MAcctSchemaGL extends X_C_AcctSchema_GL {
      */
     public ArrayList<KeyNamePair> getAcctInfo() {
         ArrayList<KeyNamePair> list = new ArrayList<>();
-        for (int i = 0; i < get_ColumnCount(); i++) {
-            String columnName = get_ColumnName(i);
+        for (int i = 0; i < getColumnCount(); i++) {
+            String columnName = getColumnName(i);
             if (columnName.endsWith("Acct")) {
-                int id = ((Integer) getValue(i));
+                int id = (getValue(i));
                 list.add(new KeyNamePair(id, columnName));
             }
         }

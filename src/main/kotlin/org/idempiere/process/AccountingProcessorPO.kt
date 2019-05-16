@@ -31,7 +31,6 @@ open class AccountingProcessorPO : BasePOName, AccountingProcessor {
         return AccountingProcessor.accessLevel.toInt()
     }
 
-
     override fun toString(): String {
         return "AccountingProcessorPO[$id]"
     }

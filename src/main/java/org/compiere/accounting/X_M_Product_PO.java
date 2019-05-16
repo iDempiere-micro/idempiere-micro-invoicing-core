@@ -57,7 +57,7 @@ public class X_M_Product_PO extends PO implements I_M_Product_PO {
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -68,7 +68,7 @@ public class X_M_Product_PO extends PO implements I_M_Product_PO {
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -79,7 +79,7 @@ public class X_M_Product_PO extends PO implements I_M_Product_PO {
      * @return Unit of Measure
      */
     public int getUOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_UOM_ID);
+        Integer ii = getValue(COLUMNNAME_C_UOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -113,7 +113,7 @@ public class X_M_Product_PO extends PO implements I_M_Product_PO {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -124,7 +124,7 @@ public class X_M_Product_PO extends PO implements I_M_Product_PO {
      * @return Price of the last purchase order for the product
      */
     public BigDecimal getPriceLastPO() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_PriceLastPO);
+        BigDecimal bd = getValue(COLUMNNAME_PriceLastPO);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -135,7 +135,7 @@ public class X_M_Product_PO extends PO implements I_M_Product_PO {
      * @return List Price
      */
     public BigDecimal getPriceList() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_PriceList);
+        BigDecimal bd = getValue(COLUMNNAME_PriceList);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -146,7 +146,7 @@ public class X_M_Product_PO extends PO implements I_M_Product_PO {
      * @return Price based on a purchase order
      */
     public BigDecimal getPricePO() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_PricePO);
+        BigDecimal bd = getValue(COLUMNNAME_PricePO);
         if (bd == null) return Env.ZERO;
         return bd;
     }

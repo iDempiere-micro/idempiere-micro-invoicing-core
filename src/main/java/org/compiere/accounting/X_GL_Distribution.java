@@ -54,7 +54,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Account used
      */
     public int getAccountId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Account_ID);
+        Integer ii = getValue(COLUMNNAME_Account_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -75,7 +75,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Performing or initiating organization
      */
     public int getTransactionOrganizationId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_OrgTrx_ID);
+        Integer ii = getValue(COLUMNNAME_AD_OrgTrx_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -395,7 +395,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Rules for accounting
      */
     public int getAccountingSchemaId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_AcctSchema_ID);
+        Integer ii = getValue(COLUMNNAME_C_AcctSchema_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -406,7 +406,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Business Activity
      */
     public int getBusinessActivityId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Activity_ID);
+        Integer ii = getValue(COLUMNNAME_C_Activity_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -427,7 +427,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -448,7 +448,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Marketing Campaign
      */
     public int getCampaignId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Campaign_ID);
+        Integer ii = getValue(COLUMNNAME_C_Campaign_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -469,7 +469,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Document type or rules
      */
     public int getDocumentTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -480,7 +480,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Location that inventory was moved from
      */
     public int getLocationFromId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_LocFrom_ID);
+        Integer ii = getValue(COLUMNNAME_C_LocFrom_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -501,7 +501,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Location that inventory was moved to
      */
     public int getLocationToId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_LocTo_ID);
+        Integer ii = getValue(COLUMNNAME_C_LocTo_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -522,7 +522,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Financial Project
      */
     public int getProjectId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Project_ID);
+        Integer ii = getValue(COLUMNNAME_C_Project_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -543,7 +543,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Sales coverage region
      */
     public int getSalesRegionId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_SalesRegion_ID);
+        Integer ii = getValue(COLUMNNAME_C_SalesRegion_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -564,7 +564,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return General Ledger Distribution
      */
     public int getGLDistributionId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_GL_Distribution_ID);
+        Integer ii = getValue(COLUMNNAME_GL_Distribution_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -613,7 +613,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -634,7 +634,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Organizational entity within client
      */
     public int getOrgId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Org_ID);
+        Integer ii = getValue(COLUMNNAME_Org_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -655,7 +655,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return Sum of the Percent details
      */
     public BigDecimal getPercentTotal() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_PercentTotal);
+        BigDecimal bd = getValue(COLUMNNAME_PercentTotal);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -675,7 +675,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return The type of posted amount for the transaction
      */
     public String getPostingType() {
-        return (String) getValue(COLUMNNAME_PostingType);
+        return getValue(COLUMNNAME_PostingType);
     }
 
     /**
@@ -684,7 +684,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return User defined list element #1
      */
     public int getUser1Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_User1_ID);
+        Integer ii = getValue(COLUMNNAME_User1_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -705,7 +705,7 @@ public abstract class X_GL_Distribution extends BasePOName implements I_GL_Distr
      * @return User defined list element #2
      */
     public int getUser2Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_User2_ID);
+        Integer ii = getValue(COLUMNNAME_User2_ID);
         if (ii == null) return 0;
         return ii;
     }

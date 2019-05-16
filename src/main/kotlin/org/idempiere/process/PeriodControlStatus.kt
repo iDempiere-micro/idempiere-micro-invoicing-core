@@ -3,7 +3,6 @@ package org.idempiere.process
 import org.compiere.accounting.MPeriodControl
 import org.compiere.process.SvrProcess
 import org.idempiere.common.util.AdempiereUserError
-import org.idempiere.common.util.CacheMgt
 import java.util.logging.Level
 
 /**
@@ -59,8 +58,8 @@ class PeriodControlStatus(var p_C_PeriodControl_ID: Int = 0) : SvrProcess() {
         val ok = pc.save()
 
         // 	Reset Cache
-        CacheMgt.get().reset("C_PeriodControl", 0)
-        CacheMgt.get().reset("C_Period", pc.periodId)
+        // DAP: CacheMgt.get().reset()
+        // DAP: CacheMgt.get().reset()
 
         return if (!ok) "@Error@" else "@OK@"
     } // 	doIt

@@ -3,9 +3,9 @@ package org.compiere.production;
 import kotliquery.Row;
 import org.compiere.model.IDocLine;
 import org.compiere.model.I_M_ProductionLine;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 
@@ -93,7 +93,7 @@ public class X_M_ProductionLine extends PO implements I_M_ProductionLine, IDocLi
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(I_M_ProductionLine.COLUMNNAME_Line);
+        Integer ii = getValue(I_M_ProductionLine.COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -113,7 +113,7 @@ public class X_M_ProductionLine extends PO implements I_M_ProductionLine, IDocLi
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(I_M_ProductionLine.COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(I_M_ProductionLine.COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -138,7 +138,7 @@ public class X_M_ProductionLine extends PO implements I_M_ProductionLine, IDocLi
      * @return Warehouse Locator
      */
     public int getLocatorId() {
-        Integer ii = (Integer) getValue(I_M_ProductionLine.COLUMNNAME_M_Locator_ID);
+        Integer ii = getValue(I_M_ProductionLine.COLUMNNAME_M_Locator_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -159,7 +159,7 @@ public class X_M_ProductionLine extends PO implements I_M_ProductionLine, IDocLi
      * @return Quantity of a product moved.
      */
     public BigDecimal getMovementQty() {
-        BigDecimal bd = (BigDecimal) getValue(I_M_ProductionLine.COLUMNNAME_MovementQty);
+        BigDecimal bd = getValue(I_M_ProductionLine.COLUMNNAME_MovementQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -185,7 +185,7 @@ public class X_M_ProductionLine extends PO implements I_M_ProductionLine, IDocLi
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(I_M_ProductionLine.COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(I_M_ProductionLine.COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -212,7 +212,7 @@ public class X_M_ProductionLine extends PO implements I_M_ProductionLine, IDocLi
      * @return Plan for producing a product
      */
     public int getProductionId() {
-        Integer ii = (Integer) getValue(I_M_ProductionLine.COLUMNNAME_M_Production_ID);
+        Integer ii = getValue(I_M_ProductionLine.COLUMNNAME_M_Production_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -235,7 +235,7 @@ public class X_M_ProductionLine extends PO implements I_M_ProductionLine, IDocLi
      * @return Document Line representing a production
      */
     public int getProductionLineId() {
-        Integer ii = (Integer) getValue(I_M_ProductionLine.COLUMNNAME_M_ProductionLine_ID);
+        Integer ii = getValue(I_M_ProductionLine.COLUMNNAME_M_ProductionLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -265,7 +265,7 @@ public class X_M_ProductionLine extends PO implements I_M_ProductionLine, IDocLi
      * @return Plan for how a product is produced
      */
     public int getProductionPlanId() {
-        Integer ii = (Integer) getValue(I_M_ProductionLine.COLUMNNAME_M_ProductionPlan_ID);
+        Integer ii = getValue(I_M_ProductionLine.COLUMNNAME_M_ProductionPlan_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -289,7 +289,7 @@ public class X_M_ProductionLine extends PO implements I_M_ProductionLine, IDocLi
      * @return Planned quantity for this project
      */
     public BigDecimal getPlannedQty() {
-        BigDecimal bd = (BigDecimal) getValue(I_M_ProductionLine.COLUMNNAME_PlannedQty);
+        BigDecimal bd = getValue(I_M_ProductionLine.COLUMNNAME_PlannedQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -318,7 +318,7 @@ public class X_M_ProductionLine extends PO implements I_M_ProductionLine, IDocLi
      * @return Quantity Used
      */
     public BigDecimal getQtyUsed() {
-        BigDecimal bd = (BigDecimal) getValue(I_M_ProductionLine.COLUMNNAME_QtyUsed);
+        BigDecimal bd = getValue(I_M_ProductionLine.COLUMNNAME_QtyUsed);
         if (bd == null) return Env.ZERO;
         return bd;
     }

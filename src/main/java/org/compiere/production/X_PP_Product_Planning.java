@@ -3,10 +3,10 @@ package org.compiere.production;
 import kotliquery.Row;
 import org.compiere.model.User;
 import org.compiere.model.Workflow;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.eevolution.model.I_PP_Product_Planning;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 
@@ -80,7 +80,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Workflow or combination of tasks
      */
     public int getWorkflowId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_Workflow_ID);
+        Integer ii = getValue(COLUMNNAME_AD_Workflow_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -108,7 +108,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Network Distribution
      */
     public int getNetworkDistributionId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_DD_NetworkDistribution_ID);
+        Integer ii = getValue(COLUMNNAME_DD_NetworkDistribution_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -130,7 +130,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Promised days between order and delivery
      */
     public BigDecimal getDeliveryTimePromised() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DeliveryTime_Promised);
+        BigDecimal bd = getValue(COLUMNNAME_DeliveryTime_Promised);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -271,7 +271,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -298,7 +298,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Storage Warehouse and Service Point
      */
     public int getWarehouseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Warehouse_ID);
+        Integer ii = getValue(COLUMNNAME_M_Warehouse_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -319,7 +319,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Maximum order quantity in UOM
      */
     public BigDecimal getOrderMax() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Order_Max);
+        BigDecimal bd = getValue(COLUMNNAME_Order_Max);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -339,7 +339,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Minimum order quantity in UOM
      */
     public BigDecimal getOrderMin() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Order_Min);
+        BigDecimal bd = getValue(COLUMNNAME_Order_Min);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -359,7 +359,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Package order size in UOM (e.g. order set of 5 units)
      */
     public BigDecimal getOrderPack() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Order_Pack);
+        BigDecimal bd = getValue(COLUMNNAME_Order_Pack);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -379,7 +379,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Order Period
      */
     public BigDecimal getOrderPeriod() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Order_Period);
+        BigDecimal bd = getValue(COLUMNNAME_Order_Period);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -399,7 +399,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Order Policy
      */
     public String getOrderPolicy() {
-        return (String) getValue(COLUMNNAME_Order_Policy);
+        return getValue(COLUMNNAME_Order_Policy);
     }
 
     /**
@@ -418,7 +418,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Order Qty
      */
     public BigDecimal getOrderQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Order_Qty);
+        BigDecimal bd = getValue(COLUMNNAME_Order_Qty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -444,7 +444,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Planner
      */
     public int getPlannerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Planner_ID);
+        Integer ii = getValue(COLUMNNAME_Planner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -471,7 +471,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return BOM & Formula
      */
     public int getProductBOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PP_Product_BOM_ID);
+        Integer ii = getValue(COLUMNNAME_PP_Product_BOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -492,7 +492,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Product Planning
      */
     public int getProductPlanningId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PP_Product_Planning_ID);
+        Integer ii = getValue(COLUMNNAME_PP_Product_Planning_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -514,7 +514,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return PP_Product_Planning_UU
      */
     public String getProduct_Planning_UU() {
-        return (String) getValue(COLUMNNAME_PP_Product_Planning_UU);
+        return getValue(COLUMNNAME_PP_Product_Planning_UU);
     }
 
     /**
@@ -533,7 +533,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * cycle stock to buffer against stock-outs
      */
     public BigDecimal getSafetyStock() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_SafetyStock);
+        BigDecimal bd = getValue(COLUMNNAME_SafetyStock);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -560,7 +560,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Resource
      */
     public int getResourceID() {
-        Integer ii = (Integer) getValue(COLUMNNAME_S_Resource_ID);
+        Integer ii = getValue(COLUMNNAME_S_Resource_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -581,7 +581,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Time Fence
      */
     public BigDecimal getTimeFence() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_TimeFence);
+        BigDecimal bd = getValue(COLUMNNAME_TimeFence);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -601,7 +601,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Transfert Time
      */
     public BigDecimal getTransfertTime() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_TransfertTime);
+        BigDecimal bd = getValue(COLUMNNAME_TransfertTime);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -621,7 +621,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * @return Workflow Simulation Execution Time
      */
     public BigDecimal getWorkingTime() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_WorkingTime);
+        BigDecimal bd = getValue(COLUMNNAME_WorkingTime);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -642,7 +642,7 @@ public class X_PP_Product_Planning extends PO implements I_PP_Product_Planning {
      * fall below 100 percent
      */
     public int getYield() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Yield);
+        Integer ii = getValue(COLUMNNAME_Yield);
         if (ii == null) return 0;
         return ii;
     }

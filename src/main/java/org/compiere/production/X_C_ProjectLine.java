@@ -2,9 +2,9 @@ package org.compiere.production;
 
 import kotliquery.Row;
 import org.compiere.model.I_C_ProjectLine;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 
@@ -73,7 +73,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return Purchase Order
      */
     public int getOrderPOId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_OrderPO_ID);
+        Integer ii = getValue(COLUMNNAME_C_OrderPO_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -100,7 +100,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return Financial Project
      */
     public int getProjectId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Project_ID);
+        Integer ii = getValue(COLUMNNAME_C_Project_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -121,7 +121,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return Project Issues (Material, Labor)
      */
     public int getProjectIssueId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ProjectIssue_ID);
+        Integer ii = getValue(COLUMNNAME_C_ProjectIssue_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -142,7 +142,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return Task or step in a project
      */
     public int getProjectLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ProjectLine_ID);
+        Integer ii = getValue(COLUMNNAME_C_ProjectLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -153,7 +153,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return Phase of a Project
      */
     public int getProjectPhaseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ProjectPhase_ID);
+        Integer ii = getValue(COLUMNNAME_C_ProjectPhase_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -174,7 +174,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return Actual Project Task in a Phase
      */
     public int getProjectTaskId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ProjectTask_ID);
+        Integer ii = getValue(COLUMNNAME_C_ProjectTask_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -195,7 +195,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -222,7 +222,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return The quantity invoiced
      */
     public BigDecimal getInvoicedQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_InvoicedQty);
+        BigDecimal bd = getValue(COLUMNNAME_InvoicedQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -251,7 +251,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Line);
+        Integer ii = getValue(COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -271,7 +271,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return Category of a Product
      */
     public int getProductCategoryId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_Category_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_Category_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -282,7 +282,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -303,7 +303,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return Plan for producing a product
      */
     public int getProductionId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Production_ID);
+        Integer ii = getValue(COLUMNNAME_M_Production_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -342,7 +342,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return Planned price for this project line
      */
     public BigDecimal getPlannedPrice() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_PlannedPrice);
+        BigDecimal bd = getValue(COLUMNNAME_PlannedPrice);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -362,7 +362,7 @@ public abstract class X_C_ProjectLine extends PO implements I_C_ProjectLine {
      * @return Planned quantity for this project
      */
     public BigDecimal getPlannedQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_PlannedQty);
+        BigDecimal bd = getValue(COLUMNNAME_PlannedQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }

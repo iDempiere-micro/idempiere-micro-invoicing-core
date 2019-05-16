@@ -2,8 +2,9 @@ package org.compiere.accounting;
 
 import kotliquery.Row;
 import org.compiere.bank.MBankAccount;
-import org.compiere.model.IFact;
 import org.compiere.model.AccountingSchema;
+import org.compiere.model.IFact;
+import org.compiere.model.IPODoc;
 import org.compiere.model.I_C_BankStatementLine;
 import org.idempiere.common.util.Env;
 
@@ -39,11 +40,15 @@ public class Doc_BankStatement extends Doc {
      *
      * @param as      accounting schema
      * @param rs      record
-     * @param trxName trx
      */
     public Doc_BankStatement(MAcctSchema as, Row rs) {
         super(as, MBankStatement.class, rs, DOCTYPE_BankStatement);
     } //	Doc_Bank
+
+    @Override
+    protected IPODoc createNewInstance(Row rs) {
+        return new MBankStatement(rs);
+    }
 
     /**
      * Load Specific Document Details
@@ -105,8 +110,8 @@ public class Doc_BankStatement extends Doc {
         retValue = retValue.add(getAmount(Doc.AMTTYPE_Gross));
         sb.append(getAmount(Doc.AMTTYPE_Gross));
         //  - Lines
-        for (int i = 0; i < p_lines.length; i++) {
-            BigDecimal lineBalance = ((DocLine_Bank) p_lines[i]).getStmtAmt();
+        for (DocLine p_line : p_lines) {
+            BigDecimal lineBalance = ((DocLine_Bank) p_line).getStmtAmt();
             retValue = retValue.subtract(lineBalance);
             sb.append("-").append(lineBalance);
         }

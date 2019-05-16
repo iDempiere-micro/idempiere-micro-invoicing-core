@@ -4,11 +4,11 @@ import kotliquery.Row;
 import org.compiere.accounting.MClientKt;
 import org.compiere.accounting.MPeriod;
 import org.compiere.docengine.DocumentEngine;
+import org.compiere.model.AccountingSchema;
+import org.compiere.model.DepreciationEntry;
 import org.compiere.model.DepreciationExpense;
 import org.compiere.model.IDoc;
 import org.compiere.model.IPODoc;
-import org.compiere.model.DepreciationEntry;
-import org.compiere.model.AccountingSchema;
 import org.compiere.orm.Query;
 import org.compiere.orm.TimeUtil;
 import org.compiere.process.CompleteActionResult;
@@ -124,7 +124,7 @@ public class MDepreciationEntry extends X_A_Depreciation_Entry implements DocAct
                         + "=?";
         int id = getId();
         if (id <= 0) { // Use old ID is current ID is missing (i.e. object was deleted)
-            id = get_IDOld();
+            id = getDeletedSingleKeyRecordId();
         }
         int no = executeUpdateEx(sql, new Object[]{id});
         if (log.isLoggable(Level.FINE)) log.fine("Updated #" + no);

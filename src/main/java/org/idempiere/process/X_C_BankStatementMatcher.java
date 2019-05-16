@@ -51,7 +51,7 @@ public class X_C_BankStatementMatcher extends BasePOName
      * @return Java Classname
      */
     public String getClassname() {
-        return (String) getValue(COLUMNNAME_Classname);
+        return getValue(COLUMNNAME_Classname);
     }
 
 }

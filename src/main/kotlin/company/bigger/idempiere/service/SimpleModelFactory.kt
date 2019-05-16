@@ -1,18 +1,5 @@
 package company.bigger.idempiere.service
 
-import kotliquery.Row
-import org.compiere.orm.ModelFactory
-import org.idempiere.common.exceptions.AdempiereException
-import org.idempiere.icommon.model.PersistentObject
+import software.hsharp.core.orm.BaseSimpleModelFactory
 
-class SimpleModelFactory : ModelFactory {
-    @Suppress("UNCHECKED_CAST")
-    override fun <T : PersistentObject> getPO(tableName: String, recordId: Int): T {
-        return if (simpleMapperId.containsKey(tableName)) simpleMapperId[tableName]?.invoke(recordId) as T else throw AdempiereException("Table '$tableName' is unknown for id $recordId")
-    }
-
-    @Suppress("UNCHECKED_CAST")
-    override fun <T : PersistentObject> getPO(tableName: String, row: Row): T {
-        return if (simpleMapperRow.containsKey(tableName)) simpleMapperRow[tableName]?.invoke(row) as T else throw AdempiereException("Table '$tableName' is unknown")
-    }
-}
+class SimpleModelFactory : BaseSimpleModelFactory(simpleMapperId, simpleMapperRow)

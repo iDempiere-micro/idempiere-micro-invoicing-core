@@ -61,7 +61,7 @@ public abstract class X_C_AcctSchema_GL extends PO implements I_C_AcctSchema_GL 
      * @return Account used when a currency is out of balance
      */
     public int getCurrencyBalancingAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_CurrencyBalancing_Acct);
+        Integer ii = getValue(COLUMNNAME_CurrencyBalancing_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -72,7 +72,7 @@ public abstract class X_C_AcctSchema_GL extends PO implements I_C_AcctSchema_GL 
      * @return Intercompany Due From / Receivables Account
      */
     public int getIntercompanyDueFromAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_IntercompanyDueFrom_Acct);
+        Integer ii = getValue(COLUMNNAME_IntercompanyDueFrom_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -83,7 +83,7 @@ public abstract class X_C_AcctSchema_GL extends PO implements I_C_AcctSchema_GL 
      * @return Intercompany Due To / Payable Account
      */
     public int getIntercompanyDueToAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_IntercompanyDueTo_Acct);
+        Integer ii = getValue(COLUMNNAME_IntercompanyDueTo_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -94,7 +94,7 @@ public abstract class X_C_AcctSchema_GL extends PO implements I_C_AcctSchema_GL 
      * @return Suspense Balancing Acct
      */
     public int getSuspenseBalancingAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_SuspenseBalancing_Acct);
+        Integer ii = getValue(COLUMNNAME_SuspenseBalancing_Acct);
         if (ii == null) return 0;
         return ii;
     }

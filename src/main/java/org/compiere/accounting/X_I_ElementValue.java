@@ -52,7 +52,7 @@ public class X_I_ElementValue extends BasePONameValue implements I_I_ElementValu
      * @return Indicates the Natural Sign of the Account as a Debit or Credit
      */
     public String getAccountSign() {
-        return (String) getValue(COLUMNNAME_AccountSign);
+        return getValue(COLUMNNAME_AccountSign);
     }
 
     /**
@@ -61,7 +61,7 @@ public class X_I_ElementValue extends BasePONameValue implements I_I_ElementValu
      * @return Indicates the type of account
      */
     public String getAccountType() {
-        return (String) getValue(COLUMNNAME_AccountType);
+        return getValue(COLUMNNAME_AccountType);
     }
 
     /**
@@ -70,7 +70,7 @@ public class X_I_ElementValue extends BasePONameValue implements I_I_ElementValu
      * @return Accounting Element
      */
     public int getElementId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Element_ID);
+        Integer ii = getValue(COLUMNNAME_C_Element_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -81,7 +81,7 @@ public class X_I_ElementValue extends BasePONameValue implements I_I_ElementValu
      * @return Account Element
      */
     public int getElementValueId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ElementValue_ID);
+        Integer ii = getValue(COLUMNNAME_C_ElementValue_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -102,7 +102,7 @@ public class X_I_ElementValue extends BasePONameValue implements I_I_ElementValu
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -111,7 +111,7 @@ public class X_I_ElementValue extends BasePONameValue implements I_I_ElementValu
      * @return Import Account Value
      */
     public int getIMportAccountElementValueId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_I_ElementValue_ID);
+        Integer ii = getValue(COLUMNNAME_I_ElementValue_ID);
         if (ii == null) return 0;
         return ii;
     }

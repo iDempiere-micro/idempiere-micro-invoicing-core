@@ -2,8 +2,9 @@ package org.compiere.accounting;
 
 import kotliquery.Row;
 import org.compiere.bo.MCurrencyKt;
-import org.compiere.model.IFact;
 import org.compiere.model.AccountingSchema;
+import org.compiere.model.IFact;
+import org.compiere.model.IPODoc;
 import org.compiere.model.I_C_OrderLine;
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.tax.MTax;
@@ -163,6 +164,11 @@ public class Doc_Order extends Doc {
         fact.createLine(null, offset, C_Currency_ID, null, total);
         return fact;
     } //	getCommitmentSalesRelease
+
+    @Override
+    protected IPODoc createNewInstance(Row rs) {
+        return new MOrder(rs);
+    }
 
     /**
      * Load Specific Document Details

@@ -66,7 +66,7 @@ public class X_R_RequestUpdate extends PO implements I_R_RequestUpdate {
      * @return Confidentiality of the individual entry
      */
     public String getConfidentialTypeEntry() {
-        return (String) getValue(COLUMNNAME_ConfidentialTypeEntry);
+        return getValue(COLUMNNAME_ConfidentialTypeEntry);
     }
 
     /**
@@ -85,7 +85,7 @@ public class X_R_RequestUpdate extends PO implements I_R_RequestUpdate {
      * @return Product/Resource/Service used in Request
      */
     public int getProductSpentId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_ProductSpent_ID);
+        Integer ii = getValue(COLUMNNAME_M_ProductSpent_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -96,7 +96,7 @@ public class X_R_RequestUpdate extends PO implements I_R_RequestUpdate {
      * @return Invoiced Quantity
      */
     public BigDecimal getQtyInvoiced() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyInvoiced);
+        BigDecimal bd = getValue(COLUMNNAME_QtyInvoiced);
         if (bd == null) return Env.ZERO;
         return bd;
     }

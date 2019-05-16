@@ -1,8 +1,8 @@
 package org.compiere.accounting
 
 import kotliquery.Row
-import org.compiere.model.IDoc
 import org.compiere.model.AccountingSchema
+import org.compiere.model.IDoc
 import org.idempiere.common.exceptions.AdempiereException
 import org.idempiere.common.exceptions.DBException
 import org.idempiere.common.util.CLogger
@@ -64,7 +64,7 @@ object DocManager {
                     tableNames.add(resultSet.getString(2))
                 }
             } catch (e: SQLException) {
-                throw DBException(e, sql)
+                throw DBException(e)
             } finally {
             }
             // 	Convert to array

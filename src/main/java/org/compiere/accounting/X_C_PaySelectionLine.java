@@ -226,7 +226,7 @@ public abstract class X_C_PaySelectionLine extends PO implements I_C_PaySelectio
      * @return How you pay the invoice
      */
     public String getPaymentRule() {
-        return (String) getValue(COLUMNNAME_PaymentRule);
+        return getValue(COLUMNNAME_PaymentRule);
     }
 
     /**

@@ -17,7 +17,7 @@ package org.idempiere.process;
 import org.compiere.accounting.MPaySelection;
 import org.compiere.accounting.MPaySelectionLine;
 import org.compiere.model.IProcessInfoParameter;
-import org.compiere.order.X_C_Order;
+import org.compiere.order.OrderConstants;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.exceptions.DBException;
@@ -148,7 +148,7 @@ public class PaySelectionCreateFrom extends SvrProcess {
                         .append(
                                 ",i.C_Currency_ID, ?,?,i.C_ConversionType_ID,i.AD_Client_ID,i.orgId) AS WriteOffAmt ") //	6 ##p6/p7 Currency_To,PayDate
                         .append("FROM C_Invoice_v i WHERE ");
-        if (X_C_Order.PAYMENTRULE_DirectDebit.equals(p_PaymentRule)) sql.append("IsSOTrx='Y'");
+        if (OrderConstants.PAYMENTRULE_DirectDebit.equals(p_PaymentRule)) sql.append("IsSOTrx='Y'");
         else sql.append("IsSOTrx='N'");
         sql.append(" AND IsPaid='N' AND DocStatus IN ('CO','CL')")
                 .append(" AND AD_Client_ID=?") // 	##p8

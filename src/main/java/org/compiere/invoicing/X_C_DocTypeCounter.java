@@ -50,7 +50,7 @@ public class X_C_DocTypeCounter extends BasePOName implements I_C_DocTypeCounter
      * @return Document type or rules
      */
     public int getDocumentTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -71,7 +71,7 @@ public class X_C_DocTypeCounter extends BasePOName implements I_C_DocTypeCounter
      * @return Generated Counter Document Type (To)
      */
     public int getCounterDocTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Counter_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_Counter_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -92,7 +92,7 @@ public class X_C_DocTypeCounter extends BasePOName implements I_C_DocTypeCounter
      * @return The targeted status of the document
      */
     public String getDocAction() {
-        return (String) getValue(COLUMNNAME_DocAction);
+        return getValue(COLUMNNAME_DocAction);
     }
 
     /**

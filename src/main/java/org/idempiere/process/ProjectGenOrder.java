@@ -5,7 +5,6 @@ import org.compiere.accounting.MOrderLine;
 import org.compiere.model.I_C_ProjectLine;
 import org.compiere.process.SvrProcess;
 import org.compiere.production.MProject;
-import org.compiere.production.MProjectLine;
 import org.idempiere.common.util.Env;
 
 import java.util.logging.Level;
@@ -58,7 +57,7 @@ public class ProjectGenOrder extends SvrProcess {
         if (log.isLoggable(Level.INFO)) log.info("C_Project_ID=" + m_C_Project_ID);
         if (m_C_Project_ID == 0) throw new IllegalArgumentException("C_Project_ID == 0");
         MProject fromProject = getProject(m_C_Project_ID);
-        Env.setSOTrx(true); // 	Set SO context
+        // DAP: Env.setSOTrx(true); // 	Set SO context
 
         /* @todo duplicate invoice prevention */
         MOrder order = new MOrder(fromProject, true, MOrder.DocSubTypeSO_OnCredit);
@@ -95,11 +94,10 @@ public class ProjectGenOrder extends SvrProcess {
                         Level.SEVERE, "Lines difference - ProjectLines=" + lines.length + " <> Saved=" + count);
         } //	Order Lines
 
-        String msgreturn = "@C_Order_ID@ " +
+        return "@C_Order_ID@ " +
                 order.getDocumentNo() +
                 " (" +
                 count +
                 ")";
-        return msgreturn;
     } //	doIt
 } //	ProjectGenOrder

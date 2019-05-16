@@ -2,8 +2,8 @@ package org.compiere.accounting;
 
 import org.compiere.bo.MCurrencyKt;
 import org.compiere.conversionrate.MConversionRate;
-import org.compiere.model.AccountingSchema;
 import org.compiere.model.AccountSchemaElement;
+import org.compiere.model.AccountingSchema;
 import org.compiere.model.I_C_ValidCombination;
 import org.idempiere.common.util.Env;
 

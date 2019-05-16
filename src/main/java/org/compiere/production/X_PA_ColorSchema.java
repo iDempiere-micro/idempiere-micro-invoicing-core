@@ -50,7 +50,7 @@ public class X_PA_ColorSchema extends BasePOName implements I_PA_ColorSchema {
      * @return First color used
      */
     public int getPrintColor1Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_PrintColor1_ID);
+        Integer ii = getValue(COLUMNNAME_AD_PrintColor1_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -71,7 +71,7 @@ public class X_PA_ColorSchema extends BasePOName implements I_PA_ColorSchema {
      * @return Second color used
      */
     public int getPrintColor2Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_PrintColor2_ID);
+        Integer ii = getValue(COLUMNNAME_AD_PrintColor2_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -92,7 +92,7 @@ public class X_PA_ColorSchema extends BasePOName implements I_PA_ColorSchema {
      * @return Third color used
      */
     public int getPrintColor3Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_PrintColor3_ID);
+        Integer ii = getValue(COLUMNNAME_AD_PrintColor3_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -113,7 +113,7 @@ public class X_PA_ColorSchema extends BasePOName implements I_PA_ColorSchema {
      * @return Forth color used
      */
     public int getPrintColor4Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_PrintColor4_ID);
+        Integer ii = getValue(COLUMNNAME_AD_PrintColor4_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -124,7 +124,7 @@ public class X_PA_ColorSchema extends BasePOName implements I_PA_ColorSchema {
      * @return Percentage up to this color is used
      */
     public int getMark1Percent() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Mark1Percent);
+        Integer ii = getValue(COLUMNNAME_Mark1Percent);
         if (ii == null) return 0;
         return ii;
     }
@@ -144,7 +144,7 @@ public class X_PA_ColorSchema extends BasePOName implements I_PA_ColorSchema {
      * @return Percentage up to this color is used
      */
     public int getMark2Percent() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Mark2Percent);
+        Integer ii = getValue(COLUMNNAME_Mark2Percent);
         if (ii == null) return 0;
         return ii;
     }
@@ -164,7 +164,7 @@ public class X_PA_ColorSchema extends BasePOName implements I_PA_ColorSchema {
      * @return Percentage up to this color is used
      */
     public int getMark3Percent() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Mark3Percent);
+        Integer ii = getValue(COLUMNNAME_Mark3Percent);
         if (ii == null) return 0;
         return ii;
     }
@@ -184,7 +184,7 @@ public class X_PA_ColorSchema extends BasePOName implements I_PA_ColorSchema {
      * @return Percentage up to this color is used
      */
     public int getMark4Percent() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Mark4Percent);
+        Integer ii = getValue(COLUMNNAME_Mark4Percent);
         if (ii == null) return 0;
         return ii;
     }

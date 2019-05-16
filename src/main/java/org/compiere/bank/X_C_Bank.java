@@ -50,7 +50,7 @@ public class X_C_Bank extends BasePOName implements I_C_Bank {
      * @return Bank Routing Number
      */
     public String getRoutingNo() {
-        return (String) getValue(COLUMNNAME_RoutingNo);
+        return getValue(COLUMNNAME_RoutingNo);
     }
 
     /**
@@ -68,7 +68,7 @@ public class X_C_Bank extends BasePOName implements I_C_Bank {
      * @return Swift Code or BIC
      */
     public String getSwiftCode() {
-        return (String) getValue(COLUMNNAME_SwiftCode);
+        return getValue(COLUMNNAME_SwiftCode);
     }
 
     @Override

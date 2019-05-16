@@ -9,7 +9,6 @@ import org.compiere.process.DocAction;
 import org.compiere.process.SvrProcess;
 import org.compiere.production.MRequest;
 import org.compiere.production.MRequestType;
-import org.compiere.production.MRequestUpdate;
 import org.compiere.util.MsgKt;
 import org.idempiere.common.util.AdempiereSystemError;
 
@@ -178,7 +177,7 @@ public class RequestInvoice extends SvrProcess {
      * @param request request
      */
     private void invoiceNew(MRequest request) {
-        m_invoice = new MInvoice(0);
+        m_invoice = new MInvoice(null, 0);
         m_invoice.setIsSOTrx(true);
 
         MBPartner partner = new MBPartner(request.getBusinessPartnerId());

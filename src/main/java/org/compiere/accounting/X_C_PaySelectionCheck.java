@@ -2,9 +2,9 @@ package org.compiere.accounting;
 
 import kotliquery.Row;
 import org.compiere.model.I_C_PaySelectionCheck;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 
@@ -81,7 +81,7 @@ public class X_C_PaySelectionCheck extends PO implements I_C_PaySelectionCheck {
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -102,7 +102,7 @@ public class X_C_PaySelectionCheck extends PO implements I_C_PaySelectionCheck {
      * @return Bank Account of the Business Partner
      */
     public int getBusinessPartnerBankAccountId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BP_BankAccount_ID);
+        Integer ii = getValue(COLUMNNAME_C_BP_BankAccount_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -123,7 +123,7 @@ public class X_C_PaySelectionCheck extends PO implements I_C_PaySelectionCheck {
      * @return Payment identifier
      */
     public int getPaymentId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Payment_ID);
+        Integer ii = getValue(COLUMNNAME_C_Payment_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -144,7 +144,7 @@ public class X_C_PaySelectionCheck extends PO implements I_C_PaySelectionCheck {
      * @return Payment Selection Check
      */
     public int getPaySelectionCheckId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_PaySelectionCheck_ID);
+        Integer ii = getValue(COLUMNNAME_C_PaySelectionCheck_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -161,7 +161,7 @@ public class X_C_PaySelectionCheck extends PO implements I_C_PaySelectionCheck {
      * @return Payment Selection
      */
     public int getPaySelectionId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_PaySelection_ID);
+        Integer ii = getValue(COLUMNNAME_C_PaySelection_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -182,7 +182,7 @@ public class X_C_PaySelectionCheck extends PO implements I_C_PaySelectionCheck {
      * @return Calculated amount of discount
      */
     public BigDecimal getDiscountAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DiscountAmt);
+        BigDecimal bd = getValue(COLUMNNAME_DiscountAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -202,7 +202,7 @@ public class X_C_PaySelectionCheck extends PO implements I_C_PaySelectionCheck {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**
@@ -257,7 +257,7 @@ public class X_C_PaySelectionCheck extends PO implements I_C_PaySelectionCheck {
      * @return Amount being paid
      */
     public BigDecimal getPayAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_PayAmt);
+        BigDecimal bd = getValue(COLUMNNAME_PayAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -277,7 +277,7 @@ public class X_C_PaySelectionCheck extends PO implements I_C_PaySelectionCheck {
      * @return How you pay the invoice
      */
     public String getPaymentRule() {
-        return (String) getValue(COLUMNNAME_PaymentRule);
+        return getValue(COLUMNNAME_PaymentRule);
     }
 
     /**
@@ -319,7 +319,7 @@ public class X_C_PaySelectionCheck extends PO implements I_C_PaySelectionCheck {
      * @return Quantity
      */
     public int getQty() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Qty);
+        Integer ii = getValue(COLUMNNAME_Qty);
         if (ii == null) return 0;
         return ii;
     }
@@ -339,7 +339,7 @@ public class X_C_PaySelectionCheck extends PO implements I_C_PaySelectionCheck {
      * @return Amount to write-off
      */
     public BigDecimal getWriteOffAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_WriteOffAmt);
+        BigDecimal bd = getValue(COLUMNNAME_WriteOffAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }

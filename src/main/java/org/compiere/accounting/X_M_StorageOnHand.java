@@ -87,7 +87,7 @@ public abstract class X_M_StorageOnHand extends PO implements I_M_StorageOnHand 
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -110,7 +110,7 @@ public abstract class X_M_StorageOnHand extends PO implements I_M_StorageOnHand 
      * @return Warehouse Locator
      */
     public int getLocatorId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Locator_ID);
+        Integer ii = getValue(COLUMNNAME_M_Locator_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -131,7 +131,7 @@ public abstract class X_M_StorageOnHand extends PO implements I_M_StorageOnHand 
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -152,7 +152,7 @@ public abstract class X_M_StorageOnHand extends PO implements I_M_StorageOnHand 
      * @return On Hand Quantity
      */
     public BigDecimal getQtyOnHand() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyOnHand);
+        BigDecimal bd = getValue(COLUMNNAME_QtyOnHand);
         if (bd == null) return Env.ZERO;
         return bd;
     }

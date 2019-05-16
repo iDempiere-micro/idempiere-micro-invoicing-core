@@ -6,6 +6,7 @@ import org.compiere.accounting.MProduct
 import org.compiere.accounting.MWarehouse
 import org.compiere.model.I_C_Order
 import org.compiere.model.I_M_Production
+import org.compiere.order.OrderConstants.DOCSTATUS_Completed
 import org.compiere.orm.MDocType
 import org.compiere.process.SvrProcess
 import org.compiere.production.MProduction
@@ -68,7 +69,7 @@ class OrderLineCreateProduction(
         if (line.id == 0)
             throw IllegalArgumentException("Order line not found")
         val order: I_C_Order = MOrder(line.orderId)
-        if (MOrder.DOCSTATUS_Completed != order.docStatus)
+        if (DOCSTATUS_Completed != order.docStatus)
             throw IllegalArgumentException("Order not completed")
 
         val doc = MDocType(order.documentTypeId)

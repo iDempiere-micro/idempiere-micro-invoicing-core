@@ -78,7 +78,7 @@ public class X_M_Locator extends PO implements I_M_Locator {
      * @return Warehouse Locator
      */
     public int getLocatorId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Locator_ID);
+        Integer ii = getValue(COLUMNNAME_M_Locator_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -89,7 +89,7 @@ public class X_M_Locator extends PO implements I_M_Locator {
      * @return Locator Type
      */
     public int getLocatorTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_LocatorType_ID);
+        Integer ii = getValue(COLUMNNAME_M_LocatorType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -100,7 +100,7 @@ public class X_M_Locator extends PO implements I_M_Locator {
      * @return Storage Warehouse and Service Point
      */
     public int getWarehouseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Warehouse_ID);
+        Integer ii = getValue(COLUMNNAME_M_Warehouse_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -130,7 +130,7 @@ public class X_M_Locator extends PO implements I_M_Locator {
      * @return Search key for the record in the format required - must be unique
      */
     public String getValue() {
-        return (String) getValue(COLUMNNAME_Value);
+        return getValue(COLUMNNAME_Value);
     }
 
     /**

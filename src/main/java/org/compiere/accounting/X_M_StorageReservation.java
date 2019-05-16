@@ -77,7 +77,7 @@ public class X_M_StorageReservation extends PO implements I_M_StorageReservation
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -100,7 +100,7 @@ public class X_M_StorageReservation extends PO implements I_M_StorageReservation
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -121,7 +121,7 @@ public class X_M_StorageReservation extends PO implements I_M_StorageReservation
      * @return Storage Warehouse and Service Point
      */
     public int getWarehouseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Warehouse_ID);
+        Integer ii = getValue(COLUMNNAME_M_Warehouse_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -142,7 +142,7 @@ public class X_M_StorageReservation extends PO implements I_M_StorageReservation
      * @return Quantity
      */
     public BigDecimal getQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Qty);
+        BigDecimal bd = getValue(COLUMNNAME_Qty);
         if (bd == null) return Env.ZERO;
         return bd;
     }

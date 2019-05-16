@@ -6,10 +6,8 @@ import org.compiere.model.AccountingProcessor.COLUMNNAME_DateLastRun
 import org.compiere.model.AdempiereProcessor
 import org.compiere.model.AdempiereProcessor2
 import org.compiere.schedule.MSchedule
-import org.compiere.util.*
-
+import org.compiere.util.translate
 import java.sql.Timestamp
-
 
 class AccountingProcessorModel : AccountingProcessorPO, AdempiereProcessor, AdempiereProcessor2 {
 
@@ -22,18 +20,18 @@ class AccountingProcessorModel : AccountingProcessorPO, AdempiereProcessor, Adem
         if (C_AcctProcessor_ID == 0) {
             setKeepLogDays(7) // 7
         }
-    } //	AccountingProcessorModel
+    } // 	AccountingProcessorModel
 
     /**
      * Load Constructor
      *
      */
-    constructor(row: Row) : super(row) //	AccountingProcessorModel
+    constructor(row: Row) : super(row) // 	AccountingProcessorModel
 
     /**
      * Parent Constructor
      *
-     * @param client        parent
+     * @param client parent
      * @param Supervisor_ID admin
      */
     constructor(client: MClient, Supervisor_ID: Int) : this(0) {
@@ -43,7 +41,7 @@ class AccountingProcessorModel : AccountingProcessorPO, AdempiereProcessor, Adem
                 translate("C_AcctProcessor_ID")
         name = msgset
         setSupervisorId(Supervisor_ID)
-    } //	AccountingProcessorModel
+    } // 	AccountingProcessorModel
 
     /**
      * Before Save
@@ -64,7 +62,7 @@ class AccountingProcessorModel : AccountingProcessorPO, AdempiereProcessor, Adem
         }
 
         return true
-    } //	beforeSave
+    } // 	beforeSave
 
     /**
      * Get Date Next Run
@@ -75,7 +73,7 @@ class AccountingProcessorModel : AccountingProcessorPO, AdempiereProcessor, Adem
     override fun getDateNextRun(requery: Boolean): Timestamp {
         if (requery) loadFromMap(null)
         return dateNextRun
-    } //	getDateNextRun
+    } // 	getDateNextRun
 
     override fun getFrequencyType(): String {
         return MSchedule.get(scheduleId).frequencyType
@@ -118,4 +116,4 @@ class AccountingProcessorModel : AccountingProcessorPO, AdempiereProcessor, Adem
     companion object {
         private const val serialVersionUID = -4760475718973777369L
     }
-} //	AccountingProcessorModel
+} // 	AccountingProcessorModel

@@ -4,16 +4,15 @@ import kotliquery.Row;
 import org.compiere.accounting.MClientKt;
 import org.compiere.accounting.MMatchInv;
 import org.compiere.accounting.MProduct;
-import org.compiere.crm.MBPartner;
 import org.compiere.model.Asset;
 import org.compiere.model.AssetAddition;
 import org.compiere.model.AssetGroupAccounting;
 import org.compiere.model.DepreciationWorkfile;
+import org.compiere.model.I_C_BPartner;
 import org.compiere.model.I_C_Project;
 import org.compiere.model.I_M_InOutLine;
 import org.compiere.order.MInOut;
 import org.compiere.order.MInOutLine;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.product.MAssetChange;
 import org.compiere.product.MAssetGroup;
 import org.compiere.product.MAttributeSetInstance;
@@ -21,6 +20,7 @@ import org.compiere.product.X_A_Asset;
 import org.compiere.util.MsgKt;
 import org.idempiere.common.util.Env;
 import org.idempiere.icommon.model.PersistentObject;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -76,7 +76,7 @@ public class MAsset extends org.compiere.product.MAsset {
             setProductId(inoutLine.getProductId());
             setAttributeSetInstanceId(inoutLine.getAttributeSetInstanceId());
         }
-        MBPartner bp = new MBPartner(invoiceLine.getInvoice().getBusinessPartnerId());
+        I_C_BPartner bp = getBusinessPartnerService().getById(invoiceLine.getInvoice().getBusinessPartnerId());
         name += bp.getName() + "-" + invoiceLine.getInvoice().getDocumentNo();
         if (log.isLoggable(Level.FINE)) log.fine("name=" + name);
         setValue(name);

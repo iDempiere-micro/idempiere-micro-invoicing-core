@@ -8,10 +8,10 @@ import org.compiere.crm.MBPartner;
 import org.compiere.docengine.DocumentEngine;
 import org.compiere.model.IDoc;
 import org.compiere.model.IPODoc;
-import org.compiere.model.User;
 import org.compiere.model.I_C_BPartner;
 import org.compiere.model.I_C_BPartner_Location;
 import org.compiere.model.I_M_Product;
+import org.compiere.model.User;
 import org.compiere.orm.MDocType;
 import org.compiere.orm.MDocTypeKt;
 import org.compiere.orm.Query;
@@ -28,6 +28,8 @@ import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.Env;
 import org.idempiere.common.util.Util;
 import org.jetbrains.annotations.NotNull;
+import software.hsharp.core.util.Environment;
+import software.hsharp.modules.Module;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -329,7 +331,7 @@ public class MDDOrder extends X_DD_Order implements DocAction, IPODoc {
         }
 
         //	No Partner Info - set Template
-        if (getBusinessPartnerId() == 0) setBPartner(MBPartner.getTemplate(getClientId()));
+        if (getBusinessPartnerId() == 0) setBPartner(new Environment<Module>().getModule().getBusinessPartnerService().getTemplate());
         if (getBusinessPartnerLocationId() == 0)
             setBPartner(new MBPartner(getBusinessPartnerId()));
 
@@ -385,7 +387,7 @@ public class MDDOrder extends X_DD_Order implements DocAction, IPODoc {
                             .list();
 
             for (MDDOrderLine line : lines) {
-                line.set_ValueOfColumn(columnName, getValue(columnName));
+                line.setValueOfColumn(columnName, getValue(columnName));
                 line.saveEx();
                 if (log.isLoggable(Level.FINE))
                     log.fine(columnName + " Lines -> #" + getValue(columnName));

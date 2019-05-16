@@ -53,7 +53,7 @@ public abstract class X_C_PaymentAllocate extends PO implements I_C_PaymentAlloc
      * @return Amount in a defined currency
      */
     public BigDecimal getAmount() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Amount);
+        BigDecimal bd = getValue(COLUMNNAME_Amount);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -83,7 +83,7 @@ public abstract class X_C_PaymentAllocate extends PO implements I_C_PaymentAlloc
      * @return Invoice Identifier
      */
     public int getInvoiceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Invoice_ID);
+        Integer ii = getValue(COLUMNNAME_C_Invoice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -104,7 +104,7 @@ public abstract class X_C_PaymentAllocate extends PO implements I_C_PaymentAlloc
      * @return Payment identifier
      */
     public int getPaymentId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Payment_ID);
+        Integer ii = getValue(COLUMNNAME_C_Payment_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -115,7 +115,7 @@ public abstract class X_C_PaymentAllocate extends PO implements I_C_PaymentAlloc
      * @return Calculated amount of discount
      */
     public BigDecimal getDiscountAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DiscountAmt);
+        BigDecimal bd = getValue(COLUMNNAME_DiscountAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -135,7 +135,7 @@ public abstract class X_C_PaymentAllocate extends PO implements I_C_PaymentAlloc
      * @return Invoice Amt
      */
     public BigDecimal getInvoiceAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_InvoiceAmt);
+        BigDecimal bd = getValue(COLUMNNAME_InvoiceAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -155,7 +155,7 @@ public abstract class X_C_PaymentAllocate extends PO implements I_C_PaymentAlloc
      * @return Over-Payment (unallocated) or Under-Payment (partial payment) Amount
      */
     public BigDecimal getOverUnderAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_OverUnderAmt);
+        BigDecimal bd = getValue(COLUMNNAME_OverUnderAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -175,7 +175,7 @@ public abstract class X_C_PaymentAllocate extends PO implements I_C_PaymentAlloc
      * @return Amount to write-off
      */
     public BigDecimal getWriteOffAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_WriteOffAmt);
+        BigDecimal bd = getValue(COLUMNNAME_WriteOffAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }

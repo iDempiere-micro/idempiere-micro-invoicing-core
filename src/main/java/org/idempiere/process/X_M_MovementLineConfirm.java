@@ -58,7 +58,7 @@ public class X_M_MovementLineConfirm extends PO implements I_M_MovementLineConfi
      * @return Confirmation of a received quantity
      */
     public BigDecimal getConfirmedQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ConfirmedQty);
+        BigDecimal bd = getValue(COLUMNNAME_ConfirmedQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -78,7 +78,7 @@ public class X_M_MovementLineConfirm extends PO implements I_M_MovementLineConfi
      * @return Difference Quantity
      */
     public BigDecimal getDifferenceQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DifferenceQty);
+        BigDecimal bd = getValue(COLUMNNAME_DifferenceQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -118,7 +118,7 @@ public class X_M_MovementLineConfirm extends PO implements I_M_MovementLineConfi
      * @return Inventory Move document Line
      */
     public int getMovementLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_MovementLine_ID);
+        Integer ii = getValue(COLUMNNAME_M_MovementLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -148,7 +148,7 @@ public class X_M_MovementLineConfirm extends PO implements I_M_MovementLineConfi
      * @return The Quantity scrapped due to QA issues
      */
     public BigDecimal getScrappedQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ScrappedQty);
+        BigDecimal bd = getValue(COLUMNNAME_ScrappedQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -168,7 +168,7 @@ public class X_M_MovementLineConfirm extends PO implements I_M_MovementLineConfi
      * @return Target Movement Quantity
      */
     public BigDecimal getTargetQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_TargetQty);
+        BigDecimal bd = getValue(COLUMNNAME_TargetQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }

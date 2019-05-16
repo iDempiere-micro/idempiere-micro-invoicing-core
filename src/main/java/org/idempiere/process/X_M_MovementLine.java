@@ -2,9 +2,9 @@ package org.idempiere.process;
 
 import kotliquery.Row;
 import org.compiere.model.I_M_MovementLine;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 
@@ -63,7 +63,7 @@ public abstract class X_M_MovementLine extends PO implements I_M_MovementLine {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -81,7 +81,7 @@ public abstract class X_M_MovementLine extends PO implements I_M_MovementLine {
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Line);
+        Integer ii = getValue(COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -101,7 +101,7 @@ public abstract class X_M_MovementLine extends PO implements I_M_MovementLine {
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -136,7 +136,7 @@ public abstract class X_M_MovementLine extends PO implements I_M_MovementLine {
      * @return Target Product Attribute Set Instance
      */
     public int getMAttributeSetInstanceToId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstanceTo_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstanceTo_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -147,7 +147,7 @@ public abstract class X_M_MovementLine extends PO implements I_M_MovementLine {
      * @return Warehouse Locator
      */
     public int getLocatorId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Locator_ID);
+        Integer ii = getValue(COLUMNNAME_M_Locator_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -168,7 +168,7 @@ public abstract class X_M_MovementLine extends PO implements I_M_MovementLine {
      * @return Location inventory is moved to
      */
     public int getLocatorToId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_LocatorTo_ID);
+        Integer ii = getValue(COLUMNNAME_M_LocatorTo_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -195,7 +195,7 @@ public abstract class X_M_MovementLine extends PO implements I_M_MovementLine {
      * @return Movement of Inventory
      */
     public int getMovementId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Movement_ID);
+        Integer ii = getValue(COLUMNNAME_M_Movement_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -216,7 +216,7 @@ public abstract class X_M_MovementLine extends PO implements I_M_MovementLine {
      * @return Inventory Move document Line
      */
     public int getMovementLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_MovementLine_ID);
+        Integer ii = getValue(COLUMNNAME_M_MovementLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -227,7 +227,7 @@ public abstract class X_M_MovementLine extends PO implements I_M_MovementLine {
      * @return Quantity of a product moved.
      */
     public BigDecimal getMovementQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_MovementQty);
+        BigDecimal bd = getValue(COLUMNNAME_MovementQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -247,7 +247,7 @@ public abstract class X_M_MovementLine extends PO implements I_M_MovementLine {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }

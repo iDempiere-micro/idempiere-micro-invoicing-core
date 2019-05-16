@@ -2,6 +2,7 @@ package org.idempiere.process;
 
 import org.compiere.accounting.MOrder;
 import org.compiere.model.IProcessInfoParameter;
+import org.compiere.order.OrderConstants;
 import org.compiere.orm.MDocType;
 import org.compiere.orm.MDocTypeKt;
 import org.compiere.process.SvrProcess;
@@ -84,7 +85,7 @@ public class CopyOrder extends SvrProcess {
         //
         MOrder from = new MOrder(p_C_Order_ID);
         MOrder newOrder =
-                MOrder.copyFrom(
+                MOrder.Companion.copyFrom(
                         from,
                         p_DateDoc,
                         dt.getDocTypeId(),
@@ -99,16 +100,16 @@ public class CopyOrder extends SvrProcess {
         //
         if (p_IsCloseDocument) {
             MOrder original = new MOrder(p_C_Order_ID);
-            original.setDocAction(MOrder.DOCACTION_Complete);
-            if (!original.processIt(MOrder.DOCACTION_Complete)) {
+            original.setDocAction(OrderConstants.DOCACTION_Complete);
+            if (!original.processIt(OrderConstants.DOCACTION_Complete)) {
                 log.warning(
                         "Order Process Failed: " + original.getDocumentNo() + " " + original.getProcessMsg());
                 throw new IllegalStateException(
                         "Order Process Failed: " + original.getDocumentNo() + " " + original.getProcessMsg());
             }
             original.saveEx();
-            original.setDocAction(MOrder.DOCACTION_Close);
-            if (!original.processIt(MOrder.DOCACTION_Close)) {
+            original.setDocAction(OrderConstants.DOCACTION_Close);
+            if (!original.processIt(OrderConstants.DOCACTION_Close)) {
                 log.warning(
                         "Order Process Failed: " + original.getDocumentNo() + " " + original.getProcessMsg());
                 throw new IllegalStateException(

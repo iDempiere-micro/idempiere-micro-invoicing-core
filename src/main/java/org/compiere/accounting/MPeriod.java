@@ -8,12 +8,12 @@ import org.compiere.orm.MDocType;
 import org.compiere.orm.MDocTypeKt;
 import org.compiere.orm.MOrgInfo;
 import org.compiere.orm.MOrgInfoKt;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PeriodClosedException;
 import org.compiere.orm.TimeUtil;
 import org.compiere.util.DisplayType;
 import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;

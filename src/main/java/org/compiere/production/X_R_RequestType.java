@@ -62,7 +62,7 @@ public class X_R_RequestType extends BasePOName implements I_R_RequestType {
      * @return Automatic Due Date Days
      */
     public int getAutoDueDateDays() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AutoDueDateDays);
+        Integer ii = getValue(COLUMNNAME_AutoDueDateDays);
         if (ii == null) return 0;
         return ii;
     }
@@ -82,7 +82,7 @@ public class X_R_RequestType extends BasePOName implements I_R_RequestType {
      * @return Type of Confidentiality
      */
     public String getConfidentialType() {
-        return (String) getValue(COLUMNNAME_ConfidentialType);
+        return getValue(COLUMNNAME_ConfidentialType);
     }
 
     /**
@@ -102,7 +102,7 @@ public class X_R_RequestType extends BasePOName implements I_R_RequestType {
      * overdue
      */
     public int getDueDateTolerance() {
-        Integer ii = (Integer) getValue(COLUMNNAME_DueDateTolerance);
+        Integer ii = getValue(COLUMNNAME_DueDateTolerance);
         if (ii == null) return 0;
         return ii;
     }
@@ -223,7 +223,7 @@ public class X_R_RequestType extends BasePOName implements I_R_RequestType {
      * @return Type of request (e.g. Inquiry, Complaint, ..)
      */
     public int getRequestTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_R_RequestType_ID);
+        Integer ii = getValue(COLUMNNAME_R_RequestType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -234,7 +234,7 @@ public class X_R_RequestType extends BasePOName implements I_R_RequestType {
      * @return Request Status Category
      */
     public int getStatusCategoryId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_R_StatusCategory_ID);
+        Integer ii = getValue(COLUMNNAME_R_StatusCategory_ID);
         if (ii == null) return 0;
         return ii;
     }

@@ -64,7 +64,7 @@ public class X_C_Element extends BasePOName implements AccountingElement {
      * @return Identifies a Tree
      */
     public int getTreeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_Tree_ID);
+        Integer ii = getValue(COLUMNNAME_AD_Tree_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -85,7 +85,7 @@ public class X_C_Element extends BasePOName implements AccountingElement {
      * @return Accounting Element
      */
     public int getElementId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Element_ID);
+        Integer ii = getValue(COLUMNNAME_C_Element_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -96,7 +96,7 @@ public class X_C_Element extends BasePOName implements AccountingElement {
      * @return Element Type (account or user defined)
      */
     public String getElementType() {
-        return (String) getValue(COLUMNNAME_ElementType);
+        return getValue(COLUMNNAME_ElementType);
     }
 
     /**

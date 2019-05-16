@@ -3,9 +3,9 @@ package org.compiere.accounting;
 import kotliquery.Row;
 import org.compiere.model.DocumentType;
 import org.compiere.model.I_M_Requisition;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -72,7 +72,7 @@ public class X_M_Requisition extends PO implements I_M_Requisition {
      * @return User within the system - Internal or Business Partner Contact
      */
     public int getUserId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_User_ID);
+        Integer ii = getValue(COLUMNNAME_AD_User_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -99,7 +99,7 @@ public class X_M_Requisition extends PO implements I_M_Requisition {
      * @return Document type or rules
      */
     public int getDocumentTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -156,7 +156,7 @@ public class X_M_Requisition extends PO implements I_M_Requisition {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -174,7 +174,7 @@ public class X_M_Requisition extends PO implements I_M_Requisition {
      * @return The targeted status of the document
      */
     public String getDocAction() {
-        return (String) getValue(COLUMNNAME_DocAction);
+        return getValue(COLUMNNAME_DocAction);
     }
 
     /**
@@ -193,7 +193,7 @@ public class X_M_Requisition extends PO implements I_M_Requisition {
      * @return The current status of the document
      */
     public String getDocStatus() {
-        return (String) getValue(COLUMNNAME_DocStatus);
+        return getValue(COLUMNNAME_DocStatus);
     }
 
     /**
@@ -212,7 +212,7 @@ public class X_M_Requisition extends PO implements I_M_Requisition {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**
@@ -253,7 +253,7 @@ public class X_M_Requisition extends PO implements I_M_Requisition {
      * @return Unique identifier of a Price List
      */
     public int getPriceListId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_PriceList_ID);
+        Integer ii = getValue(COLUMNNAME_M_PriceList_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -274,7 +274,7 @@ public class X_M_Requisition extends PO implements I_M_Requisition {
      * @return Material Requisition
      */
     public int getRequisitionId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Requisition_ID);
+        Integer ii = getValue(COLUMNNAME_M_Requisition_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -285,7 +285,7 @@ public class X_M_Requisition extends PO implements I_M_Requisition {
      * @return Storage Warehouse and Service Point
      */
     public int getWarehouseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Warehouse_ID);
+        Integer ii = getValue(COLUMNNAME_M_Warehouse_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -343,7 +343,7 @@ public class X_M_Requisition extends PO implements I_M_Requisition {
      * @return Total of all document lines
      */
     public BigDecimal getTotalLines() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_TotalLines);
+        BigDecimal bd = getValue(COLUMNNAME_TotalLines);
         if (bd == null) return Env.ZERO;
         return bd;
     }

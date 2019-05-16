@@ -54,7 +54,7 @@ public class X_AD_SchedulerRecipient extends PO implements SchedulerRecipient {
      * @return Responsibility Role
      */
     public int getRoleId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_Role_ID);
+        Integer ii = getValue(COLUMNNAME_AD_Role_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -65,7 +65,7 @@ public class X_AD_SchedulerRecipient extends PO implements SchedulerRecipient {
      * @return User within the system - Internal or Business Partner Contact
      */
     public int getUserId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_User_ID);
+        Integer ii = getValue(COLUMNNAME_AD_User_ID);
         if (ii == null) return 0;
         return ii;
     }

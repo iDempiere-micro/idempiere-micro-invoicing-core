@@ -2,8 +2,8 @@ package org.idempiere.process;
 
 import org.compiere.model.Client;
 import org.compiere.model.Column;
+import org.compiere.model.Table;
 import org.compiere.orm.MClientKt;
-import org.compiere.orm.MTable;
 import org.compiere.orm.Query;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.DisplayType;
@@ -39,19 +39,19 @@ public class TranslationDocSync extends SvrProcess {
      */
     protected String doIt() throws Exception {
         Client client = MClientKt.getClient();
-        String baselang = Language.getBaseAD_Language();
+        String baselang = Language.getBaseLanguageCode();
         if (client.isMultiLingualDocument() && client.getADLanguage().equals(baselang)) {
             throw new AdempiereUserError("@clientId@: @IsMultiLingualDocument@");
         }
         if (log.isLoggable(Level.INFO)) log.info("" + client);
-        List<MTable> tables =
-                new Query(
+        List<Table> tables =
+                new Query<Table>(
                         "AD_Table",
                         "TableName LIKE '%_Trl' AND TableName NOT LIKE 'AD%'"
                 )
                         .setOrderBy("TableName")
                         .list();
-        for (MTable table : tables) {
+        for (Table table : tables) {
             processTable(table, client);
         }
 
@@ -63,7 +63,7 @@ public class TranslationDocSync extends SvrProcess {
      *
      * @param table table
      */
-    private void processTable(MTable table, Client client) {
+    private void processTable(Table table, Client client) {
         StringBuilder columnNames = new StringBuilder();
         Column[] columns = table.getColumns(false);
         for (Column column : columns) {
@@ -81,7 +81,7 @@ public class TranslationDocSync extends SvrProcess {
         if (log.isLoggable(Level.CONFIG)) log.config(baseTable + ": " + columnNames);
 
         if (client.isMultiLingualDocument()) {
-            String baselang = Language.getBaseAD_Language();
+            String baselang = Language.getBaseLanguageCode();
             if (!client.getADLanguage().equals(baselang)) {
                 // tenant language <> base language
                 // auto update translation for tenant language

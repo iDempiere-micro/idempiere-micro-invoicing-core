@@ -55,7 +55,7 @@ public class X_C_ProjectType extends BasePOName implements I_C_ProjectType {
      * @return Type of the project
      */
     public int getProjectTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ProjectType_ID);
+        Integer ii = getValue(COLUMNNAME_C_ProjectType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -66,7 +66,7 @@ public class X_C_ProjectType extends BasePOName implements I_C_ProjectType {
      * @return Project Category
      */
     public String getProjectCategory() {
-        return (String) getValue(COLUMNNAME_ProjectCategory);
+        return getValue(COLUMNNAME_ProjectCategory);
     }
 
     @Override

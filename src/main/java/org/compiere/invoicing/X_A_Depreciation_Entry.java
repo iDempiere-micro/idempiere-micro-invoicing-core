@@ -107,7 +107,7 @@ public class X_A_Depreciation_Entry extends PO implements DepreciationEntry {
      * @return Document type or rules
      */
     public int getDocTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -118,7 +118,7 @@ public class X_A_Depreciation_Entry extends PO implements DepreciationEntry {
      * @return Period of the Calendar
      */
     public int getPeriodId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Period_ID);
+        Integer ii = getValue(COLUMNNAME_C_Period_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -148,7 +148,7 @@ public class X_A_Depreciation_Entry extends PO implements DepreciationEntry {
      * @return The targeted status of the document
      */
     public String getDocAction() {
-        return (String) getValue(COLUMNNAME_DocAction);
+        return getValue(COLUMNNAME_DocAction);
     }
 
     /**
@@ -167,7 +167,7 @@ public class X_A_Depreciation_Entry extends PO implements DepreciationEntry {
      * @return The current status of the document
      */
     public String getDocStatus() {
-        return (String) getValue(COLUMNNAME_DocStatus);
+        return getValue(COLUMNNAME_DocStatus);
     }
 
     /**
@@ -176,7 +176,7 @@ public class X_A_Depreciation_Entry extends PO implements DepreciationEntry {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**

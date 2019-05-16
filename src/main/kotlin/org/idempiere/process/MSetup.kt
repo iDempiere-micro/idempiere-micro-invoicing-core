@@ -12,7 +12,6 @@ import org.compiere.accounting.MWarehouse
 import org.compiere.accounting.X_C_AcctSchema_Default
 import org.compiere.accounting.X_C_AcctSchema_GL
 import org.compiere.crm.MBPGroup
-import org.compiere.crm.MBPartner
 import org.compiere.crm.MBPartnerLocation
 import org.compiere.crm.MLocation
 import org.compiere.crm.MUser
@@ -51,6 +50,7 @@ import software.hsharp.core.util.Environment
 import software.hsharp.core.util.convertString
 import software.hsharp.core.util.executeUpdateEx
 import software.hsharp.core.util.prepareStatement
+import software.hsharp.modules.Module
 import java.io.File
 import java.sql.PreparedStatement
 import java.sql.ResultSet
@@ -58,11 +58,10 @@ import java.sql.SQLException
 import java.util.UUID
 import java.util.logging.Level
 
-class MSetup
+class MSetup : Module by Environment<Module>().module
 /**
  * Constructor
- */
-() {
+ */ {
 
     /**	Logger			 */
     protected var log: CLogger = CLogger.getCLogger(javaClass)
@@ -511,7 +510,7 @@ class MSetup
          * Create AccountingSchema Elements (Structure)
          */
         val sql2: String?
-        if (Env.isBaseLanguage(m_lang, "AD_Reference"))
+        if (Env.isBaseLanguage(m_lang))
         // 	Get ElementTypes & Name
             sql2 = "SELECT Value, Name FROM AD_Ref_List WHERE AD_Reference_ID=181"
         else
@@ -902,7 +901,7 @@ class MSetup
     @Throws(Exception::class)
     private fun createAccountingRecord(tableName: String) {
         val table = getTable(tableName)
-        val acct : PO = table.getPO(-1) ?: throw AdempiereSystemError("Unable to create new entry for $tableName") // Note this should create a new Acct; ugly hack, because we return null for 0
+        val acct: PO = table.getPO(-1) ?: throw AdempiereSystemError("Unable to create new entry for $tableName") // Note this should create a new Acct; ugly hack, because we return null for 0
 
         val cols = table.getColumns(false)
         for (c in cols) {
@@ -1202,7 +1201,7 @@ class MSetup
             log.log(Level.SEVERE, "BP Group NOT inserted")
 
         // 	Create BPartner
-        val bp = MBPartner(0)
+        val bp = businessPartnerService.getEmpty()
         bp.searchKey = defaultName
         bp.name = defaultName
         bp.setBPGroup(bpg)
@@ -1376,7 +1375,7 @@ class MSetup
             log.log(Level.SEVERE, "ProductPrice NOT inserted")
 
         // 	Create Sales Rep for Client-User
-        val bpCU = MBPartner(0)
+        val bpCU = businessPartnerService.getEmpty()
         bpCU.searchKey = AD_User_U_Name!!
         bpCU.name = AD_User_U_Name!!
         bpCU.setBPGroup(bpg)
@@ -1401,7 +1400,7 @@ class MSetup
             log.log(Level.SEVERE, "User of SalesRep (User) NOT updated")
 
         // 	Create Sales Rep for Client-Admin
-        val bpCA = MBPartner(0)
+        val bpCA = businessPartnerService.getEmpty()
         bpCA.searchKey = AD_User_Name!!
         bpCA.name = AD_User_Name!!
         bpCA.setBPGroup(bpg)

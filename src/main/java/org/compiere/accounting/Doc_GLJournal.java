@@ -1,8 +1,9 @@
 package org.compiere.accounting;
 
 import kotliquery.Row;
-import org.compiere.model.IFact;
 import org.compiere.model.AccountingSchema;
+import org.compiere.model.IFact;
+import org.compiere.model.IPODoc;
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.model.I_GL_JournalLine;
 import org.idempiere.common.util.Env;
@@ -34,11 +35,15 @@ public class Doc_GLJournal extends Doc {
      *
      * @param as      accounting schema
      * @param rs      record
-     * @param trxName trx
      */
     public Doc_GLJournal(MAcctSchema as, Row rs) {
         super(as, MJournal.class, rs, null);
     } //	Doc_GL_Journal
+
+    @Override
+    protected IPODoc createNewInstance(Row rs) {
+        return new MJournal(rs);
+    }
 
     /**
      * Load Specific Document Details
@@ -63,7 +68,7 @@ public class Doc_GLJournal extends Doc {
      * @return DocLine Array
      */
     protected DocLine[] loadLines(MJournal journal) {
-        ArrayList<DocLine> list = new ArrayList<DocLine>();
+        ArrayList<DocLine> list = new ArrayList<>();
         I_GL_JournalLine[] lines = journal.getLines(false);
         for (I_GL_JournalLine line : lines) {
             DocLine docLine = new DocLine(line, this);
@@ -96,9 +101,9 @@ public class Doc_GLJournal extends Doc {
         BigDecimal retValue = Env.ZERO;
         StringBuilder sb = new StringBuilder(" [");
         //  Lines
-        for (int i = 0; i < p_lines.length; i++) {
-            retValue = retValue.add(p_lines[i].getAmtSource());
-            sb.append("+").append(p_lines[i].getAmtSource());
+        for (DocLine p_line : p_lines) {
+            retValue = retValue.add(p_line.getAmtSource());
+            sb.append("+").append(p_line.getAmtSource());
         }
         sb.append("]");
         //
@@ -117,7 +122,7 @@ public class Doc_GLJournal extends Doc {
      * @return Fact
      */
     public ArrayList<IFact> createFacts(AccountingSchema as) {
-        ArrayList<IFact> facts = new ArrayList<IFact>();
+        ArrayList<IFact> facts = new ArrayList<>();
         //	Other Acct Schema
         if (as.getAccountingSchemaId() != m_C_AcctSchema_ID) return facts;
 
@@ -127,16 +132,16 @@ public class Doc_GLJournal extends Doc {
         //  GLJ
         if (getDocumentType().equals(DOCTYPE_GLJournal)) {
             //  account     DR      CR
-            for (int i = 0; i < p_lines.length; i++) {
-                if (p_lines[i].getAccountingSchemaId() == as.getAccountingSchemaId()) {
+            for (DocLine p_line : p_lines) {
+                if (p_line.getAccountingSchemaId() == as.getAccountingSchemaId()) {
                     @SuppressWarnings("unused")
                     FactLine line =
                             fact.createLine(
-                                    p_lines[i],
-                                    p_lines[i].getAccount(),
+                                    p_line,
+                                    p_line.getAccount(),
                                     getCurrencyId(),
-                                    p_lines[i].getAmtSourceDr(),
-                                    p_lines[i].getAmtSourceCr());
+                                    p_line.getAmtSourceDr(),
+                                    p_line.getAmtSourceCr());
                 }
             } //	for all lines
         } else {

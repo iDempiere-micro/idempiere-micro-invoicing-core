@@ -4,7 +4,7 @@ import kotliquery.Row;
 import org.compiere.invoicing.MBPBankAccount;
 import org.compiere.model.I_C_BP_BankAccount;
 import org.compiere.model.I_C_PaySelectionLine;
-import org.compiere.order.X_C_Order;
+import org.compiere.order.OrderConstants;
 import org.idempiere.common.util.Env;
 
 /**
@@ -64,7 +64,7 @@ public class MPaySelectionCheck extends X_C_PaySelectionCheck {
         int C_BPartner_ID = line.getInvoice().getBusinessPartnerId();
         setBusinessPartnerId(C_BPartner_ID);
         //
-        if (X_C_Order.PAYMENTRULE_DirectDebit.equals(PaymentRule)) {
+        if (OrderConstants.PAYMENTRULE_DirectDebit.equals(PaymentRule)) {
             I_C_BP_BankAccount[] bas = MBPBankAccount.getOfBPartner(C_BPartner_ID);
             for (I_C_BP_BankAccount account : bas) {
                 if (account.isDirectDebit()) {
@@ -72,7 +72,7 @@ public class MPaySelectionCheck extends X_C_PaySelectionCheck {
                     break;
                 }
             }
-        } else if (X_C_Order.PAYMENTRULE_DirectDeposit.equals(PaymentRule)) {
+        } else if (OrderConstants.PAYMENTRULE_DirectDeposit.equals(PaymentRule)) {
             I_C_BP_BankAccount[] bas = MBPBankAccount.getOfBPartner(C_BPartner_ID);
             for (I_C_BP_BankAccount account : bas) {
                 if (account.isDirectDeposit()) {
@@ -188,8 +188,8 @@ public class MPaySelectionCheck extends X_C_PaySelectionCheck {
      * @return true if direct
      */
     public boolean isDirect() {
-        return (X_C_Order.PAYMENTRULE_DirectDeposit.equals(getPaymentRule())
-                || X_C_Order.PAYMENTRULE_DirectDebit.equals(getPaymentRule()));
+        return (OrderConstants.PAYMENTRULE_DirectDeposit.equals(getPaymentRule())
+                || OrderConstants.PAYMENTRULE_DirectDebit.equals(getPaymentRule()));
     } //	isDirect
 
     /**

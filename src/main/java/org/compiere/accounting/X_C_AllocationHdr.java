@@ -2,7 +2,6 @@ package org.compiere.accounting;
 
 import kotliquery.Row;
 import org.compiere.model.I_C_AllocationHdr;
-import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
 
 import java.math.BigDecimal;
@@ -14,7 +13,7 @@ import java.sql.Timestamp;
  * @author iDempiere (generated)
  * @version Release 5.1 - $Id$
  */
-public abstract class X_C_AllocationHdr extends PO implements I_C_AllocationHdr {
+public abstract class X_C_AllocationHdr extends AccountingPO implements I_C_AllocationHdr {
 
     /**
      * Complete = CO
@@ -76,15 +75,8 @@ public abstract class X_C_AllocationHdr extends PO implements I_C_AllocationHdr 
     /**
      * Standard Constructor
      */
-    public X_C_AllocationHdr(int C_AllocationHdr_ID) {
-        super(C_AllocationHdr_ID);
-    }
-
-    /**
-     * Load Constructor
-     */
-    public X_C_AllocationHdr(Row row) {
-        super(row);
+    public X_C_AllocationHdr(Row row, int C_AllocationHdr_ID) {
+        super(row, C_AllocationHdr_ID);
     }
 
     /**
@@ -106,7 +98,7 @@ public abstract class X_C_AllocationHdr extends PO implements I_C_AllocationHdr 
      * @return Document Approval Amount
      */
     public BigDecimal getApprovalAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ApprovalAmt);
+        BigDecimal bd = getValue(COLUMNNAME_ApprovalAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -126,7 +118,7 @@ public abstract class X_C_AllocationHdr extends PO implements I_C_AllocationHdr 
      * @return Payment allocation
      */
     public int getPaymentAllocationHeaderId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_AllocationHdr_ID);
+        Integer ii = getValue(COLUMNNAME_C_AllocationHdr_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -137,7 +129,7 @@ public abstract class X_C_AllocationHdr extends PO implements I_C_AllocationHdr 
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -204,7 +196,7 @@ public abstract class X_C_AllocationHdr extends PO implements I_C_AllocationHdr 
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -222,7 +214,7 @@ public abstract class X_C_AllocationHdr extends PO implements I_C_AllocationHdr 
      * @return The targeted status of the document
      */
     public String getDocAction() {
-        return (String) getValue(COLUMNNAME_DocAction);
+        return getValue(COLUMNNAME_DocAction);
     }
 
     /**
@@ -241,7 +233,7 @@ public abstract class X_C_AllocationHdr extends PO implements I_C_AllocationHdr 
      * @return The current status of the document
      */
     public String getDocStatus() {
-        return (String) getValue(COLUMNNAME_DocStatus);
+        return getValue(COLUMNNAME_DocStatus);
     }
 
     /**
@@ -260,7 +252,7 @@ public abstract class X_C_AllocationHdr extends PO implements I_C_AllocationHdr 
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**

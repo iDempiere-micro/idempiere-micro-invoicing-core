@@ -63,7 +63,7 @@ public class X_I_Conversion_Rate extends PO implements I_I_Conversion_Rate {
      * @return Currency Conversion Rate Type
      */
     public int getConversionTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ConversionType_ID);
+        Integer ii = getValue(COLUMNNAME_C_ConversionType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -74,7 +74,7 @@ public class X_I_Conversion_Rate extends PO implements I_I_Conversion_Rate {
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -85,7 +85,7 @@ public class X_I_Conversion_Rate extends PO implements I_I_Conversion_Rate {
      * @return Target currency
      */
     public int getCurrencyIdTo() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Currency_ID_To);
+        Integer ii = getValue(COLUMNNAME_C_Currency_ID_To);
         if (ii == null) return 0;
         return ii;
     }
@@ -110,7 +110,7 @@ public class X_I_Conversion_Rate extends PO implements I_I_Conversion_Rate {
      * @return To convert Source number to Target number, the Source is divided
      */
     public BigDecimal getDivideRate() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DivideRate);
+        BigDecimal bd = getValue(COLUMNNAME_DivideRate);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -130,7 +130,7 @@ public class X_I_Conversion_Rate extends PO implements I_I_Conversion_Rate {
      * @return Rate to multiple the source by to calculate the target.
      */
     public BigDecimal getMultiplyRate() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_MultiplyRate);
+        BigDecimal bd = getValue(COLUMNNAME_MultiplyRate);
         if (bd == null) return Env.ZERO;
         return bd;
     }

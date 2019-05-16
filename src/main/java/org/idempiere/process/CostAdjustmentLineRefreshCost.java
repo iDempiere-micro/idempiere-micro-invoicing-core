@@ -3,8 +3,8 @@ package org.idempiere.process;
 import org.compiere.accounting.MClientKt;
 import org.compiere.accounting.MProduct;
 import org.compiere.invoicing.MInventoryLine;
-import org.compiere.model.ClientWithAccounting;
 import org.compiere.model.AccountingSchema;
+import org.compiere.model.ClientWithAccounting;
 import org.compiere.model.I_M_Cost;
 import org.compiere.process.SvrProcess;
 

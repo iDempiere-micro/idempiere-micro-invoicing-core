@@ -16,7 +16,6 @@ package org.idempiere.process;
 
 import org.compiere.process.SvrProcess;
 import org.compiere.server.ClientProcess;
-import org.idempiere.common.util.CacheMgt;
 
 /**
  * Reset Cache
@@ -40,7 +39,7 @@ public class CacheReset extends SvrProcess implements ClientProcess {
     protected String doIt() throws java.lang.Exception {
         log.info("");
         // Env.reset(false);	// not final
-        CacheMgt.get().reset();
+        // DAP: CacheMgt.get().reset();
         return "Cache Reset";
     } //	doIt
 } //	CacheReset

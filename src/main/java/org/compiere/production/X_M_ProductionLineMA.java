@@ -72,7 +72,7 @@ public class X_M_ProductionLineMA extends PO implements I_M_ProductionLineMA {
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -95,7 +95,7 @@ public class X_M_ProductionLineMA extends PO implements I_M_ProductionLineMA {
      * @return Quantity of a product moved.
      */
     public BigDecimal getMovementQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_MovementQty);
+        BigDecimal bd = getValue(COLUMNNAME_MovementQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }

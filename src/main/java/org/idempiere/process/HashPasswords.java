@@ -1,14 +1,13 @@
 package org.idempiere.process;
 
 import org.compiere.crm.MUser;
-import org.compiere.model.User;
 import org.compiere.model.TypedQuery;
+import org.compiere.model.User;
 import org.compiere.orm.MSysConfig;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.SystemIDs;
 import org.idempiere.common.exceptions.AdempiereException;
-import org.idempiere.common.util.CacheMgt;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.util.List;
 
@@ -38,7 +37,7 @@ public class HashPasswords extends SvrProcess {
         MSysConfig conf = new MSysConfig(SystemIDs.SYSCONFIG_USER_HASH_PASSWORD);
         conf.setSearchKey("Y");
         conf.saveEx();
-        CacheMgt.get().reset(MSysConfig.Table_Name);
+        // DAP: CacheMgt.get().reset();
 
         int count = 0;
         try {

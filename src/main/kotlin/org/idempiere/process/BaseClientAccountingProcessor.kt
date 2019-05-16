@@ -1,7 +1,6 @@
 package org.idempiere.process
 
 import org.compiere.accounting.DocManager
-import org.compiere.accounting.MAcctSchema
 import org.compiere.model.AccountingSchema
 import org.idempiere.common.util.Env
 import software.hsharp.core.util.DB

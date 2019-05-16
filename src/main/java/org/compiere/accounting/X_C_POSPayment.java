@@ -59,7 +59,7 @@ public class X_C_POSPayment extends PO implements I_C_POSPayment {
      * @return Account Number
      */
     public String getAccountNo() {
-        return (String) getValue(COLUMNNAME_AccountNo);
+        return getValue(COLUMNNAME_AccountNo);
     }
 
     /**
@@ -68,7 +68,7 @@ public class X_C_POSPayment extends PO implements I_C_POSPayment {
      * @return Name on Credit Card or Account holder
      */
     public String getAccountName() {
-        return (String) getValue(COLUMNNAME_A_Name);
+        return getValue(COLUMNNAME_A_Name);
     }
 
     /**
@@ -77,7 +77,7 @@ public class X_C_POSPayment extends PO implements I_C_POSPayment {
      * @return Check Number
      */
     public String getCheckNo() {
-        return (String) getValue(COLUMNNAME_CheckNo);
+        return getValue(COLUMNNAME_CheckNo);
     }
 
     /**
@@ -96,7 +96,7 @@ public class X_C_POSPayment extends PO implements I_C_POSPayment {
      * @return POS Tender Type
      */
     public int getPOSTenderTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_POSTenderType_ID);
+        Integer ii = getValue(COLUMNNAME_C_POSTenderType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -107,7 +107,7 @@ public class X_C_POSPayment extends PO implements I_C_POSPayment {
      * @return Credit Card Number
      */
     public String getCreditCardNumber() {
-        return (String) getValue(COLUMNNAME_CreditCardNumber);
+        return getValue(COLUMNNAME_CreditCardNumber);
     }
 
     /**
@@ -116,7 +116,7 @@ public class X_C_POSPayment extends PO implements I_C_POSPayment {
      * @return Credit Card (Visa, MC, AmEx)
      */
     public String getCreditCardType() {
-        return (String) getValue(COLUMNNAME_CreditCardType);
+        return getValue(COLUMNNAME_CreditCardType);
     }
 
     /**
@@ -125,7 +125,7 @@ public class X_C_POSPayment extends PO implements I_C_POSPayment {
      * @return International Bank Account Number
      */
     public String getIBAN() {
-        return (String) getValue(COLUMNNAME_IBAN);
+        return getValue(COLUMNNAME_IBAN);
     }
 
     /**
@@ -148,7 +148,7 @@ public class X_C_POSPayment extends PO implements I_C_POSPayment {
      * @return Combination of routing no, account and check no
      */
     public String getMicr() {
-        return (String) getValue(COLUMNNAME_Micr);
+        return getValue(COLUMNNAME_Micr);
     }
 
     /**
@@ -157,7 +157,7 @@ public class X_C_POSPayment extends PO implements I_C_POSPayment {
      * @return Amount being paid
      */
     public BigDecimal getPayAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_PayAmt);
+        BigDecimal bd = getValue(COLUMNNAME_PayAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -177,7 +177,7 @@ public class X_C_POSPayment extends PO implements I_C_POSPayment {
      * @return Bank Routing Number
      */
     public String getRoutingNo() {
-        return (String) getValue(COLUMNNAME_RoutingNo);
+        return getValue(COLUMNNAME_RoutingNo);
     }
 
     /**
@@ -186,7 +186,7 @@ public class X_C_POSPayment extends PO implements I_C_POSPayment {
      * @return Swift Code or BIC
      */
     public String getSwiftCode() {
-        return (String) getValue(COLUMNNAME_SwiftCode);
+        return getValue(COLUMNNAME_SwiftCode);
     }
 
     /**
@@ -195,7 +195,7 @@ public class X_C_POSPayment extends PO implements I_C_POSPayment {
      * @return Method of Payment
      */
     public String getTenderType() {
-        return (String) getValue(COLUMNNAME_TenderType);
+        return getValue(COLUMNNAME_TenderType);
     }
 
     /**
@@ -204,6 +204,6 @@ public class X_C_POSPayment extends PO implements I_C_POSPayment {
      * @return Voice Authorization Code from credit card company
      */
     public String getVoiceAuthCode() {
-        return (String) getValue(COLUMNNAME_VoiceAuthCode);
+        return getValue(COLUMNNAME_VoiceAuthCode);
     }
 }

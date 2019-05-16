@@ -48,7 +48,7 @@ fun getBusinessPartnerAllocationInvoices(C_BPartner_ID: Int, p_APAR: String): Ar
     sql.append("ORDER BY DateInvoiced")
 
     fun load(row: Row): MInvoice? {
-        val invoice = MInvoice(row)
+        val invoice = MInvoice(row, -1)
         if (invoice.getOpenAmt(false, null).signum() == 0) {
             invoice.setIsPaid(true)
             invoice.saveEx()

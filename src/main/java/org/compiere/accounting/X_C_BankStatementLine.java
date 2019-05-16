@@ -54,7 +54,7 @@ public abstract class X_C_BankStatementLine extends PO implements I_C_BankStatem
      * @return Bank Statement of account
      */
     public int getBankStatementId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BankStatement_ID);
+        Integer ii = getValue(COLUMNNAME_C_BankStatement_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -75,7 +75,7 @@ public abstract class X_C_BankStatementLine extends PO implements I_C_BankStatem
      * @return Line on a statement from this Bank
      */
     public int getBankStatementLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BankStatementLine_ID);
+        Integer ii = getValue(COLUMNNAME_C_BankStatementLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -86,7 +86,7 @@ public abstract class X_C_BankStatementLine extends PO implements I_C_BankStatem
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -107,7 +107,7 @@ public abstract class X_C_BankStatementLine extends PO implements I_C_BankStatem
      * @return Additional document charges
      */
     public int getChargeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Charge_ID);
+        Integer ii = getValue(COLUMNNAME_C_Charge_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -128,7 +128,7 @@ public abstract class X_C_BankStatementLine extends PO implements I_C_BankStatem
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -149,7 +149,7 @@ public abstract class X_C_BankStatementLine extends PO implements I_C_BankStatem
      * @return Charge Amount
      */
     public BigDecimal getChargeAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ChargeAmt);
+        BigDecimal bd = getValue(COLUMNNAME_ChargeAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -169,7 +169,7 @@ public abstract class X_C_BankStatementLine extends PO implements I_C_BankStatem
      * @return Invoice Identifier
      */
     public int getInvoiceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Invoice_ID);
+        Integer ii = getValue(COLUMNNAME_C_Invoice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -190,7 +190,7 @@ public abstract class X_C_BankStatementLine extends PO implements I_C_BankStatem
      * @return Payment identifier
      */
     public int getPaymentId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Payment_ID);
+        Integer ii = getValue(COLUMNNAME_C_Payment_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -229,7 +229,7 @@ public abstract class X_C_BankStatementLine extends PO implements I_C_BankStatem
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -346,7 +346,7 @@ public abstract class X_C_BankStatementLine extends PO implements I_C_BankStatem
      * @return Interest Amount
      */
     public BigDecimal getInterestAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_InterestAmt);
+        BigDecimal bd = getValue(COLUMNNAME_InterestAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -389,7 +389,7 @@ public abstract class X_C_BankStatementLine extends PO implements I_C_BankStatem
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Line);
+        Integer ii = getValue(COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -445,7 +445,7 @@ public abstract class X_C_BankStatementLine extends PO implements I_C_BankStatem
      * @return Statement Amount
      */
     public BigDecimal getStmtAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_StmtAmt);
+        BigDecimal bd = getValue(COLUMNNAME_StmtAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -465,7 +465,7 @@ public abstract class X_C_BankStatementLine extends PO implements I_C_BankStatem
      * @return Amount of a transaction
      */
     public BigDecimal getTrxAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_TrxAmt);
+        BigDecimal bd = getValue(COLUMNNAME_TrxAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }

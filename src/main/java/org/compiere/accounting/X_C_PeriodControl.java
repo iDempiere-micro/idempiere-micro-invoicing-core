@@ -198,7 +198,7 @@ public class X_C_PeriodControl extends PO implements I_C_PeriodControl {
      * @return Period of the Calendar
      */
     public int getPeriodId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Period_ID);
+        Integer ii = getValue(COLUMNNAME_C_Period_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -219,7 +219,7 @@ public class X_C_PeriodControl extends PO implements I_C_PeriodControl {
      * @return Logical type of document
      */
     public String getDocBaseType() {
-        return (String) getValue(COLUMNNAME_DocBaseType);
+        return getValue(COLUMNNAME_DocBaseType);
     }
 
     /**
@@ -238,7 +238,7 @@ public class X_C_PeriodControl extends PO implements I_C_PeriodControl {
      * @return Action taken for this period
      */
     public String getPeriodAction() {
-        return (String) getValue(COLUMNNAME_PeriodAction);
+        return getValue(COLUMNNAME_PeriodAction);
     }
 
     /**
@@ -257,7 +257,7 @@ public class X_C_PeriodControl extends PO implements I_C_PeriodControl {
      * @return Current state of this period
      */
     public String getPeriodStatus() {
-        return (String) getValue(COLUMNNAME_PeriodStatus);
+        return getValue(COLUMNNAME_PeriodStatus);
     }
 
     /**

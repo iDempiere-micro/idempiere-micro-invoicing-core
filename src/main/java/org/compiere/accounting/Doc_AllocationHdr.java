@@ -3,10 +3,10 @@ package org.compiere.accounting;
 import kotliquery.Row;
 import org.compiere.invoicing.MConversionRate;
 import org.compiere.invoicing.MInvoice;
-import org.compiere.invoicing.MInvoiceLine;
-import org.compiere.model.IFact;
-import org.compiere.model.AccountingSchema;
 import org.compiere.model.AccountSchemaElement;
+import org.compiere.model.AccountingSchema;
+import org.compiere.model.IFact;
+import org.compiere.model.IPODoc;
 import org.compiere.model.I_C_InvoiceLine;
 import org.compiere.model.I_C_ValidCombination;
 import org.idempiere.common.util.CLogger;
@@ -57,6 +57,11 @@ public class Doc_AllocationHdr extends Doc {
     public Doc_AllocationHdr(AccountingSchema as, Row rs) {
         super(as, MAllocationHdr.class, rs, DOCTYPE_Allocation);
     } //  Doc_Allocation
+
+    @Override
+    protected IPODoc createNewInstance(Row rs) {
+        return new MAllocationHdr(rs, -1);
+    }
 
     /**
      * Load Specific Document Details
@@ -187,7 +192,7 @@ public class Doc_AllocationHdr extends Doc {
                 payment = new MPayment(line.getPaymentId());
             MInvoice invoice = null;
             if (line.getInvoiceId() != 0)
-                invoice = new MInvoice(line.getInvoiceId());
+                invoice = new MInvoice(null, line.getInvoiceId());
 
             //	No Invoice
             if (invoice == null) {
@@ -515,7 +520,7 @@ public class Doc_AllocationHdr extends Doc {
             int orginvoice = startorg;
             MInvoice invoice;
             if (line.getInvoiceId() != 0) {
-                invoice = new MInvoice(line.getInvoiceId());
+                invoice = new MInvoice(null, line.getInvoiceId());
                 orginvoice = invoice.getOrgId();
             }
             int orgcashline = startorg;
@@ -647,7 +652,7 @@ public class Doc_AllocationHdr extends Doc {
                         + "FROM C_Payment p INNER JOIN C_DocType d ON (p.C_DocType_ID=d.C_DocType_ID) "
                         + "WHERE C_Payment_ID=?";
         PreparedStatement pstmt;
-        ResultSet rs = null;
+        ResultSet rs;
         try {
             pstmt = prepareStatement(sql);
             pstmt.setInt(1, C_Payment_ID);

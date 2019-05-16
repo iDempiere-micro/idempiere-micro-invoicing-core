@@ -104,7 +104,7 @@ public class X_M_CostHistory extends PO implements I_M_CostHistory {
      * @return New current cost price after processing of M_CostDetail
      */
     public BigDecimal getNewCostPrice() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_NewCostPrice);
+        BigDecimal bd = getValue(COLUMNNAME_NewCostPrice);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -133,7 +133,7 @@ public class X_M_CostHistory extends PO implements I_M_CostHistory {
      * @return New current quantity after processing of M_CostDetail
      */
     public BigDecimal getNewQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_NewQty);
+        BigDecimal bd = getValue(COLUMNNAME_NewQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -153,7 +153,7 @@ public class X_M_CostHistory extends PO implements I_M_CostHistory {
      * @return Old accumulated amt before the processing of M_CostDetail
      */
     public BigDecimal getOldCAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_OldCAmt);
+        BigDecimal bd = getValue(COLUMNNAME_OldCAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -173,7 +173,7 @@ public class X_M_CostHistory extends PO implements I_M_CostHistory {
      * @return Old current cost price before the processing of M_CostDetail
      */
     public BigDecimal getOldCostPrice() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_OldCostPrice);
+        BigDecimal bd = getValue(COLUMNNAME_OldCostPrice);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -193,7 +193,7 @@ public class X_M_CostHistory extends PO implements I_M_CostHistory {
      * @return Old accumulated qty before the processing of M_CostDetail
      */
     public BigDecimal getOldCQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_OldCQty);
+        BigDecimal bd = getValue(COLUMNNAME_OldCQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -213,7 +213,7 @@ public class X_M_CostHistory extends PO implements I_M_CostHistory {
      * @return Old current quantity before the processing of M_CostDetail
      */
     public BigDecimal getOldQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_OldQty);
+        BigDecimal bd = getValue(COLUMNNAME_OldQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }

@@ -5,7 +5,6 @@ import org.compiere.orm.MSysConfig
 import org.compiere.orm.Query
 import org.compiere.process.SvrProcess
 import org.compiere.production.MProduction
-import org.compiere.production.MProductionPlan
 import org.idempiere.common.util.AdempiereUserError
 import org.idempiere.common.util.Env
 import software.hsharp.core.util.getSQLValue

@@ -3,9 +3,9 @@ package org.compiere.invoicing;
 import kotliquery.Row;
 import org.compiere.model.Asset;
 import org.compiere.model.DepreciationWorkfile;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -73,7 +73,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return Accumulated Depreciation
      */
     public BigDecimal getAccumulatedDepreciation() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_A_Accumulated_Depr);
+        BigDecimal bd = getValue(COLUMNNAME_A_Accumulated_Depr);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -93,7 +93,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return Accumulated Depreciation (fiscal)
      */
     public BigDecimal getAccumulatedDepreciationFiscal() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_A_Accumulated_Depr_F);
+        BigDecimal bd = getValue(COLUMNNAME_A_Accumulated_Depr_F);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -113,7 +113,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return Asset Cost
      */
     public BigDecimal getAssetCost() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_A_Asset_Cost);
+        BigDecimal bd = getValue(COLUMNNAME_A_Asset_Cost);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -139,7 +139,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return Asset used internally or by customers
      */
     public int getAssetId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_A_Asset_ID);
+        Integer ii = getValue(COLUMNNAME_A_Asset_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -178,7 +178,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return Remaining Amt
      */
     public BigDecimal getAssetRemaining() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_A_Asset_Remaining);
+        BigDecimal bd = getValue(COLUMNNAME_A_Asset_Remaining);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -198,7 +198,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return Remaining Amt (fiscal)
      */
     public BigDecimal getAssetRemainingFiscal() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_A_Asset_Remaining_F);
+        BigDecimal bd = getValue(COLUMNNAME_A_Asset_Remaining_F);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -218,7 +218,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return Current Period
      */
     public int getCurrentPeriod() {
-        Integer ii = (Integer) getValue(COLUMNNAME_A_Current_Period);
+        Integer ii = getValue(COLUMNNAME_A_Current_Period);
         if (ii == null) return 0;
         return ii;
     }
@@ -238,7 +238,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return Life Periods
      */
     public int getLifePeriod() {
-        Integer ii = (Integer) getValue(COLUMNNAME_A_Life_Period);
+        Integer ii = getValue(COLUMNNAME_A_Life_Period);
         if (ii == null) return 0;
         return ii;
     }
@@ -285,7 +285,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return Asset Salvage Value
      */
     public BigDecimal getSalvageValue() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_A_Salvage_Value);
+        BigDecimal bd = getValue(COLUMNNAME_A_Salvage_Value);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -323,7 +323,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return The type of posted amount for the transaction
      */
     public String getPostingType() {
-        return (String) getValue(COLUMNNAME_PostingType);
+        return getValue(COLUMNNAME_PostingType);
     }
 
     /**
@@ -342,7 +342,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return Months of the usable life of the asset
      */
     public int getUseLifeMonths() {
-        Integer ii = (Integer) getValue(COLUMNNAME_UseLifeMonths);
+        Integer ii = getValue(COLUMNNAME_UseLifeMonths);
         if (ii == null) return 0;
         return ii;
     }
@@ -362,7 +362,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return Use Life - Months (fiscal)
      */
     public int getUseLifeMonthsFiscal() {
-        Integer ii = (Integer) getValue(COLUMNNAME_UseLifeMonths_F);
+        Integer ii = getValue(COLUMNNAME_UseLifeMonths_F);
         if (ii == null) return 0;
         return ii;
     }
@@ -382,7 +382,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return Years of the usable life of the asset
      */
     public int getUseLifeYears() {
-        Integer ii = (Integer) getValue(COLUMNNAME_UseLifeYears);
+        Integer ii = getValue(COLUMNNAME_UseLifeYears);
         if (ii == null) return 0;
         return ii;
     }
@@ -402,7 +402,7 @@ public abstract class X_A_Depreciation_Workfile extends PO
      * @return Use Life - Years (fiscal)
      */
     public int getUseLifeYearsFiscal() {
-        Integer ii = (Integer) getValue(COLUMNNAME_UseLifeYears_F);
+        Integer ii = getValue(COLUMNNAME_UseLifeYears_F);
         if (ii == null) return 0;
         return ii;
     }

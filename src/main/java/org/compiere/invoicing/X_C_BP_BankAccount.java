@@ -63,7 +63,7 @@ public abstract class X_C_BP_BankAccount extends PO implements I_C_BP_BankAccoun
      * @return Account Number
      */
     public String getAccountNo() {
-        return (String) getValue(COLUMNNAME_AccountNo);
+        return getValue(COLUMNNAME_AccountNo);
     }
 
     /**
@@ -99,7 +99,7 @@ public abstract class X_C_BP_BankAccount extends PO implements I_C_BP_BankAccoun
      * @return Name on Credit Card or Account holder
      */
     public String getAccountName() {
-        return (String) getValue(COLUMNNAME_A_Name);
+        return getValue(COLUMNNAME_A_Name);
     }
 
     /**
@@ -144,7 +144,7 @@ public abstract class X_C_BP_BankAccount extends PO implements I_C_BP_BankAccoun
      * @return Business Partner Bank Account usage
      */
     public String getBPBankAcctUse() {
-        return (String) getValue(COLUMNNAME_BPBankAcctUse);
+        return getValue(COLUMNNAME_BPBankAcctUse);
     }
 
     /**
@@ -163,7 +163,7 @@ public abstract class X_C_BP_BankAccount extends PO implements I_C_BP_BankAccoun
      * @return Bank
      */
     public int getBankId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Bank_ID);
+        Integer ii = getValue(COLUMNNAME_C_Bank_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -184,7 +184,7 @@ public abstract class X_C_BP_BankAccount extends PO implements I_C_BP_BankAccoun
      * @return Bank Account of the Business Partner
      */
     public int getBusinessPartnerBankAccountId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BP_BankAccount_ID);
+        Integer ii = getValue(COLUMNNAME_C_BP_BankAccount_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -195,7 +195,7 @@ public abstract class X_C_BP_BankAccount extends PO implements I_C_BP_BankAccoun
      * @return Credit Card Number
      */
     public String getCreditCardNumber() {
-        return (String) getValue(COLUMNNAME_CreditCardNumber);
+        return getValue(COLUMNNAME_CreditCardNumber);
     }
 
     /**
@@ -213,7 +213,7 @@ public abstract class X_C_BP_BankAccount extends PO implements I_C_BP_BankAccoun
      * @return Credit Card Verification code on credit card
      */
     public String getCreditCardVV() {
-        return (String) getValue(COLUMNNAME_CreditCardVV);
+        return getValue(COLUMNNAME_CreditCardVV);
     }
 
     /**
@@ -231,7 +231,7 @@ public abstract class X_C_BP_BankAccount extends PO implements I_C_BP_BankAccoun
      * @return International Bank Account Number
      */
     public String getIBAN() {
-        return (String) getValue(COLUMNNAME_IBAN);
+        return getValue(COLUMNNAME_IBAN);
     }
 
     /**
@@ -272,7 +272,7 @@ public abstract class X_C_BP_BankAccount extends PO implements I_C_BP_BankAccoun
      * @return Bank Routing Number
      */
     public String getRoutingNo() {
-        return (String) getValue(COLUMNNAME_RoutingNo);
+        return getValue(COLUMNNAME_RoutingNo);
     }
 
     /**

@@ -82,7 +82,7 @@ public class X_C_ElementValue extends BasePONameValue implements AccountingEleme
      * @return Indicates the type of account
      */
     public String getAccountType() {
-        return (String) getValue(COLUMNNAME_AccountType);
+        return getValue(COLUMNNAME_AccountType);
     }
 
     /**
@@ -107,7 +107,7 @@ public class X_C_ElementValue extends BasePONameValue implements AccountingEleme
      * @return Accounting Element
      */
     public int getElementId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Element_ID);
+        Integer ii = getValue(COLUMNNAME_C_Element_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -128,7 +128,7 @@ public class X_C_ElementValue extends BasePONameValue implements AccountingEleme
      * @return Account Element
      */
     public int getElementValueId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ElementValue_ID);
+        Integer ii = getValue(COLUMNNAME_C_ElementValue_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -139,7 +139,7 @@ public class X_C_ElementValue extends BasePONameValue implements AccountingEleme
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**

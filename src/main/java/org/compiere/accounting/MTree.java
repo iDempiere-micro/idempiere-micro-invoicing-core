@@ -285,7 +285,7 @@ public class MTree extends MTree_Base {
         String columnNameX = getSourceTableName(true);
         String color = getActionColorName();
         if (getTreeType().equals(TREETYPE_Menu)) {
-            boolean base = Env.isBaseLanguage("AD_Menu");
+            boolean base = Env.isBaseLanguage();
             sourceTable = "m";
             if (base)
                 sqlNode.append(

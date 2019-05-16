@@ -50,7 +50,7 @@ public class X_C_City extends BasePOName implements I_C_City {
      * @return City
      */
     public int getCityId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_City_ID);
+        Integer ii = getValue(COLUMNNAME_C_City_ID);
         if (ii == null) return 0;
         return ii;
     }

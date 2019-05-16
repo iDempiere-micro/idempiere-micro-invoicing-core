@@ -7,8 +7,8 @@ import org.compiere.accounting.MFactAcct;
 import org.compiere.accounting.MJournal;
 import org.compiere.accounting.MJournalLine;
 import org.compiere.invoicing.MInvoice;
-import org.compiere.model.IProcessInfoParameter;
 import org.compiere.model.DefaultAccountsForSchema;
+import org.compiere.model.IProcessInfoParameter;
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.model.I_T_InvoiceGL;
 import org.compiere.orm.MDocType;
@@ -291,7 +291,7 @@ public class InvoiceNGL extends SvrProcess {
         for (int i = 0; i < list.size(); i++) {
             I_T_InvoiceGL gl = list.get(i);
             if (gl.getAmtRevalDrDiff().signum() == 0 && gl.getAmtRevalCrDiff().signum() == 0) continue;
-            MInvoice invoice = new MInvoice(gl.getInvoiceId());
+            MInvoice invoice = new MInvoice(null, gl.getInvoiceId());
             if (invoice.getCurrencyId() == as.getCurrencyId()) continue;
             //
             if (AD_Org_ID == 0) // 	invoice org id

@@ -52,7 +52,7 @@ public class X_I_FixedAsset extends BasePOName implements I_I_FixedAsset {
      * @return Group of Assets
      */
     public int getAssetGroupId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_A_Asset_Group_ID);
+        Integer ii = getValue(COLUMNNAME_A_Asset_Group_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -81,7 +81,7 @@ public class X_I_FixedAsset extends BasePOName implements I_I_FixedAsset {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -90,7 +90,7 @@ public class X_I_FixedAsset extends BasePOName implements I_I_FixedAsset {
      * @return Inventory No
      */
     public String getInventoryNo() {
-        return (String) getValue(COLUMNNAME_InventoryNo);
+        return getValue(COLUMNNAME_InventoryNo);
     }
 
     /**
@@ -99,7 +99,7 @@ public class X_I_FixedAsset extends BasePOName implements I_I_FixedAsset {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }

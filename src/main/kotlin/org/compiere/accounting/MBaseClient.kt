@@ -118,7 +118,7 @@ open class MBaseClient : org.compiere.orm.MClient {
 
         // 	Create Trees
         val sql: StringBuilder? =
-            if (Env.isBaseLanguage(language, "AD_Ref_List"))
+            if (Env.isBaseLanguage(language))
             // 	Get TreeTypes & Name
                 StringBuilder(
                     "SELECT Value, Name FROM AD_Ref_List WHERE AD_Reference_ID=120 AND IsActive='Y'"

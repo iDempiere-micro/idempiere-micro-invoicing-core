@@ -4,7 +4,6 @@ import org.compiere.accounting.MOrder;
 import org.compiere.bo.MCurrency;
 import org.compiere.bo.MCurrencyKt;
 import org.compiere.invoicing.MInOut;
-import org.compiere.invoicing.MInOutLine;
 import org.compiere.invoicing.MInvoice;
 import org.compiere.invoicing.MInvoiceLine;
 import org.compiere.invoicing.MInvoicePaySchedule;

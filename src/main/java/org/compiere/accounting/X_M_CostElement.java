@@ -94,7 +94,7 @@ public abstract class X_M_CostElement extends BasePOName implements I_M_CostElem
      * @return Type of Cost Element
      */
     public String getCostElementType() {
-        return (String) getValue(COLUMNNAME_CostElementType);
+        return getValue(COLUMNNAME_CostElementType);
     }
 
     /**
@@ -113,7 +113,7 @@ public abstract class X_M_CostElement extends BasePOName implements I_M_CostElem
      * @return Indicates how Costs will be calculated
      */
     public String getCostingMethod() {
-        return (String) getValue(COLUMNNAME_CostingMethod);
+        return getValue(COLUMNNAME_CostingMethod);
     }
 
     /**
@@ -155,7 +155,7 @@ public abstract class X_M_CostElement extends BasePOName implements I_M_CostElem
      * @return Product Cost Element
      */
     public int getCostElementId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_CostElement_ID);
+        Integer ii = getValue(COLUMNNAME_M_CostElement_ID);
         if (ii == null) return 0;
         return ii;
     }

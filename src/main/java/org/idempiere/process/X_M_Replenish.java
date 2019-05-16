@@ -47,7 +47,7 @@ public class X_M_Replenish extends PO implements I_M_Replenish {
      * @return Storage Warehouse and Service Point
      */
     public int getWarehouseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Warehouse_ID);
+        Integer ii = getValue(COLUMNNAME_M_Warehouse_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -58,7 +58,7 @@ public class X_M_Replenish extends PO implements I_M_Replenish {
      * @return Qty Batch Size
      */
     public BigDecimal getQtyBatchSize() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyBatchSize);
+        BigDecimal bd = getValue(COLUMNNAME_QtyBatchSize);
         if (bd == null) return Env.ZERO;
         return bd;
     }

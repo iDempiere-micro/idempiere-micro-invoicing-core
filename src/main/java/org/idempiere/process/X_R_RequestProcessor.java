@@ -52,7 +52,7 @@ public class X_R_RequestProcessor extends BasePOName implements I_R_RequestProce
      * @return Schedule
      */
     public int getScheduleId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_Schedule_ID);
+        Integer ii = getValue(COLUMNNAME_AD_Schedule_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -127,7 +127,7 @@ public class X_R_RequestProcessor extends BasePOName implements I_R_RequestProce
      * @return Processor for Requests
      */
     public int getRequestProcessorId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_R_RequestProcessor_ID);
+        Integer ii = getValue(COLUMNNAME_R_RequestProcessor_ID);
         if (ii == null) return 0;
         return ii;
     }

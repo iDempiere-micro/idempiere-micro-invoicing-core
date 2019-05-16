@@ -188,7 +188,7 @@ public class OrderPOCreate extends SvrProcess {
             while (rs.next()) {
                 //	New Order
                 int C_BPartner_ID = rs.getInt(1);
-                if (po == null || po.getBill_BPartnerId() != C_BPartner_ID) {
+                if (po == null || po.getInvoiceBusinessPartnerId() != C_BPartner_ID) {
                     po = createPOForVendor(rs.getInt(1), so);
                     String message = MsgKt.parseTranslation("@OrderCreated@ " + po.getDocumentNo());
                     addBufferLog(0, null, null, message, po.getTableId(), po.getOrderId());

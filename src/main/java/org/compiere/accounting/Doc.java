@@ -3,10 +3,10 @@ package org.compiere.accounting;
 import kotliquery.Row;
 import org.compiere.conversionrate.MConversionRate;
 import org.compiere.docengine.DocumentEngine;
+import org.compiere.model.AccountingSchema;
 import org.compiere.model.IDoc;
 import org.compiere.model.IFact;
 import org.compiere.model.IPODoc;
-import org.compiere.model.AccountingSchema;
 import org.compiere.model.I_C_AllocationHdr;
 import org.compiere.model.I_C_BankStatement;
 import org.compiere.model.I_C_Cash;
@@ -23,7 +23,6 @@ import org.idempiere.common.util.AdempiereUserError;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
 
-import java.lang.reflect.Constructor;
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -415,7 +414,7 @@ public abstract class Doc implements IDoc {
      */
     private Timestamp m_DateAcct = null;
 
-    /** ********************************************************************** */
+    /* *********************************************************************** */
     /**
      * Document Date
      */
@@ -463,6 +462,8 @@ public abstract class Doc implements IDoc {
      */
     private BigDecimal m_qty = null;
 
+    protected abstract IPODoc createNewInstance(Row rs);
+
     /**
      * ************************************************************************ Constructor
      *
@@ -479,13 +480,11 @@ public abstract class Doc implements IDoc {
         String className = clazz.getName();
         className = className.substring(className.lastIndexOf('.') + 1);
         try {
-            Constructor<?> constructor =
-                    clazz.getConstructor(Row.class);
-            p_po = (IPODoc) constructor.newInstance(new Object[]{rs});
+            p_po = createNewInstance(rs);
         } catch (Exception e) {
             String msg = className + ": " + e.getLocalizedMessage();
             log.severe(msg);
-            throw new IllegalArgumentException(msg);
+            throw new IllegalArgumentException(msg, e);
         }
         p_po.load(); // reload the PO to get any virtual column that was not obtained using
         // the rs (IDEMPIERE-775)

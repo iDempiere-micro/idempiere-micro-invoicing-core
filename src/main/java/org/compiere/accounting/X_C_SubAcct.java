@@ -50,7 +50,7 @@ public class X_C_SubAcct extends BasePONameValue implements I_C_SubAcct {
      * @return Account Element
      */
     public int getElementValueId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ElementValue_ID);
+        Integer ii = getValue(COLUMNNAME_C_ElementValue_ID);
         if (ii == null) return 0;
         return ii;
     }

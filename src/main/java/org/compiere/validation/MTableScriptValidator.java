@@ -36,7 +36,7 @@ public class MTableScriptValidator extends X_AD_Table_ScriptValidator {
      */
     private static CCache<MultiKey, List<TableScriptValidator>> s_cacheTableEvent =
             new CCache<>(
-                    null, Table_Name + "_TableEvent", 20, false);
+                    null, Table_Name + "_TableEvent", 20);
 
     /**
      * ************************************************************************ Standard Constructor

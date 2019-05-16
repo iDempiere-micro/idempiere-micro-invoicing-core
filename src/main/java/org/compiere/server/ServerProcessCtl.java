@@ -1,10 +1,9 @@
 package org.compiere.server;
 
-import org.compiere.model.IProcessInfo;
 import org.compiere.model.Column;
+import org.compiere.model.IProcessInfo;
 import org.compiere.model.Server;
 import org.compiere.orm.MTable;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.compiere.process.DocAction;
 import org.compiere.process.MPInstance;
@@ -15,6 +14,7 @@ import org.compiere.util.MsgKt;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.io.InvalidClassException;
 import java.lang.reflect.UndeclaredThrowableException;
@@ -114,7 +114,7 @@ public class ServerProcessCtl implements Runnable {
         Column column = table.getColumn("DocAction");
         if (column == null) return null;
         if (!docAction.equals(po.getValue(column.getColumnName()))) {
-            po.set_ValueOfColumn(column.getColumnName(), docAction);
+            po.setValueOfColumn(column.getColumnName(), docAction);
             po.saveEx();
         }
         ProcessInfo processInfo =
@@ -161,7 +161,7 @@ public class ServerProcessCtl implements Runnable {
                         + " INNER JOIN AD_PInstance i ON (p.AD_Process_ID=i.AD_Process_ID) "
                         + "WHERE p.IsActive='Y'"
                         + " AND i.AD_PInstance_ID=?";
-        if (!Env.isBaseLanguage("AD_Process"))
+        if (!Env.isBaseLanguage())
             sql =
                     "SELECT t.Name, p.ProcedureName,p.ClassName, p.AD_Process_ID," //	1..4
                             + " p.isReport, p.IsDirectPrint,p.AD_ReportView_ID,p.AD_Workflow_ID," //	5..8

@@ -1,8 +1,8 @@
 package org.compiere.production;
 
 import kotliquery.Row;
+import org.compiere.accounting.AccountingPO;
 import org.compiere.model.I_R_Request;
-import org.compiere.orm.PO;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -13,7 +13,7 @@ import java.sql.Timestamp;
  * @author iDempiere (generated)
  * @version Release 5.1 - $Id$
  */
-public class X_R_Request extends PO implements I_R_Request {
+public class X_R_Request extends AccountingPO implements I_R_Request {
 
     /**
      * ConfidentialType AD_Reference_ID=340
@@ -128,20 +128,14 @@ public class X_R_Request extends PO implements I_R_Request {
      * Standard Constructor
      */
     public X_R_Request(int R_Request_ID) {
-        super(R_Request_ID);
-        /**
-         * if (R_Request_ID == 0) { setConfidentialType (null); // C setConfidentialTypeEntry (null); //
-         * C setDocumentNo (null); setDueType (null); // 5 setIsEscalated (false); setIsInvoiced
-         * (false); setIsSelfService (false); // N setPriority (null); // 5 setProcessed (false);
-         * setRequestAmt (Env.ZERO); setRequestId (0); setRequestTypeId (0); setSummary (null); }
-         */
+        super(null, R_Request_ID);
     }
 
     /**
      * Load Constructor
      */
     public X_R_Request(Row row) {
-        super(row);
+        super(row, -1);
     }
 
     /**
@@ -154,8 +148,7 @@ public class X_R_Request extends PO implements I_R_Request {
     }
 
     public String toString() {
-        StringBuffer sb = new StringBuffer("X_R_Request[").append(getId()).append("]");
-        return sb.toString();
+        return "X_R_Request[" + getId() + "]";
     }
 
     /**
@@ -164,7 +157,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -193,7 +186,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return Type of Confidentiality
      */
     public String getConfidentialType() {
-        return (String) getValue(COLUMNNAME_ConfidentialType);
+        return getValue(COLUMNNAME_ConfidentialType);
     }
 
     /**
@@ -212,7 +205,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return Confidentiality of the individual entry
      */
     public String getConfidentialTypeEntry() {
-        return (String) getValue(COLUMNNAME_ConfidentialTypeEntry);
+        return getValue(COLUMNNAME_ConfidentialTypeEntry);
     }
 
     /**
@@ -249,7 +242,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**
@@ -268,7 +261,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @param IsEscalated This request has been escalated
      */
     public void setIsEscalated(boolean IsEscalated) {
-        setValue(COLUMNNAME_IsEscalated, Boolean.valueOf(IsEscalated));
+        setValue(COLUMNNAME_IsEscalated, IsEscalated);
     }
 
     /**
@@ -277,7 +270,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @param IsInvoiced Is this invoiced?
      */
     public void setIsInvoiced(boolean IsInvoiced) {
-        setValue(COLUMNNAME_IsInvoiced, Boolean.valueOf(IsInvoiced));
+        setValue(COLUMNNAME_IsInvoiced, IsInvoiced);
     }
 
     /**
@@ -288,7 +281,7 @@ public class X_R_Request extends PO implements I_R_Request {
     public boolean isInvoiced() {
         Object oo = getValue(COLUMNNAME_IsInvoiced);
         if (oo != null) {
-            if (oo instanceof Boolean) return ((Boolean) oo).booleanValue();
+            if (oo instanceof Boolean) return (Boolean) oo;
             return "Y".equals(oo);
         }
         return false;
@@ -300,7 +293,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @param IsSelfService This is a Self-Service entry or this entry can be changed via Self-Service
      */
     public void setIsSelfService(boolean IsSelfService) {
-        setValueNoCheck(COLUMNNAME_IsSelfService, Boolean.valueOf(IsSelfService));
+        setValueNoCheck(COLUMNNAME_IsSelfService, IsSelfService);
     }
 
     /**
@@ -309,7 +302,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return BOM (Engineering) Change Request
      */
     public int getChangeRequestId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_ChangeRequest_ID);
+        Integer ii = getValue(COLUMNNAME_M_ChangeRequest_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -321,7 +314,7 @@ public class X_R_Request extends PO implements I_R_Request {
      */
     public void setChangeRequestId(int M_ChangeRequest_ID) {
         if (M_ChangeRequest_ID < 1) setValue(COLUMNNAME_M_ChangeRequest_ID, null);
-        else setValue(COLUMNNAME_M_ChangeRequest_ID, Integer.valueOf(M_ChangeRequest_ID));
+        else setValue(COLUMNNAME_M_ChangeRequest_ID, M_ChangeRequest_ID);
     }
 
     /**
@@ -330,7 +323,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return Indicates if this request is of a high, medium or low priority.
      */
     public String getPriority() {
-        return (String) getValue(COLUMNNAME_Priority);
+        return getValue(COLUMNNAME_Priority);
     }
 
     /**
@@ -349,7 +342,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return Priority of the issue for the User
      */
     public String getPriorityUser() {
-        return (String) getValue(COLUMNNAME_PriorityUser);
+        return getValue(COLUMNNAME_PriorityUser);
     }
 
     /**
@@ -370,7 +363,7 @@ public class X_R_Request extends PO implements I_R_Request {
     public boolean isProcessed() {
         Object oo = getValue(COLUMNNAME_Processed);
         if (oo != null) {
-            if (oo instanceof Boolean) return ((Boolean) oo).booleanValue();
+            if (oo instanceof Boolean) return (Boolean) oo;
             return "Y".equals(oo);
         }
         return false;
@@ -382,7 +375,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @param Processed The document has been processed
      */
     public void setProcessed(boolean Processed) {
-        setValue(COLUMNNAME_Processed, Boolean.valueOf(Processed));
+        setValue(COLUMNNAME_Processed, Processed);
     }
 
     /**
@@ -400,7 +393,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return Result of the action taken
      */
     public String getResult() {
-        return (String) getValue(COLUMNNAME_Result);
+        return getValue(COLUMNNAME_Result);
     }
 
     /**
@@ -409,7 +402,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return Request Group
      */
     public int getGroupId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_R_Group_ID);
+        Integer ii = getValue(COLUMNNAME_R_Group_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -420,7 +413,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return Request from a Business Partner or Prospect
      */
     public int getRequestId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_R_Request_ID);
+        Integer ii = getValue(COLUMNNAME_R_Request_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -431,7 +424,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return Type of request (e.g. Inquiry, Complaint, ..)
      */
     public int getRequestTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_R_RequestType_ID);
+        Integer ii = getValue(COLUMNNAME_R_RequestType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -443,7 +436,7 @@ public class X_R_Request extends PO implements I_R_Request {
      */
     public void setRequestTypeId(int R_RequestType_ID) {
         if (R_RequestType_ID < 1) setValue(COLUMNNAME_R_RequestType_ID, null);
-        else setValue(COLUMNNAME_R_RequestType_ID, Integer.valueOf(R_RequestType_ID));
+        else setValue(COLUMNNAME_R_RequestType_ID, R_RequestType_ID);
     }
 
     /**
@@ -452,7 +445,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return Request Status
      */
     public int getStatusId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_R_Status_ID);
+        Integer ii = getValue(COLUMNNAME_R_Status_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -464,7 +457,7 @@ public class X_R_Request extends PO implements I_R_Request {
      */
     public void setStatusId(int R_Status_ID) {
         if (R_Status_ID < 1) setValue(COLUMNNAME_R_Status_ID, null);
-        else setValue(COLUMNNAME_R_Status_ID, Integer.valueOf(R_Status_ID));
+        else setValue(COLUMNNAME_R_Status_ID, R_Status_ID);
     }
 
     /**
@@ -473,7 +466,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return Sales Representative or Company Agent
      */
     public int getSalesRepresentativeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_SalesRep_ID);
+        Integer ii = getValue(COLUMNNAME_SalesRep_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -512,7 +505,7 @@ public class X_R_Request extends PO implements I_R_Request {
      * @return Textual summary of this request
      */
     public String getSummary() {
-        return (String) getValue(COLUMNNAME_Summary);
+        return getValue(COLUMNNAME_Summary);
     }
 
     /**

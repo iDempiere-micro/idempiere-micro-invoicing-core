@@ -6,8 +6,9 @@ import org.compiere.conversionrate.MConversionRate;
 import org.compiere.invoicing.MInvoice;
 import org.compiere.invoicing.MInvoiceLine;
 import org.compiere.invoicing.MLandedCostAllocation;
-import org.compiere.model.IFact;
 import org.compiere.model.AccountingSchema;
+import org.compiere.model.IFact;
+import org.compiere.model.IPODoc;
 import org.compiere.model.I_C_InvoiceLine;
 import org.compiere.model.I_C_OrderLandedCostAllocation;
 import org.compiere.model.I_C_ValidCombination;
@@ -70,6 +71,11 @@ public class Doc_Invoice extends Doc {
     public Doc_Invoice(MAcctSchema as, Row rs) {
         super(as, MInvoice.class, rs, null);
     } //	Doc_Invoice
+
+    @Override
+    protected IPODoc createNewInstance(Row rs) {
+        return new MInvoice(rs, -1);
+    }
 
     /**
      * Load Specific Document Details

@@ -57,7 +57,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Group of Assets
      */
     public int getAssetGroupId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_A_Asset_Group_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_A_Asset_Group_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -78,7 +78,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Performing or initiating organization
      */
     public int getTransactionOrganizationId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_AD_OrgTrx_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_AD_OrgTrx_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -109,7 +109,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Business Activity
      */
     public int getBusinessActivityId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_C_Activity_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_C_Activity_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -130,7 +130,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Marketing Campaign
      */
     public int getCampaignId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_C_Campaign_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_C_Campaign_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -151,7 +151,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Additional document charges
      */
     public int getChargeId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_C_Charge_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_C_Charge_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -178,7 +178,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Invoice Identifier
      */
     public int getInvoiceId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_C_Invoice_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_C_Invoice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -199,7 +199,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Invoice Detail Line
      */
     public int getInvoiceLineId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_C_InvoiceLine_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_C_InvoiceLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -210,7 +210,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Sales Order Line
      */
     public int getOrderLineId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_C_OrderLine_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_C_OrderLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -232,7 +232,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Financial Project
      */
     public int getProjectId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_C_Project_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_C_Project_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -253,7 +253,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Phase of a Project
      */
     public int getProjectPhaseId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_C_ProjectPhase_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_C_ProjectPhase_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -276,7 +276,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Actual Project Task in a Phase
      */
     public int getProjectTaskId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_C_ProjectTask_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_C_ProjectTask_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -299,7 +299,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Tax identifier
      */
     public int getTaxId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_C_Tax_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_C_Tax_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -320,7 +320,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Unit of Measure
      */
     public int getUOMId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_C_UOM_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_C_UOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -341,7 +341,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(I_C_InvoiceLine.COLUMNNAME_Description);
+        return getValue(I_C_InvoiceLine.COLUMNNAME_Description);
     }
 
     /**
@@ -391,7 +391,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_Line);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -411,7 +411,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Line Extended Amount (Quantity * Actual Price) without Freight and Charges
      */
     public BigDecimal getLineNetAmt() {
-        BigDecimal bd = (BigDecimal) getValue(I_C_InvoiceLine.COLUMNNAME_LineNetAmt);
+        BigDecimal bd = getValue(I_C_InvoiceLine.COLUMNNAME_LineNetAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -431,7 +431,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Total line amount incl. Tax
      */
     public BigDecimal getLineTotalAmt() {
-        BigDecimal bd = (BigDecimal) getValue(I_C_InvoiceLine.COLUMNNAME_LineTotalAmt);
+        BigDecimal bd = getValue(I_C_InvoiceLine.COLUMNNAME_LineTotalAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -451,7 +451,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -476,7 +476,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Line on Shipment or Receipt document
      */
     public int getInOutLineId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_M_InOutLine_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_M_InOutLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -498,7 +498,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -519,7 +519,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Return Material Authorization Line
      */
     public int getRMALineId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_M_RMALine_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_M_RMALine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -540,7 +540,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Actual Price
      */
     public BigDecimal getPriceActual() {
-        BigDecimal bd = (BigDecimal) getValue(I_C_InvoiceLine.COLUMNNAME_PriceActual);
+        BigDecimal bd = getValue(I_C_InvoiceLine.COLUMNNAME_PriceActual);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -551,7 +551,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Price Entered - the price based on the selected/base UoM
      */
     public BigDecimal getPriceEntered() {
-        BigDecimal bd = (BigDecimal) getValue(I_C_InvoiceLine.COLUMNNAME_PriceEntered);
+        BigDecimal bd = getValue(I_C_InvoiceLine.COLUMNNAME_PriceEntered);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -571,7 +571,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Lowest price for a product
      */
     public BigDecimal getPriceLimit() {
-        BigDecimal bd = (BigDecimal) getValue(I_C_InvoiceLine.COLUMNNAME_PriceLimit);
+        BigDecimal bd = getValue(I_C_InvoiceLine.COLUMNNAME_PriceLimit);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -591,7 +591,7 @@ public class X_C_InvoiceLine extends PO {
      * @return List Price
      */
     public BigDecimal getPriceList() {
-        BigDecimal bd = (BigDecimal) getValue(I_C_InvoiceLine.COLUMNNAME_PriceList);
+        BigDecimal bd = getValue(I_C_InvoiceLine.COLUMNNAME_PriceList);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -634,7 +634,7 @@ public class X_C_InvoiceLine extends PO {
      * @return The Quantity Entered is based on the selected UoM
      */
     public BigDecimal getQtyEntered() {
-        BigDecimal bd = (BigDecimal) getValue(I_C_InvoiceLine.COLUMNNAME_QtyEntered);
+        BigDecimal bd = getValue(I_C_InvoiceLine.COLUMNNAME_QtyEntered);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -654,7 +654,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Invoiced Quantity
      */
     public BigDecimal getQtyInvoiced() {
-        BigDecimal bd = (BigDecimal) getValue(I_C_InvoiceLine.COLUMNNAME_QtyInvoiced);
+        BigDecimal bd = getValue(I_C_InvoiceLine.COLUMNNAME_QtyInvoiced);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -717,7 +717,7 @@ public class X_C_InvoiceLine extends PO {
      * @return Tax Amount for a document
      */
     public BigDecimal getTaxAmt() {
-        BigDecimal bd = (BigDecimal) getValue(I_C_InvoiceLine.COLUMNNAME_TaxAmt);
+        BigDecimal bd = getValue(I_C_InvoiceLine.COLUMNNAME_TaxAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -737,7 +737,7 @@ public class X_C_InvoiceLine extends PO {
      * @return User defined list element #1
      */
     public int getUser1Id() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_User1_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_User1_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -758,7 +758,7 @@ public class X_C_InvoiceLine extends PO {
      * @return User defined list element #2
      */
     public int getUser2Id() {
-        Integer ii = (Integer) getValue(I_C_InvoiceLine.COLUMNNAME_User2_ID);
+        Integer ii = getValue(I_C_InvoiceLine.COLUMNNAME_User2_ID);
         if (ii == null) return 0;
         return ii;
     }

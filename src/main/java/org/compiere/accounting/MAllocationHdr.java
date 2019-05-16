@@ -2,7 +2,6 @@ package org.compiere.accounting;
 
 import kotliquery.Row;
 import org.compiere.bo.MCurrencyKt;
-import org.compiere.crm.MBPartner;
 import org.compiere.docengine.DocumentEngine;
 import org.compiere.invoicing.MConversionRate;
 import org.compiere.invoicing.MInvoice;
@@ -10,11 +9,11 @@ import org.compiere.model.ClientWithAccounting;
 import org.compiere.model.IDoc;
 import org.compiere.model.IPODoc;
 import org.compiere.model.I_C_AllocationHdr;
+import org.compiere.model.I_C_BPartner;
 import org.compiere.model.I_C_Invoice;
 import org.compiere.model.TypedQuery;
 import org.compiere.orm.MDocType;
 import org.compiere.orm.MDocTypeKt;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.compiere.orm.PeriodClosedException;
 import org.compiere.orm.Query;
@@ -26,6 +25,7 @@ import org.compiere.validation.ModelValidator;
 import org.idempiere.common.exceptions.AdempiereException;
 import org.idempiere.common.util.Env;
 import org.jetbrains.annotations.NotNull;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -82,8 +82,8 @@ public class MAllocationHdr extends X_C_AllocationHdr implements DocAction, IPOD
      *
      * @param C_AllocationHdr_ID id
      */
-    public MAllocationHdr(int C_AllocationHdr_ID) {
-        super(C_AllocationHdr_ID);
+    public MAllocationHdr(Row row, int C_AllocationHdr_ID) {
+        super(row, C_AllocationHdr_ID);
         if (C_AllocationHdr_ID == 0) {
             //	setDocumentNo (null);
             setDateTrx(new Timestamp(System.currentTimeMillis()));
@@ -116,7 +116,7 @@ public class MAllocationHdr extends X_C_AllocationHdr implements DocAction, IPOD
             Timestamp DateTrx,
             int C_Currency_ID,
             String description) {
-        this(0);
+        this(null, 0);
         setIsManual(IsManual);
         if (DateTrx != null) {
             setDateTrx(DateTrx);
@@ -125,13 +125,6 @@ public class MAllocationHdr extends X_C_AllocationHdr implements DocAction, IPOD
         setCurrencyId(C_Currency_ID);
         if (description != null) setDescription(description);
     } //  create Allocation
-
-    /**
-     * Load Constructor
-     */
-    public MAllocationHdr(Row row) {
-        super(row);
-    } //	MAllocation
 
     /**
      * Get Allocations of Payment
@@ -183,7 +176,7 @@ public class MAllocationHdr extends X_C_AllocationHdr implements DocAction, IPOD
      */
     public static MAllocationHdr copyFrom(
             MAllocationHdr from, Timestamp dateAcct, Timestamp dateTrx) {
-        MAllocationHdr to = new MAllocationHdr(0);
+        MAllocationHdr to = new MAllocationHdr(null, 0);
         PO.copyValues(from, to, from.getClientId(), from.getOrgId());
         to.setValueNoCheck("DocumentNo", null);
         //
@@ -820,10 +813,10 @@ public class MAllocationHdr extends X_C_AllocationHdr implements DocAction, IPOD
 
             boolean isSOTrxInvoice = false;
             MInvoice invoice =
-                    M_Invoice_ID > 0 ? new MInvoice(M_Invoice_ID) : null;
+                    M_Invoice_ID > 0 ? new MInvoice(null, M_Invoice_ID) : null;
             if (M_Invoice_ID > 0) isSOTrxInvoice = invoice.isSOTrx();
 
-            MBPartner bpartner = new MBPartner(line.getBusinessPartnerId());
+            I_C_BPartner bpartner = this.getBusinessPartnerService().getById(line.getBusinessPartnerId());
             forUpdate(bpartner);
 
             BigDecimal allocAmt = line.getAmount().add(line.getDiscountAmt()).add(line.getWriteOffAmt());

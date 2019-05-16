@@ -2,10 +2,10 @@ package org.compiere.invoicing;
 
 import kotliquery.Row;
 import org.compiere.accounting.MPeriod;
-import org.compiere.model.IDocLine;
 import org.compiere.model.AssetAccounting;
 import org.compiere.model.DepreciationExpense;
 import org.compiere.model.DepreciationWorkfile;
+import org.compiere.model.IDocLine;
 import org.compiere.orm.MDocType;
 import org.compiere.orm.Query;
 import org.compiere.orm.TimeUtil;

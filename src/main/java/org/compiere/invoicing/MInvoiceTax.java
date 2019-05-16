@@ -195,7 +195,7 @@ public class MInvoiceTax extends X_C_InvoiceTax implements I_C_InvoiceTax {
                 taxAmt = taxAmt.add(amt);
             }
         } catch (SQLException e) {
-            throw new DBException(e, sql);
+            throw new DBException(e);
         }
 
         //	Calculate Tax
@@ -241,7 +241,7 @@ public class MInvoiceTax extends X_C_InvoiceTax implements I_C_InvoiceTax {
      * @return Tax Provider
      */
     public int getTaxProviderId() {
-        Integer ii = (Integer) getValue(I_C_InvoiceTax.COLUMNNAME_C_TaxProvider_ID);
+        Integer ii = getValue(I_C_InvoiceTax.COLUMNNAME_C_TaxProvider_ID);
         if (ii == null) return 0;
         return ii;
     }

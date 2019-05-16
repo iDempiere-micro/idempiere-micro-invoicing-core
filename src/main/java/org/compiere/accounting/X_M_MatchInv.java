@@ -111,7 +111,7 @@ public abstract class X_M_MatchInv extends PO implements I_M_MatchInv {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -129,7 +129,7 @@ public abstract class X_M_MatchInv extends PO implements I_M_MatchInv {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**

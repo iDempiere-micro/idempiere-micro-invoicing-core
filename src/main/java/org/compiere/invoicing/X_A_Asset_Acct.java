@@ -55,7 +55,7 @@ public class X_A_Asset_Acct extends PO implements AssetAccounting {
      * @return Accumulated Depreciation Account
      */
     public int getAccumdepreciationAcct() {
-        Integer ii = (Integer) getValue(COLUMNNAME_A_Accumdepreciation_Acct);
+        Integer ii = getValue(COLUMNNAME_A_Accumdepreciation_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -76,7 +76,7 @@ public class X_A_Asset_Acct extends PO implements AssetAccounting {
      * @return Depreciation Account
      */
     public int getDepreciationAcct() {
-        Integer ii = (Integer) getValue(COLUMNNAME_A_Depreciation_Acct);
+        Integer ii = getValue(COLUMNNAME_A_Depreciation_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -107,7 +107,7 @@ public class X_A_Asset_Acct extends PO implements AssetAccounting {
      * @return Variable Percent
      */
     public BigDecimal getDepreciationVariablePercent() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_A_Depreciation_Variable_Perc);
+        BigDecimal bd = getValue(COLUMNNAME_A_Depreciation_Variable_Perc);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -118,7 +118,7 @@ public class X_A_Asset_Acct extends PO implements AssetAccounting {
      * @return Variable Percent (fiscal)
      */
     public BigDecimal getDepreciationVariablePercentFiscal() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_A_Depreciation_Variable_Perc_F);
+        BigDecimal bd = getValue(COLUMNNAME_A_Depreciation_Variable_Perc_F);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -156,7 +156,7 @@ public class X_A_Asset_Acct extends PO implements AssetAccounting {
      * @return Rules for accounting
      */
     public int getAcctSchemaId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_AcctSchema_ID);
+        Integer ii = getValue(COLUMNNAME_C_AcctSchema_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -167,7 +167,7 @@ public class X_A_Asset_Acct extends PO implements AssetAccounting {
      * @return The type of posted amount for the transaction
      */
     public String getPostingType() {
-        return (String) getValue(COLUMNNAME_PostingType);
+        return getValue(COLUMNNAME_PostingType);
     }
 
     /**

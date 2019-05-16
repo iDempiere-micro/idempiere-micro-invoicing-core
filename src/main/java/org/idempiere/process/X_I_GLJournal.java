@@ -55,7 +55,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Account used
      */
     public int getAccountId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Account_ID);
+        Integer ii = getValue(COLUMNNAME_Account_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -66,7 +66,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Document Organization (independent from account organization)
      */
     public int getOrgDocId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_OrgDoc_ID);
+        Integer ii = getValue(COLUMNNAME_AD_OrgDoc_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -77,7 +77,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Performing or initiating organization
      */
     public int getTransactionOrganizationId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_OrgTrx_ID);
+        Integer ii = getValue(COLUMNNAME_AD_OrgTrx_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -88,7 +88,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Accounted Credit Amount
      */
     public BigDecimal getAmtAcctCr() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_AmtAcctCr);
+        BigDecimal bd = getValue(COLUMNNAME_AmtAcctCr);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -99,7 +99,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Accounted Debit Amount
      */
     public BigDecimal getAmtAcctDr() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_AmtAcctDr);
+        BigDecimal bd = getValue(COLUMNNAME_AmtAcctDr);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -110,7 +110,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Source Credit Amount
      */
     public BigDecimal getAmtSourceCr() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_AmtSourceCr);
+        BigDecimal bd = getValue(COLUMNNAME_AmtSourceCr);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -121,7 +121,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Source Debit Amount
      */
     public BigDecimal getAmtSourceDr() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_AmtSourceDr);
+        BigDecimal bd = getValue(COLUMNNAME_AmtSourceDr);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -132,7 +132,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Description of the Batch
      */
     public String getBatchDescription() {
-        return (String) getValue(COLUMNNAME_BatchDescription);
+        return getValue(COLUMNNAME_BatchDescription);
     }
 
     /**
@@ -141,7 +141,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Document Number of the Batch
      */
     public String getBatchDocumentNo() {
-        return (String) getValue(COLUMNNAME_BatchDocumentNo);
+        return getValue(COLUMNNAME_BatchDocumentNo);
     }
 
     /**
@@ -150,7 +150,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Rules for accounting
      */
     public int getAccountingSchemaId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_AcctSchema_ID);
+        Integer ii = getValue(COLUMNNAME_C_AcctSchema_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -161,7 +161,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Business Activity
      */
     public int getBusinessActivityId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Activity_ID);
+        Integer ii = getValue(COLUMNNAME_C_Activity_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -172,7 +172,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -183,7 +183,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Marketing Campaign
      */
     public int getCampaignId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Campaign_ID);
+        Integer ii = getValue(COLUMNNAME_C_Campaign_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -194,7 +194,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Currency Conversion Rate Type
      */
     public int getConversionTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ConversionType_ID);
+        Integer ii = getValue(COLUMNNAME_C_ConversionType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -205,7 +205,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -216,7 +216,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Document type or rules
      */
     public int getDocumentTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -227,7 +227,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Location that inventory was moved from
      */
     public int getLocationFromId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_LocFrom_ID);
+        Integer ii = getValue(COLUMNNAME_C_LocFrom_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -238,7 +238,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Location that inventory was moved to
      */
     public int getLocationToId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_LocTo_ID);
+        Integer ii = getValue(COLUMNNAME_C_LocTo_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -249,7 +249,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Period of the Calendar
      */
     public int getPeriodId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Period_ID);
+        Integer ii = getValue(COLUMNNAME_C_Period_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -260,7 +260,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Financial Project
      */
     public int getProjectId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Project_ID);
+        Integer ii = getValue(COLUMNNAME_C_Project_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -271,7 +271,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Sales coverage region
      */
     public int getSalesRegionId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_SalesRegion_ID);
+        Integer ii = getValue(COLUMNNAME_C_SalesRegion_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -282,7 +282,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Unit of Measure
      */
     public int getUOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_UOM_ID);
+        Integer ii = getValue(COLUMNNAME_C_UOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -293,7 +293,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Currency Conversion Rate
      */
     public BigDecimal getCurrencyRate() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_CurrencyRate);
+        BigDecimal bd = getValue(COLUMNNAME_CurrencyRate);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -304,7 +304,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Valid Account Combination
      */
     public int getValidAccountCombinationId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ValidCombination_ID);
+        Integer ii = getValue(COLUMNNAME_C_ValidCombination_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -334,7 +334,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -343,7 +343,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return General Ledger Budget
      */
     public int getGLBudgetId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_GL_Budget_ID);
+        Integer ii = getValue(COLUMNNAME_GL_Budget_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -354,7 +354,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return General Ledger Category
      */
     public int getGLCategoryId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_GL_Category_ID);
+        Integer ii = getValue(COLUMNNAME_GL_Category_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -441,7 +441,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Document number of the Journal
      */
     public String getJournalDocumentNo() {
-        return (String) getValue(COLUMNNAME_JournalDocumentNo);
+        return getValue(COLUMNNAME_JournalDocumentNo);
     }
 
     /**
@@ -450,7 +450,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Line);
+        Integer ii = getValue(COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -461,7 +461,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -472,7 +472,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return The type of posted amount for the transaction
      */
     public String getPostingType() {
-        return (String) getValue(COLUMNNAME_PostingType);
+        return getValue(COLUMNNAME_PostingType);
     }
 
     /**
@@ -490,7 +490,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return Quantity
      */
     public BigDecimal getQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Qty);
+        BigDecimal bd = getValue(COLUMNNAME_Qty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -501,7 +501,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return User defined list element #1
      */
     public int getUser1Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_User1_ID);
+        Integer ii = getValue(COLUMNNAME_User1_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -512,7 +512,7 @@ public class X_I_GLJournal extends PO implements I_I_GLJournal {
      * @return User defined list element #2
      */
     public int getUser2Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_User2_ID);
+        Integer ii = getValue(COLUMNNAME_User2_ID);
         if (ii == null) return 0;
         return ii;
     }

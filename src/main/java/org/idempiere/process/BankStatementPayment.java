@@ -173,7 +173,7 @@ public class BankStatementPayment extends SvrProcess {
         payment.setDescription(Description);
         //
         if (C_Invoice_ID != 0) {
-            MInvoice invoice = new MInvoice(C_Invoice_ID);
+            MInvoice invoice = new MInvoice(null, C_Invoice_ID);
             payment.setDocumentTypeId(invoice.isSOTrx()); // 	Receipt
             payment.setInvoiceId(invoice.getInvoiceId());
             payment.setBusinessPartnerId(invoice.getBusinessPartnerId());

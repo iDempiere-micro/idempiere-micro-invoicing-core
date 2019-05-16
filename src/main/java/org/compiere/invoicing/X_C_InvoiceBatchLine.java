@@ -54,7 +54,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Performing or initiating organization
      */
     public int getTransactionOrganizationId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_OrgTrx_ID);
+        Integer ii = getValue(COLUMNNAME_AD_OrgTrx_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -65,7 +65,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return User within the system - Internal or Business Partner Contact
      */
     public int getUserId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_User_ID);
+        Integer ii = getValue(COLUMNNAME_AD_User_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -76,7 +76,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Business Activity
      */
     public int getBusinessActivityId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Activity_ID);
+        Integer ii = getValue(COLUMNNAME_C_Activity_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -87,7 +87,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -98,7 +98,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Identifies the (ship to) address for this Business Partner
      */
     public int getBusinessPartnerLocationId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_Location_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_Location_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -109,7 +109,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Additional document charges
      */
     public int getChargeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Charge_ID);
+        Integer ii = getValue(COLUMNNAME_C_Charge_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -120,7 +120,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Document type or rules
      */
     public int getDocumentTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -131,7 +131,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Expense Invoice Batch Header
      */
     public int getInvoiceBatchId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_InvoiceBatch_ID);
+        Integer ii = getValue(COLUMNNAME_C_InvoiceBatch_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -142,7 +142,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Invoice Identifier
      */
     public int getInvoiceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Invoice_ID);
+        Integer ii = getValue(COLUMNNAME_C_Invoice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -163,7 +163,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Invoice Detail Line
      */
     public int getInvoiceLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_InvoiceLine_ID);
+        Integer ii = getValue(COLUMNNAME_C_InvoiceLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -184,7 +184,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Financial Project
      */
     public int getProjectId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Project_ID);
+        Integer ii = getValue(COLUMNNAME_C_Project_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -195,7 +195,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Tax identifier
      */
     public int getTaxId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Tax_ID);
+        Integer ii = getValue(COLUMNNAME_C_Tax_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -242,7 +242,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -251,7 +251,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**
@@ -283,7 +283,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Line);
+        Integer ii = getValue(COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -294,7 +294,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Line Extended Amount (Quantity * Actual Price) without Freight and Charges
      */
     public BigDecimal getLineNetAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_LineNetAmt);
+        BigDecimal bd = getValue(COLUMNNAME_LineNetAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -314,7 +314,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Total line amount incl. Tax
      */
     public BigDecimal getLineTotalAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_LineTotalAmt);
+        BigDecimal bd = getValue(COLUMNNAME_LineTotalAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -334,7 +334,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Price Entered - the price based on the selected/base UoM
      */
     public BigDecimal getPriceEntered() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_PriceEntered);
+        BigDecimal bd = getValue(COLUMNNAME_PriceEntered);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -363,7 +363,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return The Quantity Entered is based on the selected UoM
      */
     public BigDecimal getQtyEntered() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyEntered);
+        BigDecimal bd = getValue(COLUMNNAME_QtyEntered);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -383,7 +383,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return Tax Amount for a document
      */
     public BigDecimal getTaxAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_TaxAmt);
+        BigDecimal bd = getValue(COLUMNNAME_TaxAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -403,7 +403,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return User defined list element #1
      */
     public int getUser1Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_User1_ID);
+        Integer ii = getValue(COLUMNNAME_User1_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -414,7 +414,7 @@ public class X_C_InvoiceBatchLine extends PO implements I_C_InvoiceBatchLine {
      * @return User defined list element #2
      */
     public int getUser2Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_User2_ID);
+        Integer ii = getValue(COLUMNNAME_User2_ID);
         if (ii == null) return 0;
         return ii;
     }

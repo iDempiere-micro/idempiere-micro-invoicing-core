@@ -54,7 +54,7 @@ public class X_C_InvoiceBatch extends PO implements I_C_InvoiceBatch {
      * @return Currency Conversion Rate Type
      */
     public int getConversionTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ConversionType_ID);
+        Integer ii = getValue(COLUMNNAME_C_ConversionType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -65,7 +65,7 @@ public class X_C_InvoiceBatch extends PO implements I_C_InvoiceBatch {
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -76,7 +76,7 @@ public class X_C_InvoiceBatch extends PO implements I_C_InvoiceBatch {
      * @return Expense Invoice Batch Header
      */
     public int getInvoiceBatchId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_InvoiceBatch_ID);
+        Integer ii = getValue(COLUMNNAME_C_InvoiceBatch_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -87,7 +87,7 @@ public class X_C_InvoiceBatch extends PO implements I_C_InvoiceBatch {
      * @return If not zero, the Debit amount of the document must be equal this amount
      */
     public BigDecimal getControlAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ControlAmt);
+        BigDecimal bd = getValue(COLUMNNAME_ControlAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -116,7 +116,7 @@ public class X_C_InvoiceBatch extends PO implements I_C_InvoiceBatch {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -125,7 +125,7 @@ public class X_C_InvoiceBatch extends PO implements I_C_InvoiceBatch {
      * @return Document Amount
      */
     public BigDecimal getDocumentAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DocumentAmt);
+        BigDecimal bd = getValue(COLUMNNAME_DocumentAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -191,7 +191,7 @@ public class X_C_InvoiceBatch extends PO implements I_C_InvoiceBatch {
      * @return Sales Representative or Company Agent
      */
     public int getSalesRepresentativeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_SalesRep_ID);
+        Integer ii = getValue(COLUMNNAME_SalesRep_ID);
         if (ii == null) return 0;
         return ii;
     }

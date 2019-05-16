@@ -9,7 +9,6 @@ import org.compiere.model.I_C_Invoice;
 import org.compiere.model.I_C_Order;
 import org.compiere.model.I_M_InOut;
 import org.compiere.orm.MTableKt;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.compiere.process.CompleteActionResult;
 import org.compiere.process.DocAction;

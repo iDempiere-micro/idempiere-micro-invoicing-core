@@ -51,7 +51,7 @@ public class X_M_Product_Category_Acct extends PO
      * @return Rules for accounting
      */
     public int getAccountingSchemaId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_AcctSchema_ID);
+        Integer ii = getValue(COLUMNNAME_C_AcctSchema_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -62,7 +62,7 @@ public class X_M_Product_Category_Acct extends PO
      * @return The lowest level to accumulate Costing Information
      */
     public String getCostingLevel() {
-        return (String) getValue(COLUMNNAME_CostingLevel);
+        return getValue(COLUMNNAME_CostingLevel);
     }
 
     /**
@@ -71,7 +71,7 @@ public class X_M_Product_Category_Acct extends PO
      * @return Indicates how Costs will be calculated
      */
     public String getCostingMethod() {
-        return (String) getValue(COLUMNNAME_CostingMethod);
+        return getValue(COLUMNNAME_CostingMethod);
     }
 
     /**
@@ -80,7 +80,7 @@ public class X_M_Product_Category_Acct extends PO
      * @return Category of a Product
      */
     public int getProductCategoryId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_Category_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_Category_ID);
         if (ii == null) return 0;
         return ii;
     }

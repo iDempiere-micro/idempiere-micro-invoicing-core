@@ -68,7 +68,7 @@ public class X_M_CostQueue extends PO implements I_M_CostQueue {
      * @return The currently used cost price
      */
     public BigDecimal getCurrentCostPrice() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_CurrentCostPrice);
+        BigDecimal bd = getValue(COLUMNNAME_CurrentCostPrice);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -88,7 +88,7 @@ public class X_M_CostQueue extends PO implements I_M_CostQueue {
      * @return Current Quantity
      */
     public BigDecimal getCurrentQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_CurrentQty);
+        BigDecimal bd = getValue(COLUMNNAME_CurrentQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -108,7 +108,7 @@ public class X_M_CostQueue extends PO implements I_M_CostQueue {
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }

@@ -68,7 +68,7 @@ public class X_M_BOMProduct extends PO implements I_M_BOMProduct {
      * @return BOM Product Type
      */
     public String getBOMProductType() {
-        return (String) getValue(COLUMNNAME_BOMProductType);
+        return getValue(COLUMNNAME_BOMProductType);
     }
 
     /**
@@ -105,7 +105,7 @@ public class X_M_BOMProduct extends PO implements I_M_BOMProduct {
      * @return Optional Lead Time offset before starting production
      */
     public int getLeadTimeOffset() {
-        Integer ii = (Integer) getValue(COLUMNNAME_LeadTimeOffset);
+        Integer ii = getValue(COLUMNNAME_LeadTimeOffset);
         if (ii == null) return 0;
         return ii;
     }
@@ -125,7 +125,7 @@ public class X_M_BOMProduct extends PO implements I_M_BOMProduct {
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Line);
+        Integer ii = getValue(COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -145,7 +145,7 @@ public class X_M_BOMProduct extends PO implements I_M_BOMProduct {
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -167,7 +167,7 @@ public class X_M_BOMProduct extends PO implements I_M_BOMProduct {
      * @return Product BOM Alternative Group
      */
     public int getBOMAlternativeGroupId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_BOMAlternative_ID);
+        Integer ii = getValue(COLUMNNAME_M_BOMAlternative_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -178,7 +178,7 @@ public class X_M_BOMProduct extends PO implements I_M_BOMProduct {
      * @return Bill of Material
      */
     public int getBOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_BOM_ID);
+        Integer ii = getValue(COLUMNNAME_M_BOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -189,7 +189,7 @@ public class X_M_BOMProduct extends PO implements I_M_BOMProduct {
      * @return Bill of Material Component (Product)
      */
     public int getBOMProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_BOMProduct_ID);
+        Integer ii = getValue(COLUMNNAME_M_BOMProduct_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -200,7 +200,7 @@ public class X_M_BOMProduct extends PO implements I_M_BOMProduct {
      * @return Bill of Material Component Product
      */
     public int getProductBOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_ProductBOM_ID);
+        Integer ii = getValue(COLUMNNAME_M_ProductBOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -221,7 +221,7 @@ public class X_M_BOMProduct extends PO implements I_M_BOMProduct {
      * @return Product Manufacturing Operation
      */
     public int getProductOperationId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_ProductOperation_ID);
+        Integer ii = getValue(COLUMNNAME_M_ProductOperation_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -232,7 +232,7 @@ public class X_M_BOMProduct extends PO implements I_M_BOMProduct {
      * @return Method of ordering records; lowest number comes first
      */
     public int getSeqNo() {
-        Integer ii = (Integer) getValue(COLUMNNAME_SeqNo);
+        Integer ii = getValue(COLUMNNAME_SeqNo);
         if (ii == null) return 0;
         return ii;
     }

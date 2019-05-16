@@ -167,7 +167,7 @@ public class MBankStatementLine extends X_C_BankStatementLine implements IPODoc 
             if (payment.getInvoiceId() != 0) setInvoiceId(payment.getInvoiceId());
         }
         if (getInvoiceId() != 0 && getBusinessPartnerId() == 0) {
-            MInvoice invoice = new MInvoice(getInvoiceId());
+            MInvoice invoice = new MInvoice(null, getInvoiceId());
             setBusinessPartnerId(invoice.getBusinessPartnerId());
         }
 

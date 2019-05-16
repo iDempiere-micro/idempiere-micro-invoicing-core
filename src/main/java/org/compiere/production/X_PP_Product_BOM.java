@@ -3,9 +3,9 @@ package org.compiere.production;
 import kotliquery.Row;
 import org.compiere.model.HasName;
 import org.compiere.model.I_M_AttributeSetInstance;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.eevolution.model.I_PP_Product_BOM;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.sql.Timestamp;
 
@@ -55,7 +55,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return Type of BOM
      */
     public String getBOMType() {
-        return (String) getValue(COLUMNNAME_BOMType);
+        return getValue(COLUMNNAME_BOMType);
     }
 
     /**
@@ -74,7 +74,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return The use of the Bill of Material
      */
     public String getBOMUse() {
-        return (String) getValue(COLUMNNAME_BOMUse);
+        return getValue(COLUMNNAME_BOMUse);
     }
 
     /**
@@ -93,7 +93,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return Copy From Record
      */
     public String getCopyFrom() {
-        return (String) getValue(COLUMNNAME_CopyFrom);
+        return getValue(COLUMNNAME_CopyFrom);
     }
 
     /**
@@ -117,7 +117,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return Unit of Measure
      */
     public int getUOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_UOM_ID);
+        Integer ii = getValue(COLUMNNAME_C_UOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -138,7 +138,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -156,7 +156,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**
@@ -174,7 +174,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return Comment or Hint
      */
     public String getHelp() {
-        return (String) getValue(COLUMNNAME_Help);
+        return getValue(COLUMNNAME_Help);
     }
 
     /**
@@ -198,7 +198,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -226,7 +226,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return Bill of Materials (Engineering) Change Notice (Version)
      */
     public int getChangeNoticeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_ChangeNotice_ID);
+        Integer ii = getValue(COLUMNNAME_M_ChangeNotice_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -253,7 +253,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -274,7 +274,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return Alphanumeric identifier of the entity
      */
     public String getName() {
-        return (String) getValue(HasName.COLUMNNAME_Name);
+        return getValue(HasName.COLUMNNAME_Name);
     }
 
     /**
@@ -292,7 +292,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return BOM & Formula
      */
     public int getProductBOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PP_Product_BOM_ID);
+        Integer ii = getValue(COLUMNNAME_PP_Product_BOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -313,7 +313,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return PP_Product_BOM_UU
      */
     public String getProductBOM_UU() {
-        return (String) getValue(COLUMNNAME_PP_Product_BOM_UU);
+        return getValue(COLUMNNAME_PP_Product_BOM_UU);
     }
 
     /**
@@ -354,7 +354,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return Revision
      */
     public String getRevision() {
-        return (String) getValue(COLUMNNAME_Revision);
+        return getValue(COLUMNNAME_Revision);
     }
 
     /**
@@ -408,7 +408,7 @@ public abstract class X_PP_Product_BOM extends PO implements I_PP_Product_BOM {
      * @return Search key for the record in the format required - must be unique
      */
     public String getValue() {
-        return (String) getValue(COLUMNNAME_Value);
+        return getValue(COLUMNNAME_Value);
     }
 
     /**

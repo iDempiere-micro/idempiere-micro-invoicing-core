@@ -50,7 +50,7 @@ public class X_A_Depreciation extends BasePOName implements Depreciation {
      * @return DepreciationType
      */
     public String getDepreciationType() {
-        return (String) getValue(COLUMNNAME_DepreciationType);
+        return getValue(COLUMNNAME_DepreciationType);
     }
 
     @Override

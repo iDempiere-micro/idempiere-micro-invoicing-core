@@ -55,7 +55,7 @@ public class X_C_SalesRegion extends BasePONameValue implements I_C_SalesRegion 
      * @return Sales coverage region
      */
     public int getSalesRegionId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_SalesRegion_ID);
+        Integer ii = getValue(COLUMNNAME_C_SalesRegion_ID);
         if (ii == null) return 0;
         return ii;
     }

@@ -1,8 +1,8 @@
 package org.compiere.accounting
 
+import org.compiere.model.AccountingSchema
 import org.compiere.model.IDoc
 import org.compiere.model.IDocFactory
-import org.compiere.model.AccountingSchema
 import org.compiere.orm.getDbTableName
 import software.hsharp.core.util.DB
 import software.hsharp.core.util.queryOf

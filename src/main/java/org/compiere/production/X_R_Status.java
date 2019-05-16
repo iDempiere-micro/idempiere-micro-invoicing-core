@@ -165,7 +165,7 @@ public class X_R_Status extends BasePONameValue implements I_R_Status {
      * @return Move to next status automatically after timeout
      */
     public int getNextStatusId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Next_Status_ID);
+        Integer ii = getValue(COLUMNNAME_Next_Status_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -186,7 +186,7 @@ public class X_R_Status extends BasePONameValue implements I_R_Status {
      * @return Request Status Category
      */
     public int getStatusCategoryId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_R_StatusCategory_ID);
+        Integer ii = getValue(COLUMNNAME_R_StatusCategory_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -197,7 +197,7 @@ public class X_R_Status extends BasePONameValue implements I_R_Status {
      * @return Request Status
      */
     public int getStatusId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_R_Status_ID);
+        Integer ii = getValue(COLUMNNAME_R_Status_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -208,7 +208,7 @@ public class X_R_Status extends BasePONameValue implements I_R_Status {
      * @return Timeout in Days to change Status automatically
      */
     public int getTimeoutDays() {
-        Integer ii = (Integer) getValue(COLUMNNAME_TimeoutDays);
+        Integer ii = getValue(COLUMNNAME_TimeoutDays);
         if (ii == null) return 0;
         return ii;
     }
@@ -219,7 +219,7 @@ public class X_R_Status extends BasePONameValue implements I_R_Status {
      * @return Automatically change the status after entry from web
      */
     public int getUpdateStatusId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Update_Status_ID);
+        Integer ii = getValue(COLUMNNAME_Update_Status_ID);
         if (ii == null) return 0;
         return ii;
     }

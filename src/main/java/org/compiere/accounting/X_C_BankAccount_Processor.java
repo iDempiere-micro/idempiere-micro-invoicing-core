@@ -200,7 +200,7 @@ public class X_C_BankAccount_Processor extends PO
      * @return Account at the Bank
      */
     public int getBankAccountId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BankAccount_ID);
+        Integer ii = getValue(COLUMNNAME_C_BankAccount_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -221,7 +221,7 @@ public class X_C_BankAccount_Processor extends PO
      * @return Payment processor for electronic payments
      */
     public int getPaymentProcessorId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_PaymentProcessor_ID);
+        Integer ii = getValue(COLUMNNAME_C_PaymentProcessor_ID);
         if (ii == null) return 0;
         return ii;
     }

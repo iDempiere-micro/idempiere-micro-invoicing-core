@@ -17,22 +17,22 @@ import org.compiere.bo.MCurrencyKt;
 import org.compiere.crm.MBPartner;
 import org.compiere.crm.MUser;
 import org.compiere.docengine.DocumentEngine;
+import org.compiere.model.DocumentType;
 import org.compiere.model.HasName;
 import org.compiere.model.IDoc;
 import org.compiere.model.IPODoc;
-import org.compiere.model.I_M_MatchInv;
-import org.compiere.model.User;
 import org.compiere.model.I_C_BPartner;
 import org.compiere.model.I_C_BPartner_Location;
 import org.compiere.model.I_C_BankAccount;
-import org.compiere.model.DocumentType;
 import org.compiere.model.I_C_Invoice;
 import org.compiere.model.I_C_InvoiceBatch;
 import org.compiere.model.I_C_InvoiceBatchLine;
 import org.compiere.model.I_C_InvoiceLine;
 import org.compiere.model.I_C_InvoiceTax;
+import org.compiere.model.I_M_MatchInv;
 import org.compiere.model.I_M_PriceList;
 import org.compiere.model.I_M_PriceList_Version;
+import org.compiere.model.User;
 import org.compiere.order.BPartnerNoAddressException;
 import org.compiere.order.MInOut;
 import org.compiere.order.MInOutLine;
@@ -64,6 +64,8 @@ import org.idempiere.common.util.CCache;
 import org.idempiere.common.util.CLogger;
 import org.idempiere.common.util.Env;
 import org.jetbrains.annotations.NotNull;
+import software.hsharp.core.util.Environment;
+import software.hsharp.modules.Module;
 
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;
@@ -106,7 +108,7 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
      * Cache
      */
     private static CCache<Integer, MInvoice> s_cache =
-            new CCache<>(I_C_Invoice.Table_Name, 20, 2); // 	2 minutes
+            new CCache<>(I_C_Invoice.Table_Name, 2); // 	2 minutes
     private static volatile boolean recursiveCall = false;
     /* Save array of documents to process AFTER completing this one */
     ArrayList<IPODoc> docsPostProcess = new ArrayList<>();
@@ -140,8 +142,8 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
      *
      * @param C_Invoice_ID invoice or 0 for new
      */
-    public MInvoice(int C_Invoice_ID) {
-        super(C_Invoice_ID);
+    public MInvoice(Row row, int C_Invoice_ID) {
+        super(row, C_Invoice_ID);
         if (C_Invoice_ID == 0) {
             setDocStatus(X_C_Invoice.DOCSTATUS_Drafted); // 	Draft
             setDocAction(X_C_Invoice.DOCACTION_Complete);
@@ -173,13 +175,6 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
     } //	MInvoice
 
     /**
-     * Load Constructor
-     */
-    public MInvoice(Row row) {
-        super(row);
-    } //	MInvoice
-
-    /**
      * Create Invoice from Order
      *
      * @param order              order
@@ -187,7 +182,7 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
      * @param invoiceDate        date or null
      */
     public MInvoice(MOrder order, int C_DocTypeTarget_ID, Timestamp invoiceDate) {
-        this(0);
+        this(null, 0);
         setClientOrg(order);
         setOrder(order); // 	set base settings
         //
@@ -198,7 +193,7 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
                 if (C_DocTypeTarget_ID <= 0)
                     throw new AdempiereException(
                             "@NotFound@ @C_DocTypeInvoice_ID@ - @C_DocType_ID@:"
-                                    + odt.get_Translation(HasName.COLUMNNAME_Name));
+                                    + odt.getTranslation(HasName.COLUMNNAME_Name));
             }
         }
         setTargetDocumentTypeId(C_DocTypeTarget_ID);
@@ -207,9 +202,9 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
         //
         setSalesRepresentativeId(order.getSalesRepresentativeId());
         //
-        setBusinessPartnerId(order.getBill_BPartnerId());
+        setBusinessPartnerId(order.getInvoiceBusinessPartnerId());
         setBusinessPartnerLocationId(order.getBusinessPartnerInvoicingLocationId());
-        setUserId(order.getBill_UserId());
+        setUserId(order.getInvoiceUserId());
     } //	MInvoice
 
     /**
@@ -219,7 +214,7 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
      * @param invoiceDate date or null
      */
     public MInvoice(org.compiere.order.MInOut ship, Timestamp invoiceDate) {
-        this(0);
+        this(null, 0);
         setClientOrg(ship);
         setShipment(ship); // 	set base settings
         //
@@ -237,12 +232,12 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
      * @param line  batch line
      */
     public MInvoice(I_C_InvoiceBatch batch, I_C_InvoiceBatchLine line) {
-        this(0);
+        this(null, 0);
         setClientOrg(line);
         setDocumentNo(line.getDocumentNo());
         //
         setIsSOTrx(batch.isSOTrx());
-        MBPartner bp = new MBPartner(line.getBusinessPartnerId());
+        I_C_BPartner bp = getBusinessPartnerService().getById(line.getBusinessPartnerId());
         setBPartner(bp); // 	defaults
         //
         setIsTaxIncluded(line.isTaxIncluded());
@@ -326,7 +321,7 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
             boolean counter,
             boolean setOrder,
             String documentNo) {
-        MInvoice to = new MInvoice(0);
+        MInvoice to = new MInvoice(null, 0);
         PO.copyValues(from, to, from.getClientId(), from.getOrgId());
         to.setValueNoCheck("C_Invoice_ID", I_ZERO);
         to.setValueNoCheck("DocumentNo", documentNo);
@@ -424,7 +419,7 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
         Integer key = new Integer(C_Invoice_ID);
         MInvoice retValue = s_cache.get(key);
         if (retValue != null) return retValue;
-        retValue = new MInvoice(C_Invoice_ID);
+        retValue = new MInvoice(null, C_Invoice_ID);
         if (retValue.getId() != 0) s_cache.put(key, retValue);
         return retValue;
     } //	get
@@ -526,7 +521,7 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
 
         setIsSOTrx(ship.isSOTrx());
         //
-        MBPartner bp = new MBPartner(ship.getBusinessPartnerId());
+        I_C_BPartner bp = getBusinessPartnerService().getById(ship.getBusinessPartnerId());
         setBPartner(bp);
         //
         setUserId(ship.getUserId());
@@ -558,11 +553,11 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
             MDocType dt = MDocTypeKt.getDocumentType(order.getDocumentTypeId());
             if (dt.getDocTypeInvoiceId() != 0) setTargetDocumentTypeId(dt.getDocTypeInvoiceId());
             // Overwrite Invoice BPartner
-            setBusinessPartnerId(order.getBill_BPartnerId());
+            setBusinessPartnerId(order.getInvoiceBusinessPartnerId());
             // Overwrite Invoice Address
             setBusinessPartnerLocationId(order.getBusinessPartnerInvoicingLocationId());
             // Overwrite Contact
-            setUserId(order.getBill_UserId());
+            setUserId(order.getInvoiceUserId());
             //
         }
         // Check if Shipment/Receipt is based on RMA
@@ -882,9 +877,9 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
     protected boolean beforeSave(boolean newRecord) {
         log.fine("");
         //	No Partner Info - set Template
-        if (getBusinessPartnerId() == 0) setBPartner(MBPartner.getTemplate(getClientId()));
+        if (getBusinessPartnerId() == 0) setBPartner(new Environment<Module>().getModule().getBusinessPartnerService().getTemplate());
         if (getBusinessPartnerLocationId() == 0)
-            setBPartner(new MBPartner(getBusinessPartnerId()));
+            setBPartner(getBusinessPartnerService().getById(getBusinessPartnerId()));
 
         //	Price List
         if (getPriceListId() == 0) {
@@ -1108,8 +1103,8 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
                         + " INNER JOIN C_Invoice i ON (al.C_Invoice_ID=i.C_Invoice_ID) "
                         + "WHERE al.C_Invoice_ID=?"
                         + " AND ah.IsActive='Y' AND al.IsActive='Y'";
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
+        PreparedStatement pstmt;
+        ResultSet rs;
         try {
             pstmt = prepareStatement(sql);
             pstmt.setInt(1, getInvoiceId());
@@ -1118,10 +1113,7 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
                 retValue = rs.getBigDecimal(1);
             }
         } catch (SQLException e) {
-            throw new DBException(e, sql);
-        } finally {
-            rs = null;
-            pstmt = null;
+            throw new DBException(e);
         }
         //	log.fine("getAllocatedAmt - " + retValue);
         //	? ROUND(NVL(v_AllocatedAmt,0), 2);
@@ -1292,7 +1284,7 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
                     && getGrandTotal().signum() < 0)
                     || (doc.getDocBaseType().equals(MDocType.DOCBASETYPE_ARInvoice)
                     && getGrandTotal().signum() > 0)) {
-                MBPartner bp = new MBPartner(getBusinessPartnerId());
+                I_C_BPartner bp =  getBusinessPartnerService().getById(getBusinessPartnerId());
                 if (MBPartner.SOCREDITSTATUS_CreditStop.equals(bp.getSOCreditStatus())) {
                     m_processMsg =
                             "@BPartnerCreditStop@ - @TotalOpenBalance@="
@@ -1635,7 +1627,7 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
         if (matchPO > 0) info.append(" @M_MatchPO_ID@#").append(matchPO).append(" ");
 
         //	Update BP Statistics
-        MBPartner bp = new MBPartner(getBusinessPartnerId());
+        I_C_BPartner bp = getBusinessPartnerService().getById(getBusinessPartnerId());
         forUpdate(bp);
         //	Update total revenue and balance / credit limit (reversed on AllocationLine.processIt)
         BigDecimal invAmt =
@@ -1955,11 +1947,11 @@ public class MInvoice extends X_C_Invoice implements DocAction, I_C_Invoice, IPO
         int counterC_BPartner_ID = org.getLinkedBusinessPartnerId();
         if (counterC_BPartner_ID == 0) return null;
         //	Business Partner needs to be linked to Org
-        MBPartner bp = new MBPartner(getBusinessPartnerId());
+        I_C_BPartner bp = getBusinessPartnerService().getById(getBusinessPartnerId());
         int counterAD_Org_ID = bp.getLinkedOrganizationId();
         if (counterAD_Org_ID == 0) return null;
 
-        MBPartner counterBP = new MBPartner(counterC_BPartner_ID);
+        I_C_BPartner counterBP = getBusinessPartnerService().getById(counterC_BPartner_ID);
         //		MOrgInfo counterOrgInfo = MOrgInfoKt.getOrganizationInfo(counterAD_Org_ID);
         if (log.isLoggable(Level.INFO)) log.info("Counter BP=" + counterBP.getName());
 

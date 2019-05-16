@@ -18,7 +18,7 @@ import org.compiere.invoicing.MInvoice;
 import org.compiere.invoicing.MInvoiceLine;
 import org.compiere.invoicing.MRMA;
 import org.compiere.model.IProcessInfoParameter;
-import org.compiere.order.MRMALine;
+import org.compiere.model.I_M_RMALine;
 import org.compiere.process.DocAction;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.MsgKt;
@@ -130,7 +130,7 @@ public class InvoiceGenerateRMA extends SvrProcess {
             throw new IllegalStateException("Could not get invoice document type for Vendor RMA");
         }
 
-        MInvoice invoice = new MInvoice(0);
+        MInvoice invoice = new MInvoice(null, 0);
         invoice.setRMA(rma);
 
         invoice.setTargetDocumentTypeId(docTypeId);
@@ -144,9 +144,9 @@ public class InvoiceGenerateRMA extends SvrProcess {
     private MInvoiceLine[] createInvoiceLines(MRMA rma, MInvoice invoice) {
         ArrayList<MInvoiceLine> invLineList = new ArrayList<MInvoiceLine>();
 
-        MRMALine[] rmaLines = rma.getLines(true);
+        I_M_RMALine[] rmaLines = rma.getLines(true);
 
-        for (MRMALine rmaLine : rmaLines) {
+        for (I_M_RMALine rmaLine : rmaLines) {
             if (rmaLine.getInOutLineId() == 0 && rmaLine.getChargeId() == 0) {
                 StringBuilder msgiste =
                         new StringBuilder("No customer return line - RMA = ")

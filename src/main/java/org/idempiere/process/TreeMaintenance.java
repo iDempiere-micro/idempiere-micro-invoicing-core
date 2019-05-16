@@ -2,7 +2,6 @@ package org.idempiere.process;
 
 import org.compiere.accounting.MTree;
 import org.compiere.model.Table;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.MTree_Base;
 import org.compiere.orm.MTree_Node;
 import org.compiere.orm.MTree_NodeBP;
@@ -10,6 +9,7 @@ import org.compiere.orm.MTree_NodeMM;
 import org.compiere.orm.MTree_NodePR;
 import org.compiere.orm.PO;
 import org.compiere.process.SvrProcess;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;
@@ -166,7 +166,7 @@ public class TreeMaintenance extends SvrProcess {
                 while (rs.next()) {
                     int Node_ID = rs.getInt(1);
                     PO rec = (PO) table.getPO(Node_ID);
-                    rec.update_Tree(tree.getTreeType());
+                    rec.updateTree(tree.getTreeType());
                 }
             } catch (Exception e) {
                 log.log(Level.SEVERE, "verifyTree", e);

@@ -1,7 +1,7 @@
 package org.compiere.validation;
 
-import org.compiere.model.IFact;
 import org.compiere.model.AccountingSchema;
+import org.compiere.model.IFact;
 import org.idempiere.icommon.model.PersistentObject;
 
 import java.util.List;

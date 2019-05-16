@@ -100,7 +100,7 @@ public class MInvoicePaySchedule extends X_C_InvoicePaySchedule {
      * @return Returns the parent.
      */
     public MInvoice getParent() {
-        if (m_parent == null) m_parent = new MInvoice(getInvoiceId());
+        if (m_parent == null) m_parent = new MInvoice(null, getInvoiceId());
         return m_parent;
     } //	getParent
 

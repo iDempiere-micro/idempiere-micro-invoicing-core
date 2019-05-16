@@ -56,7 +56,7 @@ public class X_C_BankStatementLoader extends BasePOName
      * @return Class name of the bank statement loader
      */
     public String getStmtLoaderClass() {
-        return (String) getValue(COLUMNNAME_StmtLoaderClass);
+        return getValue(COLUMNNAME_StmtLoaderClass);
     }
 
 }

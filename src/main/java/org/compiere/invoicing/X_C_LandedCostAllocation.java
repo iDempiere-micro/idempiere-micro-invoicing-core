@@ -2,9 +2,9 @@ package org.compiere.invoicing;
 
 import kotliquery.Row;
 import org.compiere.model.I_C_LandedCostAllocation;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 
@@ -60,7 +60,7 @@ public class X_C_LandedCostAllocation extends PO implements I_C_LandedCostAlloca
      * @return Amount
      */
     public BigDecimal getAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Amt);
+        BigDecimal bd = getValue(COLUMNNAME_Amt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -80,7 +80,7 @@ public class X_C_LandedCostAllocation extends PO implements I_C_LandedCostAlloca
      * @return Calculation Base
      */
     public BigDecimal getBase() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Base);
+        BigDecimal bd = getValue(COLUMNNAME_Base);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -110,7 +110,7 @@ public class X_C_LandedCostAllocation extends PO implements I_C_LandedCostAlloca
      * @return Allocation for Land Costs
      */
     public int getLandedCostAllocationId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_LandedCostAllocation_ID);
+        Integer ii = getValue(COLUMNNAME_C_LandedCostAllocation_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -121,7 +121,7 @@ public class X_C_LandedCostAllocation extends PO implements I_C_LandedCostAlloca
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -144,7 +144,7 @@ public class X_C_LandedCostAllocation extends PO implements I_C_LandedCostAlloca
      * @return Product Cost Element
      */
     public int getCostElementId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_CostElement_ID);
+        Integer ii = getValue(COLUMNNAME_M_CostElement_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -171,7 +171,7 @@ public class X_C_LandedCostAllocation extends PO implements I_C_LandedCostAlloca
      * @return Line on Shipment or Receipt document
      */
     public int getInOutLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_InOutLine_ID);
+        Integer ii = getValue(COLUMNNAME_M_InOutLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -192,7 +192,7 @@ public class X_C_LandedCostAllocation extends PO implements I_C_LandedCostAlloca
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -213,7 +213,7 @@ public class X_C_LandedCostAllocation extends PO implements I_C_LandedCostAlloca
      * @return Quantity
      */
     public BigDecimal getQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Qty);
+        BigDecimal bd = getValue(COLUMNNAME_Qty);
         if (bd == null) return Env.ZERO;
         return bd;
     }

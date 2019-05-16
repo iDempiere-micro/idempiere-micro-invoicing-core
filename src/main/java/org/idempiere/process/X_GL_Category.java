@@ -62,7 +62,7 @@ public class X_GL_Category extends BasePOName implements I_GL_Category {
      * @return Source of the Journal with this category
      */
     public String getCategoryType() {
-        return (String) getValue(COLUMNNAME_CategoryType);
+        return getValue(COLUMNNAME_CategoryType);
     }
 
     /**
@@ -81,7 +81,7 @@ public class X_GL_Category extends BasePOName implements I_GL_Category {
      * @return General Ledger Category
      */
     public int getGLCategoryId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_GL_Category_ID);
+        Integer ii = getValue(COLUMNNAME_GL_Category_ID);
         if (ii == null) return 0;
         return ii;
     }

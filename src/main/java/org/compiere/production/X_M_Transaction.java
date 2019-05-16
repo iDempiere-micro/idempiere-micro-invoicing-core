@@ -89,7 +89,7 @@ public class X_M_Transaction extends PO implements I_M_Transaction {
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -161,7 +161,7 @@ public class X_M_Transaction extends PO implements I_M_Transaction {
      * @return Quantity of a product moved.
      */
     public BigDecimal getMovementQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_MovementQty);
+        BigDecimal bd = getValue(COLUMNNAME_MovementQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -181,7 +181,7 @@ public class X_M_Transaction extends PO implements I_M_Transaction {
      * @return Method of moving the inventory
      */
     public String getMovementType() {
-        return (String) getValue(COLUMNNAME_MovementType);
+        return getValue(COLUMNNAME_MovementType);
     }
 
     /**
@@ -200,7 +200,7 @@ public class X_M_Transaction extends PO implements I_M_Transaction {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }

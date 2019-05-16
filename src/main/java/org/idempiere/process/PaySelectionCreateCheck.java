@@ -6,7 +6,7 @@ import org.compiere.crm.MBPartner;
 import org.compiere.model.IProcessInfoParameter;
 import org.compiere.model.I_C_BPartner;
 import org.compiere.model.I_C_PaySelectionLine;
-import org.compiere.order.X_C_Order;
+import org.compiere.order.OrderConstants;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.AdempiereUserError;
 
@@ -45,7 +45,7 @@ public class PaySelectionCreateCheck extends SvrProcess {
             else log.log(Level.SEVERE, "Unknown Parameter: " + name);
         }
         p_C_PaySelection_ID = getRecordId();
-        if (p_PaymentRule != null && p_PaymentRule.equals(X_C_Order.PAYMENTRULE_DirectDebit))
+        if (p_PaymentRule != null && p_PaymentRule.equals(OrderConstants.PAYMENTRULE_DirectDebit))
             p_PaymentRule = null;
     } //	prepare
 
@@ -98,7 +98,7 @@ public class PaySelectionCreateCheck extends SvrProcess {
         //	Create new
         String PaymentRule = line.getPaymentRule();
         if (p_PaymentRule != null) {
-            if (!X_C_Order.PAYMENTRULE_DirectDebit.equals(PaymentRule)) PaymentRule = p_PaymentRule;
+            if (!OrderConstants.PAYMENTRULE_DirectDebit.equals(PaymentRule)) PaymentRule = p_PaymentRule;
         }
         MPaySelectionCheck check = new MPaySelectionCheck(line, PaymentRule);
         if (!check.isValid()) {

@@ -2,13 +2,11 @@ package org.idempiere.process;
 
 import org.compiere.accounting.MClientKt;
 import org.compiere.accounting.MOrder;
-import org.compiere.accounting.MOrderLine;
 import org.compiere.bo.MCurrency;
 import org.compiere.bo.MCurrencyKt;
 import org.compiere.crm.MBPartner;
 import org.compiere.crm.MLocation;
 import org.compiere.invoicing.MInOut;
-import org.compiere.invoicing.MInOutLine;
 import org.compiere.invoicing.MInvoice;
 import org.compiere.invoicing.MInvoiceLine;
 import org.compiere.invoicing.MInvoicePaySchedule;
@@ -19,6 +17,7 @@ import org.compiere.model.I_C_OrderLine;
 import org.compiere.model.I_M_InOut;
 import org.compiere.model.I_M_InOutLine;
 import org.compiere.order.MOrderPaySchedule;
+import org.compiere.order.OrderConstants;
 import org.compiere.orm.MDocType;
 import org.compiere.orm.MDocTypeKt;
 import org.compiere.orm.PO;
@@ -224,15 +223,15 @@ public class InvoiceGenerate extends SvrProcess {
                     && m_invoice.getBusinessPartnerLocationId() != order.getBusinessPartnerInvoicingLocationId()))
                 completeInvoice();
             boolean completeOrder =
-                    MOrder.INVOICERULE_AfterOrderDelivered.equals(order.getInvoiceRule());
+                    OrderConstants.INVOICERULE_AfterOrderDelivered.equals(order.getInvoiceRule());
 
             //	Schedule After Delivery
             boolean doInvoice = false;
-            if (MOrder.INVOICERULE_CustomerScheduleAfterDelivery.equals(order.getInvoiceRule())) {
-                m_bp = new MBPartner(order.getBill_BPartnerId());
+            if (OrderConstants.INVOICERULE_CustomerScheduleAfterDelivery.equals(order.getInvoiceRule())) {
+                m_bp = new MBPartner(order.getInvoiceBusinessPartnerId());
                 if (m_bp.getInvoiceScheduleId() == 0) {
                     log.warning("BPartner has no Schedule - set to After Delivery");
-                    order.setInvoiceRule(MOrder.INVOICERULE_AfterDelivery);
+                    order.setInvoiceRule(OrderConstants.INVOICERULE_AfterDelivery);
                     order.saveEx();
                 } else {
                     MInvoiceSchedule is =
@@ -247,7 +246,7 @@ public class InvoiceGenerate extends SvrProcess {
             } //	Schedule
 
             //	After Delivery
-            if (doInvoice || MOrder.INVOICERULE_AfterDelivery.equals(order.getInvoiceRule())) {
+            if (doInvoice || OrderConstants.INVOICERULE_AfterDelivery.equals(order.getInvoiceRule())) {
                 I_M_InOut[] shipments = order.getShipments();
                 for (I_M_InOut ship : shipments) {
                     createLines(order, ship);
@@ -279,7 +278,7 @@ public class InvoiceGenerate extends SvrProcess {
                         break;
                     }
                     //	Immediate
-                    else if (MOrder.INVOICERULE_Immediate.equals(order.getInvoiceRule())) {
+                    else if (OrderConstants.INVOICERULE_Immediate.equals(order.getInvoiceRule())) {
                         if (log.isLoggable(Level.FINE))
                             log.fine("Immediate - ToInvoice=" + toInvoice + " - " + oLine);
                         BigDecimal qtyEntered = toInvoice;
@@ -308,12 +307,12 @@ public class InvoiceGenerate extends SvrProcess {
                                 oLine.getOrderLineId());
                     }
                 } //	for all order lines
-                if (MOrder.INVOICERULE_Immediate.equals(order.getInvoiceRule())) m_line += 1000;
+                if (OrderConstants.INVOICERULE_Immediate.equals(order.getInvoiceRule())) m_line += 1000;
             }
 
             //	Complete Order successful
             if (completeOrder
-                    && MOrder.INVOICERULE_AfterOrderDelivered.equals(order.getInvoiceRule())) {
+                    && OrderConstants.INVOICERULE_AfterOrderDelivered.equals(order.getInvoiceRule())) {
                 I_M_InOut[] shipments = order.getShipments();
                 for (I_M_InOut ship : shipments) {
                     createLines(order, ship);
@@ -384,7 +383,7 @@ public class InvoiceGenerate extends SvrProcess {
             String AD_Language = client.getADLanguage();
             if (client.isMultiLingualDocument() && m_bp.getADLanguage() != null)
                 AD_Language = m_bp.getADLanguage();
-            if (AD_Language == null) AD_Language = Language.getBaseAD_Language();
+            if (AD_Language == null) AD_Language = Language.getBaseLanguageCode();
             java.text.SimpleDateFormat format =
                     DisplayType.getDateFormat(DisplayType.Date, Language.getLanguage(AD_Language));
             m_ship = ship;

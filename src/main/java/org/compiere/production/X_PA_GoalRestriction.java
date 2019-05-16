@@ -71,7 +71,7 @@ public class X_PA_GoalRestriction extends BasePOName implements I_PA_GoalRestric
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -82,7 +82,7 @@ public class X_PA_GoalRestriction extends BasePOName implements I_PA_GoalRestric
      * @return Business Partner Group
      */
     public int getBPGroupId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BP_Group_ID);
+        Integer ii = getValue(COLUMNNAME_C_BP_Group_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -93,7 +93,7 @@ public class X_PA_GoalRestriction extends BasePOName implements I_PA_GoalRestric
      * @return Goal Restriction Type
      */
     public String getGoalRestrictionType() {
-        return (String) getValue(COLUMNNAME_GoalRestrictionType);
+        return getValue(COLUMNNAME_GoalRestrictionType);
     }
 
     /**
@@ -102,7 +102,7 @@ public class X_PA_GoalRestriction extends BasePOName implements I_PA_GoalRestric
      * @return Category of a Product
      */
     public int getProductCategoryId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_Category_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_Category_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -113,7 +113,7 @@ public class X_PA_GoalRestriction extends BasePOName implements I_PA_GoalRestric
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -124,7 +124,7 @@ public class X_PA_GoalRestriction extends BasePOName implements I_PA_GoalRestric
      * @return Organizational entity within client
      */
     public int getOrgId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Org_ID);
+        Integer ii = getValue(COLUMNNAME_Org_ID);
         if (ii == null) return 0;
         return ii;
     }

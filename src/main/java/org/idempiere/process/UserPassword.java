@@ -122,7 +122,7 @@ public class UserPassword extends SvrProcess {
         }
 
         if (!Util.isEmpty(p_NewPassword))
-            user.set_ValueOfColumn("Password", p_NewPassword); // will be hashed and validate on saveEx
+            user.setValueOfColumn("Password", p_NewPassword); // will be hashed and validate on saveEx
         if (!Util.isEmpty(p_NewEMail)) user.setEMail(p_NewEMail);
         if (!Util.isEmpty(p_NewEMailUser)) user.setEMailUser(p_NewEMailUser);
         if (!Util.isEmpty(p_NewEMailUserPW)) user.setEMailUserPW(p_NewEMailUserPW);

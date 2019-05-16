@@ -16,7 +16,7 @@ fun getAllocationsOfPayment(C_Payment_ID: Int): Array<MAllocationHdr> {
             "WHERE IsActive='Y'" +
             " AND EXISTS (SELECT * FROM C_AllocationLine l " +
             "WHERE h.C_AllocationHdr_ID=l.C_AllocationHdr_ID AND l.C_Payment_ID=?)")
-    val query = queryOf(sql, listOf(C_Payment_ID)).map { row -> MAllocationHdr(row) }.asList
+    val query = queryOf(sql, listOf(C_Payment_ID)).map { row -> MAllocationHdr(row, -1) }.asList
     return DB.current.run(query).toTypedArray()
 } // 	getOfPayment
 
@@ -32,7 +32,7 @@ fun getAllocationsOfInvoice(C_Invoice_ID: Int): Array<MAllocationHdr> {
             "WHERE IsActive='Y'" +
             " AND EXISTS (SELECT * FROM C_AllocationLine l " +
             "WHERE h.C_AllocationHdr_ID=l.C_AllocationHdr_ID AND l.C_Invoice_ID=?)")
-    val query = queryOf(sql, listOf(C_Invoice_ID)).map { row -> MAllocationHdr(row) }.asList
+    val query = queryOf(sql, listOf(C_Invoice_ID)).map { row -> MAllocationHdr(row, -1) }.asList
     return DB.current.run(query).toTypedArray()
 } // 	getOfInvoice
 

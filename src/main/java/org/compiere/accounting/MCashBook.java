@@ -100,7 +100,7 @@ public class MCashBook extends X_C_CashBook {
      * @return success
      */
     protected boolean afterSave(boolean newRecord, boolean success) {
-        if (newRecord && success) insert_Accounting("C_CashBook_Acct", "C_AcctSchema_Default", null);
+        if (newRecord && success) insertAccounting("C_CashBook_Acct", "C_AcctSchema_Default", null);
 
         return success;
     } //	afterSave

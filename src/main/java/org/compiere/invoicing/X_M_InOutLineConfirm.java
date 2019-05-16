@@ -72,7 +72,7 @@ public abstract class X_M_InOutLineConfirm extends PO implements I_M_InOutLineCo
      * @return Confirmation of a received quantity
      */
     public BigDecimal getConfirmedQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ConfirmedQty);
+        BigDecimal bd = getValue(COLUMNNAME_ConfirmedQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -101,7 +101,7 @@ public abstract class X_M_InOutLineConfirm extends PO implements I_M_InOutLineCo
      * @return Difference Quantity
      */
     public BigDecimal getDifferenceQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_DifferenceQty);
+        BigDecimal bd = getValue(COLUMNNAME_DifferenceQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -131,7 +131,7 @@ public abstract class X_M_InOutLineConfirm extends PO implements I_M_InOutLineCo
      * @return Line on Shipment or Receipt document
      */
     public int getInOutLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_InOutLine_ID);
+        Integer ii = getValue(COLUMNNAME_M_InOutLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -171,7 +171,7 @@ public abstract class X_M_InOutLineConfirm extends PO implements I_M_InOutLineCo
      * @return The Quantity scrapped due to QA issues
      */
     public BigDecimal getScrappedQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ScrappedQty);
+        BigDecimal bd = getValue(COLUMNNAME_ScrappedQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -191,7 +191,7 @@ public abstract class X_M_InOutLineConfirm extends PO implements I_M_InOutLineCo
      * @return Target Movement Quantity
      */
     public BigDecimal getTargetQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_TargetQty);
+        BigDecimal bd = getValue(COLUMNNAME_TargetQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }

@@ -2,10 +2,10 @@ package org.compiere.accounting;
 
 import kotliquery.Row;
 import org.compiere.invoicing.MConversionRate;
-import org.compiere.model.ClientInfoWithAccounting;
-import org.compiere.model.ClientWithAccounting;
-import org.compiere.model.ClientOrganization;
 import org.compiere.model.AccountingSchema;
+import org.compiere.model.ClientInfoWithAccounting;
+import org.compiere.model.ClientOrganization;
+import org.compiere.model.ClientWithAccounting;
 import org.compiere.model.I_M_Cost;
 import org.compiere.model.I_M_CostElement;
 import org.compiere.model.I_M_Product_PO;
@@ -244,7 +244,7 @@ public class MCost extends X_M_Cost {
                 count++;
             }
         } catch (SQLException e) {
-            throw new DBException(e, sql);
+            throw new DBException(e);
         }
         if (count > 1) // 	Print summary
             if (s_log.isLoggable(Level.FINEST))
@@ -471,7 +471,7 @@ public class MCost extends X_M_Cost {
                 else return priceList;
             }
         } catch (SQLException e) {
-            throw new DBException(e, sql);
+            throw new DBException(e);
         }
         return BigDecimal.ZERO;
     }
@@ -562,7 +562,7 @@ public class MCost extends X_M_Cost {
                 if (retValue == null || retValue.signum() == 0) retValue = rs.getBigDecimal(2);
             }
         } catch (SQLException e) {
-            throw new DBException(e, sql.toString());
+            throw new DBException(e);
         }
 
         if (retValue != null) {

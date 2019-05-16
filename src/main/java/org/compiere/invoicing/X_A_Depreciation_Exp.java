@@ -72,7 +72,7 @@ public abstract class X_A_Depreciation_Exp extends PO implements DepreciationExp
      * @return Accumulated Depreciation
      */
     public BigDecimal getAccumulatedDepreciation() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_A_Accumulated_Depr);
+        BigDecimal bd = getValue(COLUMNNAME_A_Accumulated_Depr);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -101,7 +101,7 @@ public abstract class X_A_Depreciation_Exp extends PO implements DepreciationExp
      * @return Accumulated Depreciation (fiscal)
      */
     public BigDecimal getAccumulatedDepreciationFiscal() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_A_Accumulated_Depr_F);
+        BigDecimal bd = getValue(COLUMNNAME_A_Accumulated_Depr_F);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -139,7 +139,7 @@ public abstract class X_A_Depreciation_Exp extends PO implements DepreciationExp
      * @return Asset used internally or by customers
      */
     public int getAssetId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_A_Asset_ID);
+        Integer ii = getValue(COLUMNNAME_A_Asset_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -178,7 +178,7 @@ public abstract class X_A_Depreciation_Exp extends PO implements DepreciationExp
      * @return Depreciation Entry
      */
     public int getDepreciationEntryId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_A_Depreciation_Entry_ID);
+        Integer ii = getValue(COLUMNNAME_A_Depreciation_Entry_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -189,7 +189,7 @@ public abstract class X_A_Depreciation_Exp extends PO implements DepreciationExp
      * @return Entry Type
      */
     public String getEntryType() {
-        return (String) getValue(COLUMNNAME_A_Entry_Type);
+        return getValue(COLUMNNAME_A_Entry_Type);
     }
 
     /**
@@ -208,7 +208,7 @@ public abstract class X_A_Depreciation_Exp extends PO implements DepreciationExp
      * @return Asset Period
      */
     public int getPeriod() {
-        Integer ii = (Integer) getValue(COLUMNNAME_A_Period);
+        Integer ii = getValue(COLUMNNAME_A_Period);
         if (ii == null) return 0;
         return ii;
     }
@@ -275,7 +275,7 @@ public abstract class X_A_Depreciation_Exp extends PO implements DepreciationExp
      * @return Expense
      */
     public BigDecimal getExpense() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Expense);
+        BigDecimal bd = getValue(COLUMNNAME_Expense);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -295,7 +295,7 @@ public abstract class X_A_Depreciation_Exp extends PO implements DepreciationExp
      * @return Expense (fiscal)
      */
     public BigDecimal getFiscalExpense() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Expense_F);
+        BigDecimal bd = getValue(COLUMNNAME_Expense_F);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -333,7 +333,7 @@ public abstract class X_A_Depreciation_Exp extends PO implements DepreciationExp
      * @return The type of posted amount for the transaction
      */
     public String getPostingType() {
-        return (String) getValue(COLUMNNAME_PostingType);
+        return getValue(COLUMNNAME_PostingType);
     }
 
     /**

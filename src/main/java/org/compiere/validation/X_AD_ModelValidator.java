@@ -57,7 +57,7 @@ public class X_AD_ModelValidator extends BasePOName implements ModelValidator {
      * @return Model Validation Class
      */
     public String getModelValidationClass() {
-        return (String) getValue(COLUMNNAME_ModelValidationClass);
+        return getValue(COLUMNNAME_ModelValidationClass);
     }
 
 }

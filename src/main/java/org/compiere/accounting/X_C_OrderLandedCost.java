@@ -2,9 +2,9 @@ package org.compiere.accounting;
 
 import kotliquery.Row;
 import org.compiere.model.I_C_OrderLandedCost;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 
@@ -60,7 +60,7 @@ public abstract class X_C_OrderLandedCost extends PO implements I_C_OrderLandedC
      * @return Amount
      */
     public BigDecimal getAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Amt);
+        BigDecimal bd = getValue(COLUMNNAME_Amt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -77,7 +77,7 @@ public abstract class X_C_OrderLandedCost extends PO implements I_C_OrderLandedC
      * @return Order
      */
     public int getOrderId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Order_ID);
+        Integer ii = getValue(COLUMNNAME_C_Order_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -88,7 +88,7 @@ public abstract class X_C_OrderLandedCost extends PO implements I_C_OrderLandedC
      * @return Estimated Landed Cost
      */
     public int getOrderLandedCostId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_OrderLandedCost_ID);
+        Integer ii = getValue(COLUMNNAME_C_OrderLandedCost_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -99,7 +99,7 @@ public abstract class X_C_OrderLandedCost extends PO implements I_C_OrderLandedC
      * @return Landed Cost Distribution
      */
     public String getLandedCostDistribution() {
-        return (String) getValue(COLUMNNAME_LandedCostDistribution);
+        return getValue(COLUMNNAME_LandedCostDistribution);
     }
 
     /**
@@ -108,7 +108,7 @@ public abstract class X_C_OrderLandedCost extends PO implements I_C_OrderLandedC
      * @return Product Cost Element
      */
     public int getCostElementId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_CostElement_ID);
+        Integer ii = getValue(COLUMNNAME_M_CostElement_ID);
         if (ii == null) return 0;
         return ii;
     }

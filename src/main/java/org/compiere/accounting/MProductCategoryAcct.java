@@ -20,7 +20,7 @@ public class MProductCategoryAcct extends X_M_Product_Category_Acct {
      * Static cache
      */
     private static CCache<String, I_M_Product_Category_Acct> s_cache =
-            new CCache<>(I_M_Product_Category_Acct.Table_Name, 40, 5);
+            new CCache<>(I_M_Product_Category_Acct.Table_Name, 5);
 
     /**
      * ************************************************************************ Standard Constructor

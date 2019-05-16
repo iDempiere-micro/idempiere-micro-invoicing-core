@@ -7,7 +7,6 @@ import org.compiere.orm.PO;
 import org.compiere.orm.TimeUtil;
 import org.compiere.schedule.MSchedule;
 import org.idempiere.common.util.CLogger;
-import org.idempiere.common.util.Env;
 
 import java.sql.Timestamp;
 import java.util.Properties;
@@ -80,13 +79,13 @@ public abstract class AdempiereServer implements Runnable {
         }
 
         Properties context = new Properties();
-        Env.setContext("#clientId", p_model.getClientId());
+        // DAP: Env.setContext("#clientId", p_model.getClientId());
         if (p_model instanceof PO) {
             PO po = (PO) p_model;
-            if (po.getColumnIndex("AD_Org_ID") >= 0)
-                Env.setContext("#orgId", po.getValueAsInt("AD_Org_ID"));
-            if (po.getColumnIndex("AD_User_ID") >= 0)
-                Env.setContext("#AD_User_ID", po.getValueAsInt("AD_User_ID"));
+            if (po.getColumnIndex("AD_Org_ID") >= 0) ;
+                // DAP: Env.setContext("#orgId", po.getValueAsInt("AD_Org_ID"));
+            if (po.getColumnIndex("AD_User_ID") >= 0) ;
+            // DAP: Env.setContext("#AD_User_ID", po.getValueAsInt("AD_User_ID"));
         }
 
         try {

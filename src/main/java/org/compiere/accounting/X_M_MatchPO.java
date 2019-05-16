@@ -60,7 +60,7 @@ public class X_M_MatchPO extends PO implements I_M_MatchPO {
      * @return Invoice Detail Line
      */
     public int getInvoiceLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_InvoiceLine_ID);
+        Integer ii = getValue(COLUMNNAME_C_InvoiceLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -81,7 +81,7 @@ public class X_M_MatchPO extends PO implements I_M_MatchPO {
      * @return Sales Order Line
      */
     public int getOrderLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_OrderLine_ID);
+        Integer ii = getValue(COLUMNNAME_C_OrderLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -138,7 +138,7 @@ public class X_M_MatchPO extends PO implements I_M_MatchPO {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -156,7 +156,7 @@ public class X_M_MatchPO extends PO implements I_M_MatchPO {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**
@@ -174,7 +174,7 @@ public class X_M_MatchPO extends PO implements I_M_MatchPO {
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -197,7 +197,7 @@ public class X_M_MatchPO extends PO implements I_M_MatchPO {
      * @return Line on Shipment or Receipt document
      */
     public int getInOutLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_InOutLine_ID);
+        Integer ii = getValue(COLUMNNAME_M_InOutLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -218,7 +218,7 @@ public class X_M_MatchPO extends PO implements I_M_MatchPO {
      * @return Match Purchase Order to Shipment/Receipt and Invoice
      */
     public int getMatchPOId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_MatchPO_ID);
+        Integer ii = getValue(COLUMNNAME_M_MatchPO_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -229,7 +229,7 @@ public class X_M_MatchPO extends PO implements I_M_MatchPO {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -273,7 +273,7 @@ public class X_M_MatchPO extends PO implements I_M_MatchPO {
      * @return Difference between Purchase and Invoice Price per matched line
      */
     public BigDecimal getPriceMatchDifference() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_PriceMatchDifference);
+        BigDecimal bd = getValue(COLUMNNAME_PriceMatchDifference);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -325,7 +325,7 @@ public class X_M_MatchPO extends PO implements I_M_MatchPO {
      * @return Quantity
      */
     public BigDecimal getQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Qty);
+        BigDecimal bd = getValue(COLUMNNAME_Qty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -345,7 +345,7 @@ public class X_M_MatchPO extends PO implements I_M_MatchPO {
      * @return ID of document reversal
      */
     public int getReversalId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Reversal_ID);
+        Integer ii = getValue(COLUMNNAME_Reversal_ID);
         if (ii == null) return 0;
         return ii;
     }

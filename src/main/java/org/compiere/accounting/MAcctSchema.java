@@ -6,8 +6,8 @@ import org.compiere.bo.MCurrencyKt;
 import org.compiere.crm.MClientInfo;
 import org.compiere.crm.MClientInfoKt;
 import org.compiere.model.AccountSchemaElement;
-import org.compiere.model.ClientInfo;
 import org.compiere.model.AccountingSchema;
+import org.compiere.model.ClientInfo;
 import org.compiere.model.DefaultAccountsForSchema;
 import org.compiere.model.I_C_AcctSchema_GL;
 import org.compiere.orm.MClient;
@@ -39,13 +39,13 @@ public class MAcctSchema extends X_C_AcctSchema implements AccountingSchema {
      * Cache of Client AcctSchema Arrays *
      */
     private static CCache<Integer, AccountingSchema[]> s_schema =
-            new CCache<>(ClientInfo.Table_Name, 3, 120, true); //  3 clients
+            new CCache<>(ClientInfo.Table_Name, 120); //  3 clients
     /**
      * Cache of AcctSchemas *
      */
     private static CCache<Integer, MAcctSchema> s_cache =
             new CCache<>(
-                    AccountingSchema.Table_Name, 3, 120, true); //  3 accounting schemas
+                    AccountingSchema.Table_Name, 120); //  3 accounting schemas
     /**
      * GL Info
      */
@@ -125,7 +125,7 @@ public class MAcctSchema extends X_C_AcctSchema implements AccountingSchema {
                 " " +
                 getGAAP() +
                 "/" +
-                get_ColumnCount() +
+                getColumnCount() +
                 " " +
                 currency.getName();
         setName(msgset);

@@ -1,24 +1,20 @@
 package org.compiere.accounting
 
 import kotliquery.Row
+import org.compiere.model.AccountingSchema
+import org.compiere.model.Client
 import org.compiere.model.ClientInfoWithAccounting
 import org.compiere.model.ClientWithAccounting
-import org.compiere.model.Client
-import org.compiere.model.User
-import org.compiere.model.AccountingSchema
 import org.compiere.orm.MSysConfig
 import org.compiere.orm.Query
 import org.idempiere.common.util.AdempiereSystemError
 import org.idempiere.common.util.CCache
-import org.idempiere.common.util.CLogger
 import org.idempiere.common.util.Env
 import org.idempiere.common.util.Language
 import org.idempiere.common.util.all
 import org.idempiere.common.util.factory
 import org.idempiere.common.util.loadUsing
 import software.hsharp.core.util.Environment
-
-import java.io.File
 import java.util.Locale
 
 private fun loadAllClients() = Query<ClientWithAccounting>(Client.Table_Name, null).list()
@@ -140,7 +136,7 @@ class MClient : MBaseClient, ClientWithAccounting {
      * @return Language
      */
     override fun getADLanguage(): String {
-        return super.getADLanguage() ?: return Language.getBaseAD_Language()
+        return super.getADLanguage() ?: return Language.getBaseLanguageCode()
     } // 	getADLanguage
 
     /**
@@ -224,46 +220,12 @@ class MClient : MBaseClient, ClientWithAccounting {
         return s
     } // 	getSMTPHost
 
-    fun sendEMail(
-        from: User,
-        to: User,
-        subject: String,
-        message: String,
-        attachment: File,
-        isHtml: Boolean
-    ): Boolean {
-        return true
-    }
-
-    fun sendEMail(
-        from: User,
-        to: User,
-        subject: String,
-        message: String,
-        attachment: File
-    ): Boolean {
-        return true
-    }
-
-    fun sendEMailAttachments(
-        from: User,
-        user: User,
-        schedulerName: String,
-        mailContent: String,
-        fileList: List<File>
-    ) {
-    }
-
     companion object {
         private val serialVersionUID = -4420908648355523008L
         // IDEMPIERE-722
         private val MAIL_SEND_CREDENTIALS_USER = "U"
         private val MAIL_SEND_CREDENTIALS_SYSTEM = "S"
-        protected var s_cache = CCache<Int, Client>(Client.Table_Name, 3, 120, true)
-        /**
-         * Static Logger
-         */
-        private val s_log = CLogger.getCLogger(MClient::class.java)
+        protected var s_cache = CCache<Int, Client>(Client.Table_Name, 120)
 
         /**
          * Get all clients

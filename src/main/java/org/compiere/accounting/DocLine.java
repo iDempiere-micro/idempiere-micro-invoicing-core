@@ -1,7 +1,7 @@
 package org.compiere.accounting;
 
-import org.compiere.model.IDocLine;
 import org.compiere.model.AccountingSchema;
+import org.compiere.model.IDocLine;
 import org.compiere.model.I_C_ValidCombination;
 import org.compiere.model.I_M_CostDetail;
 import org.idempiere.common.util.CLogger;

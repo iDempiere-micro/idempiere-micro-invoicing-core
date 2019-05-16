@@ -59,11 +59,11 @@ public class ChangeBaseLanguage extends SvrProcess {
         if (lang.isSystemLanguage())
             throw new AdempiereUserError("Base language cannot be a system language");
 
-        if (org.idempiere.common.util.Language.getBaseAD_Language().equals(p_Language))
+        if (org.idempiere.common.util.Language.getBaseLanguageCode().equals(p_Language))
             throw new AdempiereUserError("Same base language");
 
         // Disable the base flag on the actual
-        Language baselang = MLanguage.get(org.idempiere.common.util.Language.getBaseAD_Language());
+        Language baselang = MLanguage.get(org.idempiere.common.util.Language.getBaseLanguageCode());
         baselang.setIsBaseLanguage(false);
         baselang.saveEx();
 

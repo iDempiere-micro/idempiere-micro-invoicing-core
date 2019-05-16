@@ -22,8 +22,6 @@ import org.compiere.model.I_C_TaxCategory
 import org.compiere.model.I_M_Product
 import org.compiere.model.I_M_Warehouse
 import org.compiere.order.MPaySchedule
-import org.compiere.orm.DefaultModelFactory
-import org.compiere.orm.ModelFactory
 import org.compiere.orm.Query
 import org.compiere.orm.getClientDocumentTypes
 import org.compiere.orm.getClientOrganizations
@@ -39,7 +37,6 @@ import org.idempiere.common.util.EnvironmentServiceImpl
 import org.idempiere.icommon.model.PersistentObject
 import org.junit.Before
 import org.slf4j.impl.SimpleLogger
-import software.hsharp.core.modules.BaseModuleImpl
 import software.hsharp.core.util.DB
 import software.hsharp.core.util.Environment
 import software.hsharp.core.util.HikariCPI
@@ -63,7 +60,15 @@ fun randomString(length: Int): String {
 }
 
 internal val environmentService = EnvironmentServiceImpl(0, 0, 0)
-internal val baseModule = BaseModuleImpl(environmentService = environmentService, modelFactory = SimpleModelFactory())
+internal val modelFactory = SimpleModelFactory()
+private val mainLogicModule = MainLogicModule()
+private val mainEnvironmentModule = MainEnvironmentModule()
+internal val baseModule = ModuleImpl(
+    environment = mainEnvironmentModule,
+    logic = mainLogicModule,
+    data = MainDataModule(mainEnvironmentModule)
+)
+internal val environment = Environment(baseModule)
 
 abstract class BaseComponentTest {
     companion object {
@@ -94,7 +99,7 @@ abstract class BaseComponentTest {
 
     @Before
     fun prepareEnv() {
-        Environment.run(baseModule) {
+        environment.run {
             environmentService.login(NEW_AD_CLIENT_ID, 0, 0)
             DB.run {
                 val query = Query<Client>("AD_Client", "ad_client_id=$NEW_AD_CLIENT_ID")
@@ -150,7 +155,6 @@ abstract class BaseComponentTest {
     }
 
     fun <T : PersistentObject> getById(id: Int, tableName: String): T {
-        val modelFactory: ModelFactory = DefaultModelFactory()
         val result: T = modelFactory.getPO(tableName, id)
         println(result)
         assertNotNull(result)
@@ -159,7 +163,6 @@ abstract class BaseComponentTest {
     }
 
     protected fun getProductById(product_id: Int): I_M_Product {
-        val modelFactory: ModelFactory = DefaultModelFactory()
         val product: I_M_Product = modelFactory.getPO(I_M_Product.Table_Name, product_id)
         println(product)
         assertNotNull(product)

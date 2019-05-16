@@ -199,7 +199,7 @@ public class X_M_Production extends BasePOName {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(I_M_Production.COLUMNNAME_Description);
+        return getValue(I_M_Production.COLUMNNAME_Description);
     }
 
     /**
@@ -217,7 +217,7 @@ public class X_M_Production extends BasePOName {
      * @return The targeted status of the document
      */
     public String getDocAction() {
-        return (String) getValue(I_M_Production.COLUMNNAME_DocAction);
+        return getValue(I_M_Production.COLUMNNAME_DocAction);
     }
 
     /**
@@ -236,7 +236,7 @@ public class X_M_Production extends BasePOName {
      * @return The current status of the document
      */
     public String getDocStatus() {
-        return (String) getValue(I_M_Production.COLUMNNAME_DocStatus);
+        return getValue(I_M_Production.COLUMNNAME_DocStatus);
     }
 
     /**
@@ -255,7 +255,7 @@ public class X_M_Production extends BasePOName {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(I_M_Production.COLUMNNAME_DocumentNo);
+        return getValue(I_M_Production.COLUMNNAME_DocumentNo);
     }
 
     /**
@@ -273,7 +273,7 @@ public class X_M_Production extends BasePOName {
      * @return Records created
      */
     public String getIsCreated() {
-        return (String) getValue(I_M_Production.COLUMNNAME_IsCreated);
+        return getValue(I_M_Production.COLUMNNAME_IsCreated);
     }
 
     /**
@@ -315,7 +315,7 @@ public class X_M_Production extends BasePOName {
      * @return Warehouse Locator
      */
     public int getLocatorId() {
-        Integer ii = (Integer) getValue(I_M_Production.COLUMNNAME_M_Locator_ID);
+        Integer ii = getValue(I_M_Production.COLUMNNAME_M_Locator_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -354,7 +354,7 @@ public class X_M_Production extends BasePOName {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(I_M_Production.COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(I_M_Production.COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -375,7 +375,7 @@ public class X_M_Production extends BasePOName {
      * @return Plan for producing a product
      */
     public int getProductionId() {
-        Integer ii = (Integer) getValue(I_M_Production.COLUMNNAME_M_Production_ID);
+        Integer ii = getValue(I_M_Production.COLUMNNAME_M_Production_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -418,7 +418,7 @@ public class X_M_Production extends BasePOName {
      * @return Quantity of products to produce
      */
     public BigDecimal getProductionQty() {
-        BigDecimal bd = (BigDecimal) getValue(I_M_Production.COLUMNNAME_ProductionQty);
+        BigDecimal bd = getValue(I_M_Production.COLUMNNAME_ProductionQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }

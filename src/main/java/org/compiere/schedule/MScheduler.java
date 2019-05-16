@@ -4,16 +4,16 @@ import kotliquery.Row;
 import org.compiere.model.AdempiereProcessor;
 import org.compiere.model.AdempiereProcessor2;
 import org.compiere.model.Column;
-import org.compiere.model.SchedulerRecipient;
 import org.compiere.model.SchedulerParameter;
+import org.compiere.model.SchedulerRecipient;
 import org.compiere.orm.MColumn;
 import org.compiere.orm.MTable;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.MUserRoles;
 import org.compiere.orm.Query;
 import org.compiere.util.DisplayType;
 import org.compiere.util.MsgKt;
 import org.idempiere.icommon.model.PersistentObject;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.sql.Timestamp;
 import java.util.List;

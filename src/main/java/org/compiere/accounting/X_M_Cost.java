@@ -3,9 +3,9 @@ package org.compiere.accounting;
 import kotliquery.Row;
 import org.compiere.model.AccountingSchema;
 import org.compiere.model.I_M_Cost;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 
@@ -70,7 +70,7 @@ public abstract class X_M_Cost extends PO implements I_M_Cost {
      * @return Rules for accounting
      */
     public int getAccountingSchemaId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_AcctSchema_ID);
+        Integer ii = getValue(COLUMNNAME_C_AcctSchema_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -91,7 +91,7 @@ public abstract class X_M_Cost extends PO implements I_M_Cost {
      * @return Total Amount
      */
     public BigDecimal getCumulatedAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_CumulatedAmt);
+        BigDecimal bd = getValue(COLUMNNAME_CumulatedAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -111,7 +111,7 @@ public abstract class X_M_Cost extends PO implements I_M_Cost {
      * @return Total Quantity
      */
     public BigDecimal getCumulatedQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_CumulatedQty);
+        BigDecimal bd = getValue(COLUMNNAME_CumulatedQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -131,7 +131,7 @@ public abstract class X_M_Cost extends PO implements I_M_Cost {
      * @return The currently used cost price
      */
     public BigDecimal getCurrentCostPrice() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_CurrentCostPrice);
+        BigDecimal bd = getValue(COLUMNNAME_CurrentCostPrice);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -152,7 +152,7 @@ public abstract class X_M_Cost extends PO implements I_M_Cost {
      * manufactured for this level.
      */
     public BigDecimal getCurrentCostPriceLL() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_CurrentCostPriceLL);
+        BigDecimal bd = getValue(COLUMNNAME_CurrentCostPriceLL);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -163,7 +163,7 @@ public abstract class X_M_Cost extends PO implements I_M_Cost {
      * @return Current Quantity
      */
     public BigDecimal getCurrentQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_CurrentQty);
+        BigDecimal bd = getValue(COLUMNNAME_CurrentQty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -183,7 +183,7 @@ public abstract class X_M_Cost extends PO implements I_M_Cost {
      * @return Future Cost Price
      */
     public BigDecimal getFutureCostPrice() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_FutureCostPrice);
+        BigDecimal bd = getValue(COLUMNNAME_FutureCostPrice);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -203,7 +203,7 @@ public abstract class X_M_Cost extends PO implements I_M_Cost {
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -232,7 +232,7 @@ public abstract class X_M_Cost extends PO implements I_M_Cost {
      * @return Product Cost Element
      */
     public int getCostElementId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_CostElement_ID);
+        Integer ii = getValue(COLUMNNAME_M_CostElement_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -253,7 +253,7 @@ public abstract class X_M_Cost extends PO implements I_M_Cost {
      * @return Type of Cost (e.g. Current, Plan, Future)
      */
     public int getCostTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_CostType_ID);
+        Integer ii = getValue(COLUMNNAME_M_CostType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -280,7 +280,7 @@ public abstract class X_M_Cost extends PO implements I_M_Cost {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -301,7 +301,7 @@ public abstract class X_M_Cost extends PO implements I_M_Cost {
      * @return Percentage
      */
     public int getPercent() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Percent);
+        Integer ii = getValue(COLUMNNAME_Percent);
         if (ii == null) return 0;
         return ii;
     }

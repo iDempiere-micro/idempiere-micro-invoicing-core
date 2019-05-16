@@ -368,10 +368,10 @@ public class MProject extends X_C_Project {
     protected boolean afterSave(boolean newRecord, boolean success) {
         if (!success) return success;
         if (newRecord) {
-            insert_Accounting("C_Project_Acct", "C_AcctSchema_Default", null);
-            insert_Tree(MTree_Base.TREETYPE_Project);
+            insertAccounting("C_Project_Acct", "C_AcctSchema_Default", null);
+            insertTree(MTree_Base.TREETYPE_Project);
         }
-        if (newRecord || isValueChanged(COLUMNNAME_Value)) update_Tree(MTree_Base.TREETYPE_Project);
+        if (newRecord || isValueChanged(COLUMNNAME_Value)) updateTree(MTree_Base.TREETYPE_Project);
 
         //	Value/Name change
         if (!newRecord && (isValueChanged("Value") || isValueChanged("Name")))
@@ -387,7 +387,7 @@ public class MProject extends X_C_Project {
      * @return deleted
      */
     protected boolean afterDelete(boolean success) {
-        if (success) delete_Tree(MTree_Base.TREETYPE_Project);
+        if (success) deleteTree(MTree_Base.TREETYPE_Project);
         return success;
     } //	afterDelete
 

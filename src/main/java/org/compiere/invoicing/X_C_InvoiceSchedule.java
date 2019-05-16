@@ -92,7 +92,7 @@ public class X_C_InvoiceSchedule extends PO implements I_C_InvoiceSchedule {
      * @return Amount
      */
     public BigDecimal getAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Amt);
+        BigDecimal bd = getValue(COLUMNNAME_Amt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -103,7 +103,7 @@ public class X_C_InvoiceSchedule extends PO implements I_C_InvoiceSchedule {
      * @return Day of Invoice Generation
      */
     public int getInvoiceDay() {
-        Integer ii = (Integer) getValue(COLUMNNAME_InvoiceDay);
+        Integer ii = getValue(COLUMNNAME_InvoiceDay);
         if (ii == null) return 0;
         return ii;
     }
@@ -114,7 +114,7 @@ public class X_C_InvoiceSchedule extends PO implements I_C_InvoiceSchedule {
      * @return Last day for including shipments
      */
     public int getInvoiceDayCutoff() {
-        Integer ii = (Integer) getValue(COLUMNNAME_InvoiceDayCutoff);
+        Integer ii = getValue(COLUMNNAME_InvoiceDayCutoff);
         if (ii == null) return 0;
         return ii;
     }
@@ -125,7 +125,7 @@ public class X_C_InvoiceSchedule extends PO implements I_C_InvoiceSchedule {
      * @return How often invoices will be generated
      */
     public String getInvoiceFrequency() {
-        return (String) getValue(COLUMNNAME_InvoiceFrequency);
+        return getValue(COLUMNNAME_InvoiceFrequency);
     }
 
     /**
@@ -134,7 +134,7 @@ public class X_C_InvoiceSchedule extends PO implements I_C_InvoiceSchedule {
      * @return Day to generate invoices
      */
     public String getInvoiceWeekDay() {
-        return (String) getValue(COLUMNNAME_InvoiceWeekDay);
+        return getValue(COLUMNNAME_InvoiceWeekDay);
     }
 
     /**
@@ -143,7 +143,7 @@ public class X_C_InvoiceSchedule extends PO implements I_C_InvoiceSchedule {
      * @return Last day in the week for shipments to be included
      */
     public String getInvoiceWeekDayCutoff() {
-        return (String) getValue(COLUMNNAME_InvoiceWeekDayCutoff);
+        return getValue(COLUMNNAME_InvoiceWeekDayCutoff);
     }
 
     /**

@@ -11,9 +11,10 @@ import org.compiere.accounting.MStorageReservation;
 import org.compiere.accounting.NegativeInventoryDisallowedException;
 import org.compiere.crm.MBPartner;
 import org.compiere.docengine.DocumentEngine;
+import org.compiere.model.DocumentType;
 import org.compiere.model.IDoc;
 import org.compiere.model.IPODoc;
-import org.compiere.model.DocumentType;
+import org.compiere.model.I_C_BPartner;
 import org.compiere.model.I_C_Invoice;
 import org.compiere.model.I_C_InvoiceLine;
 import org.compiere.model.I_C_Order;
@@ -160,7 +161,7 @@ public class MInOut extends org.compiere.order.MInOut implements DocAction, IPOD
                 if (peer.getRef_OrderId() != 0) to.setOrderId(peer.getRef_OrderId());
             }
             if (from.getInvoiceId() != 0) {
-                MInvoice peer = new MInvoice(from.getInvoiceId());
+                MInvoice peer = new MInvoice(null, from.getInvoiceId());
                 if (peer.getRef_InvoiceId() != 0) to.setInvoiceId(peer.getRef_InvoiceId());
             }
             // find RMA link
@@ -301,7 +302,7 @@ public class MInOut extends org.compiere.order.MInOut implements DocAction, IPOD
                     || !MDocType.DOCSUBTYPESO_PrepayOrder.equals(order.getDocumentType().getDocSubTypeSO())
                     || MSysConfig.getBooleanValue(
                     MSysConfig.CHECK_CREDIT_ON_PREPAY_ORDER, true, getClientId(), getOrgId())) {
-                MBPartner bp = new MBPartner(getBusinessPartnerId());
+                I_C_BPartner bp = getBusinessPartnerService().getById(getBusinessPartnerId());
                 if (MBPartner.SOCREDITSTATUS_CreditStop.equals(bp.getSOCreditStatus())) {
                     m_processMsg =
                             "@BPartnerCreditStop@ - @TotalOpenBalance@="
@@ -1412,11 +1413,11 @@ public class MInOut extends org.compiere.order.MInOut implements DocAction, IPOD
         int counterC_BPartner_ID = org.getLinkedBusinessPartnerId();
         if (counterC_BPartner_ID == 0) return null;
         //	Business Partner needs to be linked to Org
-        MBPartner bp = new MBPartner(getBusinessPartnerId());
+        I_C_BPartner bp = getBusinessPartnerService().getById(getBusinessPartnerId());
         int counterAD_Org_ID = bp.getLinkedOrganizationId();
         if (counterAD_Org_ID == 0) return null;
 
-        MBPartner counterBP = new MBPartner(counterC_BPartner_ID);
+        I_C_BPartner counterBP = getBusinessPartnerService().getById(counterC_BPartner_ID);
         MOrgInfo counterOrgInfo = MOrgInfoKt.getOrganizationInfo(counterAD_Org_ID);
         if (log.isLoggable(Level.INFO)) log.info("Counter BP=" + counterBP.getName());
 

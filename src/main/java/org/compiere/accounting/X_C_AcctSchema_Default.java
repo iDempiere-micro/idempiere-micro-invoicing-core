@@ -50,7 +50,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Bank Asset Account
      */
     public int getBankAssetAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_B_Asset_Acct);
+        Integer ii = getValue(COLUMNNAME_B_Asset_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -61,7 +61,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Bank Interest Expense Account
      */
     public int getBankInterestExpenseAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_B_InterestExp_Acct);
+        Integer ii = getValue(COLUMNNAME_B_InterestExp_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -72,7 +72,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Bank Interest Revenue Account
      */
     public int getBankInterestRevenueAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_B_InterestRev_Acct);
+        Integer ii = getValue(COLUMNNAME_B_InterestRev_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -83,7 +83,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Bank In Transit Account
      */
     public int getBankInTransitAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_B_InTransit_Acct);
+        Integer ii = getValue(COLUMNNAME_B_InTransit_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -94,7 +94,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return AP Payment Selection Clearing Account
      */
     public int getAPPaymentSelectionClearingAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_B_PaymentSelect_Acct);
+        Integer ii = getValue(COLUMNNAME_B_PaymentSelect_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -105,7 +105,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Unallocated Cash Clearing Account
      */
     public int getUnallocatedCashClearingAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_B_UnallocatedCash_Acct);
+        Integer ii = getValue(COLUMNNAME_B_UnallocatedCash_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -116,7 +116,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Rules for accounting
      */
     public int getAccountingSchemaId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_AcctSchema_ID);
+        Integer ii = getValue(COLUMNNAME_C_AcctSchema_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -137,7 +137,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Cash Book Asset Account
      */
     public int getCashBookAssetAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_CB_Asset_Acct);
+        Integer ii = getValue(COLUMNNAME_CB_Asset_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -148,7 +148,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Cash Transfer Clearing Account
      */
     public int getCashTransferClearingAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_CB_CashTransfer_Acct);
+        Integer ii = getValue(COLUMNNAME_CB_CashTransfer_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -159,7 +159,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Cash Book Differences Account
      */
     public int getCashBookDifferencesAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_CB_Differences_Acct);
+        Integer ii = getValue(COLUMNNAME_CB_Differences_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -170,7 +170,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Cash Book Expense Account
      */
     public int getCashBookExpenseAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_CB_Expense_Acct);
+        Integer ii = getValue(COLUMNNAME_CB_Expense_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -181,7 +181,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Cash Book Receipts Account
      */
     public int getCashBookReceiptsAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_CB_Receipt_Acct);
+        Integer ii = getValue(COLUMNNAME_CB_Receipt_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -192,7 +192,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Charge Account
      */
     public int getChargeAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Ch_Expense_Acct);
+        Integer ii = getValue(COLUMNNAME_Ch_Expense_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -203,7 +203,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for customer prepayments
      */
     public int getCustomerPrepaymentAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Prepayment_Acct);
+        Integer ii = getValue(COLUMNNAME_C_Prepayment_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -214,7 +214,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for Customer Receivables
      */
     public int getCustomerReceivableAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Receivable_Acct);
+        Integer ii = getValue(COLUMNNAME_C_Receivable_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -225,7 +225,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Customer Accounts Receivables Services Account
      */
     public int getCustomerReceivableServicesAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Receivable_Services_Acct);
+        Integer ii = getValue(COLUMNNAME_C_Receivable_Services_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -236,7 +236,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for not-invoiced Material Receipts
      */
     public int getNotInvoicedReceiptsAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_NotInvoicedReceipts_Acct);
+        Integer ii = getValue(COLUMNNAME_NotInvoicedReceipts_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -247,7 +247,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for Product Asset (Inventory)
      */
     public int getProductAssetAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_P_Asset_Acct);
+        Integer ii = getValue(COLUMNNAME_P_Asset_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -258,7 +258,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Average Cost Variance
      */
     public int getAverageCostVarianceAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_P_AverageCostVariance_Acct);
+        Integer ii = getValue(COLUMNNAME_P_AverageCostVariance_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -269,7 +269,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Payment Discount Expense Account
      */
     public int getPaymentDiscountExpenseAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PayDiscount_Exp_Acct);
+        Integer ii = getValue(COLUMNNAME_PayDiscount_Exp_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -280,7 +280,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Payment Discount Revenue Account
      */
     public int getPaymentDiscountRevenueAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PayDiscount_Rev_Acct);
+        Integer ii = getValue(COLUMNNAME_PayDiscount_Rev_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -291,7 +291,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for Cost of Goods Sold
      */
     public int getProductCOGSAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_P_COGS_Acct);
+        Integer ii = getValue(COLUMNNAME_P_COGS_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -302,7 +302,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Product Cost Adjustment Account
      */
     public int getProductCostAdjustmentAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_P_CostAdjustment_Acct);
+        Integer ii = getValue(COLUMNNAME_P_CostAdjustment_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -313,7 +313,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for Product Expense
      */
     public int getProductExpenseAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_P_Expense_Acct);
+        Integer ii = getValue(COLUMNNAME_P_Expense_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -324,7 +324,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Product Inventory Clearing Account
      */
     public int getInventoryClearingAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_P_InventoryClearing_Acct);
+        Integer ii = getValue(COLUMNNAME_P_InventoryClearing_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -335,7 +335,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Difference between Costs and Invoice Price (IPV)
      */
     public int getInvoicePriceVarianceAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_P_InvoicePriceVariance_Acct);
+        Integer ii = getValue(COLUMNNAME_P_InvoicePriceVariance_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -346,7 +346,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Project Asset Account
      */
     public int getProjectAssetAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PJ_Asset_Acct);
+        Integer ii = getValue(COLUMNNAME_PJ_Asset_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -357,7 +357,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Product Landed Cost Clearing Account
      */
     public int getLandedCostClearingAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_P_LandedCostClearing_Acct);
+        Integer ii = getValue(COLUMNNAME_P_LandedCostClearing_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -368,7 +368,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Difference between Standard Cost and Purchase Price (PPV)
      */
     public int getPurchasePriceVarianceAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_P_PurchasePriceVariance_Acct);
+        Integer ii = getValue(COLUMNNAME_P_PurchasePriceVariance_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -379,7 +379,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return The Rate Variance account is the account used Manufacturing Order
      */
     public int getRateVarianceAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_P_RateVariance_Acct);
+        Integer ii = getValue(COLUMNNAME_P_RateVariance_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -390,7 +390,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for Product Revenue (Sales Account)
      */
     public int getRevenueAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_P_Revenue_Acct);
+        Integer ii = getValue(COLUMNNAME_P_Revenue_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -401,7 +401,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Trade Discount Granted Account
      */
     public int getTradeDiscountGrantedAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_P_TradeDiscountGrant_Acct);
+        Integer ii = getValue(COLUMNNAME_P_TradeDiscountGrant_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -412,7 +412,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Trade Discount Receivable Account
      */
     public int getTradeDiscountReceivableAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_P_TradeDiscountRec_Acct);
+        Integer ii = getValue(COLUMNNAME_P_TradeDiscountRec_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -423,7 +423,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Realized Gain Account
      */
     public int getRealizedGainAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_RealizedGain_Acct);
+        Integer ii = getValue(COLUMNNAME_RealizedGain_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -434,7 +434,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Realized Loss Account
      */
     public int getRealizedLossAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_RealizedLoss_Acct);
+        Integer ii = getValue(COLUMNNAME_RealizedLoss_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -445,7 +445,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for Tax you can reclaim
      */
     public int getTaxCreditAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_T_Credit_Acct);
+        Integer ii = getValue(COLUMNNAME_T_Credit_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -456,7 +456,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for Tax you have to pay
      */
     public int getTaxDueAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_T_Due_Acct);
+        Integer ii = getValue(COLUMNNAME_T_Due_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -467,7 +467,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for paid tax you cannot reclaim
      */
     public int getTaxExpenseAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_T_Expense_Acct);
+        Integer ii = getValue(COLUMNNAME_T_Expense_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -478,7 +478,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for unearned revenue
      */
     public int getUnEarnedRevenueAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_UnEarnedRevenue_Acct);
+        Integer ii = getValue(COLUMNNAME_UnEarnedRevenue_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -489,7 +489,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Unrealized Gain Account for currency revaluation
      */
     public int getUnrealizedGainAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_UnrealizedGain_Acct);
+        Integer ii = getValue(COLUMNNAME_UnrealizedGain_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -500,7 +500,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Unrealized Loss Account for currency revaluation
      */
     public int getUnrealizedLossAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_UnrealizedLoss_Acct);
+        Integer ii = getValue(COLUMNNAME_UnrealizedLoss_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -511,7 +511,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for Vendor Liability
      */
     public int getVendorLiabilityAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_V_Liability_Acct);
+        Integer ii = getValue(COLUMNNAME_V_Liability_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -522,7 +522,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for Vendor Service Liability
      */
     public int getVendorServiceLiabilityAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_V_Liability_Services_Acct);
+        Integer ii = getValue(COLUMNNAME_V_Liability_Services_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -533,7 +533,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for Vendor Prepayments
      */
     public int getVendorPrepaymentAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_V_Prepayment_Acct);
+        Integer ii = getValue(COLUMNNAME_V_Prepayment_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -544,7 +544,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Warehouse Differences Account
      */
     public int getWarehouseDifferencesAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_W_Differences_Acct);
+        Integer ii = getValue(COLUMNNAME_W_Differences_Acct);
         if (ii == null) return 0;
         return ii;
     }
@@ -555,7 +555,7 @@ public abstract class X_C_AcctSchema_Default extends PO implements DefaultAccoun
      * @return Account for Receivables write-off
      */
     public int getWriteOffAccount() {
-        Integer ii = (Integer) getValue(COLUMNNAME_WriteOff_Acct);
+        Integer ii = getValue(COLUMNNAME_WriteOff_Acct);
         if (ii == null) return 0;
         return ii;
     }

@@ -6,10 +6,10 @@ import org.compiere.model.DocumentType;
 import org.compiere.model.I_M_AttributeSetInstance;
 import org.compiere.model.User;
 import org.compiere.model.Workflow;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.eevolution.model.I_PP_Order;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -61,7 +61,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Performing or initiating organization
      */
     public int getTransactionOrganizationId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_OrgTrx_ID);
+        Integer ii = getValue(COLUMNNAME_AD_OrgTrx_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -88,7 +88,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Workflow or combination of tasks
      */
     public int getWorkflowId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_Workflow_ID);
+        Integer ii = getValue(COLUMNNAME_AD_Workflow_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -109,7 +109,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Indicated the Quantity Assay to use into Quality Order
      */
     public BigDecimal getAssay() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Assay);
+        BigDecimal bd = getValue(COLUMNNAME_Assay);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -135,7 +135,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Business Activity
      */
     public int getBusinessActivityId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Activity_ID);
+        Integer ii = getValue(COLUMNNAME_C_Activity_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -162,7 +162,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Marketing Campaign
      */
     public int getCampaignId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Campaign_ID);
+        Integer ii = getValue(COLUMNNAME_C_Campaign_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -189,7 +189,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Document type or rules
      */
     public int getDocumentTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -216,7 +216,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Target document type for conversing documents
      */
     public int getTargetDocumentTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocTypeTarget_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocTypeTarget_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -237,7 +237,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Copy From Record
      */
     public String getCopyFrom() {
-        return (String) getValue(COLUMNNAME_CopyFrom);
+        return getValue(COLUMNNAME_CopyFrom);
     }
 
     /**
@@ -261,7 +261,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Sales Order Line
      */
     public int getOrderLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_OrderLine_ID);
+        Integer ii = getValue(COLUMNNAME_C_OrderLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -288,7 +288,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Financial Project
      */
     public int getProjectId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Project_ID);
+        Integer ii = getValue(COLUMNNAME_C_Project_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -315,7 +315,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Unit of Measure
      */
     public int getUOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_UOM_ID);
+        Integer ii = getValue(COLUMNNAME_C_UOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -480,7 +480,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -498,7 +498,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return The targeted status of the document
      */
     public String getDocAction() {
-        return (String) getValue(COLUMNNAME_DocAction);
+        return getValue(COLUMNNAME_DocAction);
     }
 
     /**
@@ -517,7 +517,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return The current status of the document
      */
     public String getDocStatus() {
-        return (String) getValue(COLUMNNAME_DocStatus);
+        return getValue(COLUMNNAME_DocStatus);
     }
 
     /**
@@ -536,7 +536,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**
@@ -554,7 +554,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Float After
      */
     public BigDecimal getFloatAfter() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_FloatAfter);
+        BigDecimal bd = getValue(COLUMNNAME_FloatAfter);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -574,7 +574,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Float Befored
      */
     public BigDecimal getFloatBefored() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_FloatBefored);
+        BigDecimal bd = getValue(COLUMNNAME_FloatBefored);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -709,7 +709,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Line);
+        Integer ii = getValue(COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -729,7 +729,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Lot number (alphanumeric)
      */
     public String getLot() {
-        return (String) getValue(COLUMNNAME_Lot);
+        return getValue(COLUMNNAME_Lot);
     }
 
     /**
@@ -753,7 +753,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -781,7 +781,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -808,7 +808,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Storage Warehouse and Service Point
      */
     public int getWarehouseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Warehouse_ID);
+        Integer ii = getValue(COLUMNNAME_M_Warehouse_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -830,7 +830,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * Order, Requisition)
      */
     public String getOrderType() {
-        return (String) getValue(COLUMNNAME_OrderType);
+        return getValue(COLUMNNAME_OrderType);
     }
 
     /**
@@ -855,7 +855,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Planner
      */
     public int getPlannerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Planner_ID);
+        Integer ii = getValue(COLUMNNAME_Planner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -899,7 +899,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Manufacturing Order
      */
     public int getOrderId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PP_Order_ID);
+        Integer ii = getValue(COLUMNNAME_PP_Order_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -920,7 +920,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return PP_Order_UU
      */
     public String getOrderUU() {
-        return (String) getValue(COLUMNNAME_PP_Order_UU);
+        return getValue(COLUMNNAME_PP_Order_UU);
     }
 
     /**
@@ -944,7 +944,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return BOM & Formula
      */
     public int getProductBOMId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_PP_Product_BOM_ID);
+        Integer ii = getValue(COLUMNNAME_PP_Product_BOM_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -965,7 +965,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Priority of a document
      */
     public String getPriorityRule() {
-        return (String) getValue(COLUMNNAME_PriorityRule);
+        return getValue(COLUMNNAME_PriorityRule);
     }
 
     /**
@@ -1007,7 +1007,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return The date+time (expressed in decimal format) when the document has been processed
      */
     public BigDecimal getProcessedOn() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ProcessedOn);
+        BigDecimal bd = getValue(COLUMNNAME_ProcessedOn);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -1051,7 +1051,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Qty Batchs
      */
     public BigDecimal getQtyBatchs() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyBatchs);
+        BigDecimal bd = getValue(COLUMNNAME_QtyBatchs);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -1071,7 +1071,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Qty Batch Size
      */
     public BigDecimal getQtyBatchSize() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyBatchSize);
+        BigDecimal bd = getValue(COLUMNNAME_QtyBatchSize);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -1091,7 +1091,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Delivered Quantity
      */
     public BigDecimal getQtyDelivered() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyDelivered);
+        BigDecimal bd = getValue(COLUMNNAME_QtyDelivered);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -1111,7 +1111,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return The Quantity Entered is based on the selected UoM
      */
     public BigDecimal getQtyEntered() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyEntered);
+        BigDecimal bd = getValue(COLUMNNAME_QtyEntered);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -1131,7 +1131,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Ordered Quantity
      */
     public BigDecimal getQtyOrdered() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyOrdered);
+        BigDecimal bd = getValue(COLUMNNAME_QtyOrdered);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -1151,7 +1151,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Qty Reject
      */
     public BigDecimal getQtyReject() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyReject);
+        BigDecimal bd = getValue(COLUMNNAME_QtyReject);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -1171,7 +1171,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Reserved Quantity
      */
     public BigDecimal getQtyReserved() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyReserved);
+        BigDecimal bd = getValue(COLUMNNAME_QtyReserved);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -1191,7 +1191,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Scrap % Quantity for this componet
      */
     public BigDecimal getQtyScrap() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyScrap);
+        BigDecimal bd = getValue(COLUMNNAME_QtyScrap);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -1211,7 +1211,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Type of schedule
      */
     public String getScheduleType() {
-        return (String) getValue(COLUMNNAME_ScheduleType);
+        return getValue(COLUMNNAME_ScheduleType);
     }
 
     /**
@@ -1229,7 +1229,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Product Serial Number
      */
     public String getSerNo() {
-        return (String) getValue(COLUMNNAME_SerNo);
+        return getValue(COLUMNNAME_SerNo);
     }
 
     /**
@@ -1253,7 +1253,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return Resource
      */
     public int getResourceID() {
-        Integer ii = (Integer) getValue(COLUMNNAME_S_Resource_ID);
+        Integer ii = getValue(COLUMNNAME_S_Resource_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -1280,7 +1280,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return User defined list element #1
      */
     public int getUser1Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_User1_ID);
+        Integer ii = getValue(COLUMNNAME_User1_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -1307,7 +1307,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * @return User defined list element #2
      */
     public int getUser2Id() {
-        Integer ii = (Integer) getValue(COLUMNNAME_User2_ID);
+        Integer ii = getValue(COLUMNNAME_User2_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -1329,7 +1329,7 @@ public class X_PP_Order extends PO implements I_PP_Order {
      * fall below 100 percent
      */
     public BigDecimal getYield() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Yield);
+        BigDecimal bd = getValue(COLUMNNAME_Yield);
         if (bd == null) return Env.ZERO;
         return bd;
     }

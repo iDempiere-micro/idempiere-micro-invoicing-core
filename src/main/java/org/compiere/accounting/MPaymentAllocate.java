@@ -4,9 +4,9 @@ import kotliquery.Row;
 import org.compiere.invoicing.MInvoice;
 import org.compiere.model.I_C_PaymentAllocate;
 import org.compiere.model.TypedQuery;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.util.MsgKt;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -44,7 +44,7 @@ public class MPaymentAllocate extends X_C_PaymentAllocate {
     } //	MPaymentAllocate
 
     /**
-     * Load Cosntructor
+     * Load Constructor
      *
      */
     public MPaymentAllocate(Row row) {
@@ -84,7 +84,7 @@ public class MPaymentAllocate extends X_C_PaymentAllocate {
      */
     public MInvoice getInvoice() {
         if (m_invoice == null && getInvoiceId() != 0)
-            m_invoice = new MInvoice(getInvoiceId());
+            m_invoice = new MInvoice(null, getInvoiceId());
         return m_invoice;
     } //	getInvoice
 

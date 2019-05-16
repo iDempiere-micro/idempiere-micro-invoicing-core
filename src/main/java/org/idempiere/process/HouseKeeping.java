@@ -16,7 +16,6 @@ package org.idempiere.process;
 
 import org.compiere.model.IProcessInfoParameter;
 import org.compiere.orm.MTable;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.process.SvrProcess;
 import org.compiere.util.MsgKt;
 import org.idempiere.common.util.AdempiereSystemError;

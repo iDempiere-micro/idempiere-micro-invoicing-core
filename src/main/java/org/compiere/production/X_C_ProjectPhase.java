@@ -80,7 +80,7 @@ public class X_C_ProjectPhase extends BasePOName implements I_C_ProjectPhase {
      * @return Standard Phase of the Project Type
      */
     public int getPhaseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Phase_ID);
+        Integer ii = getValue(COLUMNNAME_C_Phase_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -101,7 +101,7 @@ public class X_C_ProjectPhase extends BasePOName implements I_C_ProjectPhase {
      * @return Financial Project
      */
     public int getProjectId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Project_ID);
+        Integer ii = getValue(COLUMNNAME_C_Project_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -122,7 +122,7 @@ public class X_C_ProjectPhase extends BasePOName implements I_C_ProjectPhase {
      * @return Phase of a Project
      */
     public int getProjectPhaseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_ProjectPhase_ID);
+        Integer ii = getValue(COLUMNNAME_C_ProjectPhase_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -133,7 +133,7 @@ public class X_C_ProjectPhase extends BasePOName implements I_C_ProjectPhase {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -178,7 +178,7 @@ public class X_C_ProjectPhase extends BasePOName implements I_C_ProjectPhase {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -199,7 +199,7 @@ public class X_C_ProjectPhase extends BasePOName implements I_C_ProjectPhase {
      * @return Actual Price
      */
     public BigDecimal getPriceActual() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_PriceActual);
+        BigDecimal bd = getValue(COLUMNNAME_PriceActual);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -210,7 +210,7 @@ public class X_C_ProjectPhase extends BasePOName implements I_C_ProjectPhase {
      * @return Quantity
      */
     public BigDecimal getQty() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_Qty);
+        BigDecimal bd = getValue(COLUMNNAME_Qty);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -230,7 +230,7 @@ public class X_C_ProjectPhase extends BasePOName implements I_C_ProjectPhase {
      * @return Method of ordering records; lowest number comes first
      */
     public int getSeqNo() {
-        Integer ii = (Integer) getValue(COLUMNNAME_SeqNo);
+        Integer ii = getValue(COLUMNNAME_SeqNo);
         if (ii == null) return 0;
         return ii;
     }

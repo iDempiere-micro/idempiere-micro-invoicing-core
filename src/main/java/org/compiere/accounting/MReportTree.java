@@ -26,7 +26,7 @@ public class MReportTree {
      * Map with Tree
      */
     private static CCache<String, MReportTree> s_trees =
-            new CCache<String, MReportTree>(null, "MReportTree", 20, false);
+            new CCache<String, MReportTree>(null, "MReportTree", 20);
     /**
      * Optional Hierarchy
      */

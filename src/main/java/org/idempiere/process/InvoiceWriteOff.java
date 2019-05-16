@@ -260,7 +260,7 @@ public class InvoiceWriteOff extends SvrProcess {
         }
 
         //	Invoice
-        MInvoice invoice = new MInvoice(C_Invoice_ID);
+        MInvoice invoice = new MInvoice(null, C_Invoice_ID);
         if (!invoice.isSOTrx()) OpenAmt = OpenAmt.negate();
 
         //	Allocation

@@ -1,7 +1,6 @@
 package org.idempiere.process;
 
 import org.compiere.accounting.MOrder;
-import org.compiere.accounting.MOrderLine;
 import org.compiere.accounting.MStorageOnHand;
 import org.compiere.invoicing.MInOut;
 import org.compiere.invoicing.MInOutLine;

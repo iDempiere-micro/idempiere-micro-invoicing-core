@@ -2,9 +2,9 @@ package org.compiere.invoicing;
 
 import kotliquery.Row;
 import org.compiere.model.I_M_InventoryLine;
-import software.hsharp.core.orm.MBaseTableKt;
 import org.compiere.orm.PO;
 import org.idempiere.common.util.Env;
+import software.hsharp.core.orm.MBaseTableKt;
 
 import java.math.BigDecimal;
 
@@ -62,7 +62,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return Additional document charges
      */
     public int getChargeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Charge_ID);
+        Integer ii = getValue(COLUMNNAME_C_Charge_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -83,7 +83,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return The currently used cost price
      */
     public BigDecimal getCurrentCostPrice() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_CurrentCostPrice);
+        BigDecimal bd = getValue(COLUMNNAME_CurrentCostPrice);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -103,7 +103,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -121,7 +121,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return Type of inventory difference
      */
     public String getInventoryType() {
-        return (String) getValue(COLUMNNAME_InventoryType);
+        return getValue(COLUMNNAME_InventoryType);
     }
 
     /**
@@ -140,7 +140,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Line);
+        Integer ii = getValue(COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }
@@ -160,7 +160,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return Product Attribute Set Instance
      */
     public int getAttributeSetInstanceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_AttributeSetInstance_ID);
+        Integer ii = getValue(COLUMNNAME_M_AttributeSetInstance_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -188,7 +188,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return Parameters for a Physical Inventory
      */
     public int getInventoryId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Inventory_ID);
+        Integer ii = getValue(COLUMNNAME_M_Inventory_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -209,7 +209,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return Unique line in an Inventory document
      */
     public int getInventoryLineId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_InventoryLine_ID);
+        Integer ii = getValue(COLUMNNAME_M_InventoryLine_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -220,7 +220,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return Warehouse Locator
      */
     public int getLocatorId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Locator_ID);
+        Integer ii = getValue(COLUMNNAME_M_Locator_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -247,7 +247,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -268,7 +268,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return New current cost price after processing of M_CostDetail
      */
     public BigDecimal getNewCostPrice() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_NewCostPrice);
+        BigDecimal bd = getValue(COLUMNNAME_NewCostPrice);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -297,7 +297,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return Book Quantity
      */
     public BigDecimal getQtyBook() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyBook);
+        BigDecimal bd = getValue(COLUMNNAME_QtyBook);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -317,7 +317,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return Counted Quantity
      */
     public BigDecimal getQtyCount() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyCount);
+        BigDecimal bd = getValue(COLUMNNAME_QtyCount);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -337,7 +337,7 @@ public abstract class X_M_InventoryLine extends PO implements I_M_InventoryLine 
      * @return Internal Use Quantity removed from Inventory
      */
     public BigDecimal getQtyInternalUse() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyInternalUse);
+        BigDecimal bd = getValue(COLUMNNAME_QtyInternalUse);
         if (bd == null) return Env.ZERO;
         return bd;
     }

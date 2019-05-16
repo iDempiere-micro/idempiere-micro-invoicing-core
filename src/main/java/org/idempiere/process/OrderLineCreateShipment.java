@@ -5,6 +5,7 @@ import org.compiere.accounting.MOrderLine;
 import org.compiere.model.IProcessInfoParameter;
 import org.compiere.order.MInOut;
 import org.compiere.order.MInOutLine;
+import org.compiere.order.OrderConstants;
 import org.compiere.process.SvrProcess;
 import org.idempiere.common.util.Env;
 
@@ -58,7 +59,7 @@ public class OrderLineCreateShipment extends SvrProcess {
         MOrderLine line = new MOrderLine(p_C_OrderLine_ID);
         if (line.getId() == 0) throw new IllegalArgumentException("Order line not found");
         MOrder order = new MOrder(line.getOrderId());
-        if (!MOrder.DOCSTATUS_Completed.equals(order.getDocStatus()))
+        if (!OrderConstants.DOCSTATUS_Completed.equals(order.getDocStatus()))
             throw new IllegalArgumentException("Order not completed");
 
         if ((line.getQtyOrdered().subtract(line.getQtyDelivered())).compareTo(Env.ZERO) <= 0)

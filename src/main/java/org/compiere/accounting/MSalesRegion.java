@@ -47,9 +47,9 @@ public class MSalesRegion extends X_C_SalesRegion {
      */
     protected boolean afterSave(boolean newRecord, boolean success) {
         if (!success) return success;
-        if (newRecord) insert_Tree(MTree_Base.TREETYPE_SalesRegion);
+        if (newRecord) insertTree(MTree_Base.TREETYPE_SalesRegion);
         if (newRecord || isValueChanged(I_C_SalesRegion.COLUMNNAME_Value))
-            update_Tree(MTree_Base.TREETYPE_SalesRegion);
+            updateTree(MTree_Base.TREETYPE_SalesRegion);
         //	Value/Name change
         if (!newRecord && (isValueChanged("Value") || isValueChanged("Name")))
             MAccount.updateValueDescription(
@@ -65,7 +65,7 @@ public class MSalesRegion extends X_C_SalesRegion {
      * @return deleted
      */
     protected boolean afterDelete(boolean success) {
-        if (success) delete_Tree(MTree_Base.TREETYPE_SalesRegion);
+        if (success) deleteTree(MTree_Base.TREETYPE_SalesRegion);
         return success;
     } //	afterDelete
 } //	MSalesRegion

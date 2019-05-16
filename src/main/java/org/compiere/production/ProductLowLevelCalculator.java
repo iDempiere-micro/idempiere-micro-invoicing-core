@@ -72,7 +72,7 @@ class ProductLowLevelCalculator {
                 }
             }
         } catch (SQLException e) {
-            throw new DBException(e, sql);
+            throw new DBException(e);
         } finally {
 
             rs = null;
@@ -124,7 +124,7 @@ class ProductLowLevelCalculator {
                 }
             }
         } catch (SQLException e) {
-            throw new DBException(e, sql);
+            throw new DBException(e);
         } finally {
 
             rs = null;

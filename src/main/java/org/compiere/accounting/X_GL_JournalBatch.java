@@ -103,7 +103,7 @@ public class X_GL_JournalBatch extends PO implements I_GL_JournalBatch {
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -124,7 +124,7 @@ public class X_GL_JournalBatch extends PO implements I_GL_JournalBatch {
      * @return Document type or rules
      */
     public int getDocumentTypeId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DocType_ID);
+        Integer ii = getValue(COLUMNNAME_C_DocType_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -145,7 +145,7 @@ public class X_GL_JournalBatch extends PO implements I_GL_JournalBatch {
      * @return If not zero, the Debit amount of the document must be equal this amount
      */
     public BigDecimal getControlAmt() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_ControlAmt);
+        BigDecimal bd = getValue(COLUMNNAME_ControlAmt);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -165,7 +165,7 @@ public class X_GL_JournalBatch extends PO implements I_GL_JournalBatch {
      * @return Period of the Calendar
      */
     public int getPeriodId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Period_ID);
+        Integer ii = getValue(COLUMNNAME_C_Period_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -222,7 +222,7 @@ public class X_GL_JournalBatch extends PO implements I_GL_JournalBatch {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -240,7 +240,7 @@ public class X_GL_JournalBatch extends PO implements I_GL_JournalBatch {
      * @return The targeted status of the document
      */
     public String getDocAction() {
-        return (String) getValue(COLUMNNAME_DocAction);
+        return getValue(COLUMNNAME_DocAction);
     }
 
     /**
@@ -259,7 +259,7 @@ public class X_GL_JournalBatch extends PO implements I_GL_JournalBatch {
      * @return The current status of the document
      */
     public String getDocStatus() {
-        return (String) getValue(COLUMNNAME_DocStatus);
+        return getValue(COLUMNNAME_DocStatus);
     }
 
     /**
@@ -278,7 +278,7 @@ public class X_GL_JournalBatch extends PO implements I_GL_JournalBatch {
      * @return Document sequence number of the document
      */
     public String getDocumentNo() {
-        return (String) getValue(COLUMNNAME_DocumentNo);
+        return getValue(COLUMNNAME_DocumentNo);
     }
 
     /**
@@ -296,7 +296,7 @@ public class X_GL_JournalBatch extends PO implements I_GL_JournalBatch {
      * @return General Ledger Category
      */
     public int getGLCategoryId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_GL_Category_ID);
+        Integer ii = getValue(COLUMNNAME_GL_Category_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -317,7 +317,7 @@ public class X_GL_JournalBatch extends PO implements I_GL_JournalBatch {
      * @return General Ledger Journal Batch
      */
     public int getGLJournalBatchId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_GL_JournalBatch_ID);
+        Integer ii = getValue(COLUMNNAME_GL_JournalBatch_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -337,7 +337,7 @@ public class X_GL_JournalBatch extends PO implements I_GL_JournalBatch {
      * @return The type of posted amount for the transaction
      */
     public String getPostingType() {
-        return (String) getValue(COLUMNNAME_PostingType);
+        return getValue(COLUMNNAME_PostingType);
     }
 
     /**
@@ -398,7 +398,7 @@ public class X_GL_JournalBatch extends PO implements I_GL_JournalBatch {
      * @return Total Credit in document currency
      */
     public BigDecimal getTotalCr() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_TotalCr);
+        BigDecimal bd = getValue(COLUMNNAME_TotalCr);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -418,7 +418,7 @@ public class X_GL_JournalBatch extends PO implements I_GL_JournalBatch {
      * @return Total debit in document currency
      */
     public BigDecimal getTotalDr() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_TotalDr);
+        BigDecimal bd = getValue(COLUMNNAME_TotalDr);
         if (bd == null) return Env.ZERO;
         return bd;
     }

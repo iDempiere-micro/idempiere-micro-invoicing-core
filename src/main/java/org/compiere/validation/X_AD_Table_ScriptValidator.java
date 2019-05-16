@@ -152,7 +152,7 @@ public class X_AD_Table_ScriptValidator extends PO
      * @return Rule
      */
     public int getRuleId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_Rule_ID);
+        Integer ii = getValue(COLUMNNAME_AD_Rule_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -163,7 +163,7 @@ public class X_AD_Table_ScriptValidator extends PO
      * @return Database Table information
      */
     public int getDBTableId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_Table_ID);
+        Integer ii = getValue(COLUMNNAME_AD_Table_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -174,7 +174,7 @@ public class X_AD_Table_ScriptValidator extends PO
      * @return Event Model Validator
      */
     public String getEventModelValidator() {
-        return (String) getValue(COLUMNNAME_EventModelValidator);
+        return getValue(COLUMNNAME_EventModelValidator);
     }
 
     /**
@@ -183,7 +183,7 @@ public class X_AD_Table_ScriptValidator extends PO
      * @return Method of ordering records; lowest number comes first
      */
     public int getSeqNo() {
-        Integer ii = (Integer) getValue(COLUMNNAME_SeqNo);
+        Integer ii = getValue(COLUMNNAME_SeqNo);
         if (ii == null) return 0;
         return ii;
     }

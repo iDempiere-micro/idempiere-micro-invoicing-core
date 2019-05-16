@@ -51,7 +51,7 @@ public class X_C_Year extends PO implements I_C_Year {
      * @return Accounting Calendar Name
      */
     public int getCalendarId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Calendar_ID);
+        Integer ii = getValue(COLUMNNAME_C_Calendar_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -72,7 +72,7 @@ public class X_C_Year extends PO implements I_C_Year {
      * @return Calendar Year
      */
     public int getYearId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Year_ID);
+        Integer ii = getValue(COLUMNNAME_C_Year_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -83,7 +83,7 @@ public class X_C_Year extends PO implements I_C_Year {
      * @return The Fiscal Year
      */
     public String getFiscalYear() {
-        return (String) getValue(COLUMNNAME_FiscalYear);
+        return getValue(COLUMNNAME_FiscalYear);
     }
 
     /**

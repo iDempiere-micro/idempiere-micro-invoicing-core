@@ -51,7 +51,7 @@ public class X_T_Replenish extends PO implements I_T_Replenish {
      * @return Identifies a Business Partner
      */
     public int getBusinessPartnerId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_BPartner_ID);
+        Integer ii = getValue(COLUMNNAME_C_BPartner_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -62,7 +62,7 @@ public class X_T_Replenish extends PO implements I_T_Replenish {
      * @return Product, Service, Item
      */
     public int getProductId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Product_ID);
+        Integer ii = getValue(COLUMNNAME_M_Product_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -73,7 +73,7 @@ public class X_T_Replenish extends PO implements I_T_Replenish {
      * @return Storage Warehouse and Service Point
      */
     public int getWarehouseId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_Warehouse_ID);
+        Integer ii = getValue(COLUMNNAME_M_Warehouse_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -84,7 +84,7 @@ public class X_T_Replenish extends PO implements I_T_Replenish {
      * @return Optional Warehouse to replenish from
      */
     public int getWarehouseSourceId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_M_WarehouseSource_ID);
+        Integer ii = getValue(COLUMNNAME_M_WarehouseSource_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -95,7 +95,7 @@ public class X_T_Replenish extends PO implements I_T_Replenish {
      * @return Quantity to Order
      */
     public BigDecimal getQtyToOrder() {
-        BigDecimal bd = (BigDecimal) getValue(COLUMNNAME_QtyToOrder);
+        BigDecimal bd = getValue(COLUMNNAME_QtyToOrder);
         if (bd == null) return Env.ZERO;
         return bd;
     }
@@ -115,7 +115,7 @@ public class X_T_Replenish extends PO implements I_T_Replenish {
      * @return Method for re-ordering a product
      */
     public String getReplenishType() {
-        return (String) getValue(COLUMNNAME_ReplenishType);
+        return getValue(COLUMNNAME_ReplenishType);
     }
 
     @Override

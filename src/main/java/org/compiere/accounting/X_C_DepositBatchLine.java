@@ -52,7 +52,7 @@ public class X_C_DepositBatchLine extends PO implements I_C_DepositBatchLine {
      * @return Deposit Batch
      */
     public int getDepositBatchId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_DepositBatch_ID);
+        Integer ii = getValue(COLUMNNAME_C_DepositBatch_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -73,7 +73,7 @@ public class X_C_DepositBatchLine extends PO implements I_C_DepositBatchLine {
      * @return Payment identifier
      */
     public int getPaymentId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Payment_ID);
+        Integer ii = getValue(COLUMNNAME_C_Payment_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -94,7 +94,7 @@ public class X_C_DepositBatchLine extends PO implements I_C_DepositBatchLine {
      * @return Unique line for this document
      */
     public int getLine() {
-        Integer ii = (Integer) getValue(COLUMNNAME_Line);
+        Integer ii = getValue(COLUMNNAME_Line);
         if (ii == null) return 0;
         return ii;
     }

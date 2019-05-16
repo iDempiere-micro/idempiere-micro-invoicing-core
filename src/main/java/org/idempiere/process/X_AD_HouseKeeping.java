@@ -52,7 +52,7 @@ public class X_AD_HouseKeeping extends BasePONameValue implements HouseKeeping {
      * @return Database Table information
      */
     public int getTableID() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_Table_ID);
+        Integer ii = getValue(COLUMNNAME_AD_Table_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -63,7 +63,7 @@ public class X_AD_HouseKeeping extends BasePONameValue implements HouseKeeping {
      * @return Backup Folder
      */
     public String getBackupFolder() {
-        return (String) getValue(COLUMNNAME_BackupFolder);
+        return getValue(COLUMNNAME_BackupFolder);
     }
 
     /**
@@ -118,6 +118,6 @@ public class X_AD_HouseKeeping extends BasePONameValue implements HouseKeeping {
      * @return Fully qualified SQL WHERE clause
      */
     public String getWhereClause() {
-        return (String) getValue(COLUMNNAME_WhereClause);
+        return getValue(COLUMNNAME_WhereClause);
     }
 }

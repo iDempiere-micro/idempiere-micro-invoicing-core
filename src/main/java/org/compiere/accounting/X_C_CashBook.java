@@ -55,7 +55,7 @@ public class X_C_CashBook extends BasePOName implements I_C_CashBook {
      * @return Cash Book for recording petty cash transactions
      */
     public int getCashBookId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_CashBook_ID);
+        Integer ii = getValue(COLUMNNAME_C_CashBook_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -66,7 +66,7 @@ public class X_C_CashBook extends BasePOName implements I_C_CashBook {
      * @return The Currency for this record
      */
     public int getCurrencyId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_C_Currency_ID);
+        Integer ii = getValue(COLUMNNAME_C_Currency_ID);
         if (ii == null) return 0;
         return ii;
     }

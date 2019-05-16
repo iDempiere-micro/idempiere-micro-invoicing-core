@@ -1,60 +1,61 @@
 package org.compiere.invoicing.test
 
-import org.compiere.accounting.MProduct
-import org.compiere.accounting.MStorageOnHand
 import org.compiere.accounting.MOrder
 import org.compiere.accounting.MOrderLine
 import org.compiere.accounting.MPayment
+import org.compiere.accounting.MProduct
+import org.compiere.accounting.MStorageOnHand
+import org.compiere.crm.MBPartnerLocation
+import org.compiere.crm.MLocation
+import org.compiere.crm.defaultRegion
+import org.compiere.crm.getDefaultCountry
 import org.compiere.invoicing.MInOut
 import org.compiere.invoicing.MInOutLine
 import org.compiere.invoicing.MInvoice
+import org.compiere.model.I_C_BPartner
+import org.compiere.model.I_C_Invoice
+import org.compiere.model.I_C_Payment
+import org.compiere.model.I_M_InOut
+import org.compiere.model.I_M_InOutLine
+import org.compiere.model.I_M_PriceList
+import org.compiere.model.I_M_PriceList_Version
+import org.compiere.model.I_M_Product
+import org.compiere.model.I_M_Production
+import org.compiere.order.OrderConstants.DOCSTATUS_Completed
 import org.compiere.order.X_M_InOut
-import org.compiere.orm.DefaultModelFactory
-import org.compiere.orm.ModelFactory
 import org.compiere.orm.MDocType
+import org.compiere.orm.getDocumentTypeOfDocBaseType
 import org.compiere.process.DocAction
 import org.compiere.process.ProcessInfo
+import org.compiere.product.MDiscountSchema
+import org.compiere.product.MPriceList
+import org.compiere.product.MPriceListVersion
+import org.compiere.product.MProductBOM
+import org.compiere.product.MProductPrice
 import org.compiere.production.MLocator
 import org.compiere.production.MProduction
+import org.idempiere.common.util.AdempiereSystemError
 import org.idempiere.process.ProductionCreate
 import org.junit.Before
 import org.junit.Test
 import software.hsharp.core.util.DB
+import software.hsharp.core.util.Environment
 import software.hsharp.core.util.asResource
 import software.hsharp.core.util.queryOf
+import software.hsharp.modules.Module
 import java.math.BigDecimal
 import java.sql.Date
 import java.sql.Timestamp
 import java.time.Instant
-import org.compiere.crm.MBPartner
-import org.compiere.crm.MLocation
-import org.compiere.crm.MBPartnerLocation
-import org.compiere.crm.getDefaultCountry
-import org.compiere.model.I_M_PriceList
-import org.compiere.model.I_M_Product
-import org.compiere.model.I_M_PriceList_Version
-import org.compiere.model.I_M_InOut
-import org.compiere.model.I_M_InOutLine
-import org.compiere.model.I_C_BPartner
-import org.compiere.model.I_C_Invoice
-import org.compiere.model.I_C_Payment
-import org.compiere.model.I_M_Production
-import org.compiere.product.MProductBOM
-import org.compiere.product.MPriceList
-import org.compiere.product.MPriceListVersion
-import org.compiere.product.MDiscountSchema
-import org.compiere.product.MProductPrice
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 import kotlin.test.fail
-import org.idempiere.common.util.AdempiereSystemError
-import software.hsharp.core.util.Environment
-import org.compiere.crm.defaultRegion
-import org.compiere.orm.getDocumentTypeOfDocBaseType
 
 data class InvoiceImportantTestAttributes(
+    val invoiceId: Int,
+    val invoiceLineId: Int,
     val grandTotal: BigDecimal,
     val grandTotalVAT: BigDecimal,
     val reverseCharge: Boolean,
@@ -86,7 +87,7 @@ class InvoiceTest : BaseComponentTest() {
 
     @Before
     fun createProdAndReceipt() {
-        Environment.run(baseModule) {
+        environment.run {
             DB.run {
                 _now = Timestamp(System.currentTimeMillis())
                 val always = Timestamp(0)
@@ -166,7 +167,7 @@ class InvoiceTest : BaseComponentTest() {
     }
 
     private fun createBPartner(): I_C_BPartner {
-        val newPartner = MBPartner.getTemplate(Environment.current.clientId)
+        val newPartner = Environment<Module>().module.businessPartnerService.getTemplate()
         val name = "Test " + randomString(10)
         newPartner.name = name
         val value = "t-" + randomString(5)
@@ -185,7 +186,7 @@ class InvoiceTest : BaseComponentTest() {
 
     @Test
     fun `get invoice by id`() {
-        Environment.run(baseModule) {
+        environment.run {
             environmentService.login(11, 0, 0)
             DB.run {
                 val invoiceId = 106
@@ -260,7 +261,7 @@ class InvoiceTest : BaseComponentTest() {
         val (order, id, product_id) = createOrder(c_DocType_ID, productId)
         doAfterOrderTask(order)
 
-        order.docStatus = MOrder.DOCSTATUS_Completed
+        order.docStatus = DOCSTATUS_Completed
         order.save()
         order.setDocAction(DocAction.STATUS_Completed)
         val completion = order.completeIt()
@@ -276,7 +277,6 @@ class InvoiceTest : BaseComponentTest() {
         assertEquals(product_id, line.productId)
         assertEquals(QTY.toBigDecimal(), line.qtyInvoiced)
 
-        val modelFactory: ModelFactory = DefaultModelFactory()
         val result: MInvoice = modelFactory.getPO(I_C_Invoice.Table_Name, invoice.id)
         println(result)
         assertNotNull(result)
@@ -292,12 +292,14 @@ class InvoiceTest : BaseComponentTest() {
                 queryOf(sql, listOf())
                     .map { row ->
                         InvoiceImportantTestAttributes(
+                            row.int("c_invoice_id"), row.int("c_invoiceline_id"),
                             row.bigDecimal("grandtotal"), row.bigDecimal("grandtotalvat"),
                             row.boolean("reverse_charge"), row.sqlDate("due_previous_business_day"),
                             row.sqlDate("due_previous_5business_days")
                         )
                     }.asList
-            val list = DB.current.run(loadQuery)
+            val list = DB.current.run(loadQuery).distinct()
+
             assertEquals(1, list.count())
             val details = list.first()
             assertFalse(details.reverseCharge)
@@ -409,15 +411,15 @@ class InvoiceTest : BaseComponentTest() {
                         .asList
 
                 val list = DB.current.run(loadQuery)
-                kotlin.test.assertEquals(11, list.count())
+                assertEquals(11, list.count())
                 val standards = list.filter { it.productName.startsWith(MAT) }
                 val bom1s = list.filter { it.productName.startsWith(BOM) }
-                kotlin.test.assertEquals(9, standards.count())
-                kotlin.test.assertEquals(
+                assertEquals(9, standards.count())
+                assertEquals(
                     6 * 1000000 - 2 * 1 - 10,
                     standards.sumBy { (it.amountIn - it.amountOut).toInt() })
-                kotlin.test.assertEquals(2, bom1s.count())
-                kotlin.test.assertEquals(1 - 1, bom1s.sumBy { (it.amountIn - it.amountOut).toInt() })
+                assertEquals(2, bom1s.count())
+                assertEquals(1 - 1, bom1s.sumBy { (it.amountIn - it.amountOut).toInt() })
             }
         }
     }

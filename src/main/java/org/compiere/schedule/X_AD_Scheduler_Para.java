@@ -50,7 +50,7 @@ public class X_AD_Scheduler_Para extends PO implements SchedulerParameter {
      * @return Process Parameter
      */
     public int getProcessParameterId() {
-        Integer ii = (Integer) getValue(COLUMNNAME_AD_Process_Para_ID);
+        Integer ii = getValue(COLUMNNAME_AD_Process_Para_ID);
         if (ii == null) return 0;
         return ii;
     }
@@ -61,7 +61,7 @@ public class X_AD_Scheduler_Para extends PO implements SchedulerParameter {
      * @return Optional short description of the record
      */
     public String getDescription() {
-        return (String) getValue(COLUMNNAME_Description);
+        return getValue(COLUMNNAME_Description);
     }
 
     /**
@@ -70,7 +70,7 @@ public class X_AD_Scheduler_Para extends PO implements SchedulerParameter {
      * @return Default value of the parameter
      */
     public String getParameterDefault() {
-        return (String) getValue(COLUMNNAME_ParameterDefault);
+        return getValue(COLUMNNAME_ParameterDefault);
     }
 
     /**
@@ -79,7 +79,7 @@ public class X_AD_Scheduler_Para extends PO implements SchedulerParameter {
      * @return Default value of the to parameter
      */
     public String getParameterToDefault() {
-        return (String) getValue(COLUMNNAME_ParameterToDefault);
+        return getValue(COLUMNNAME_ParameterToDefault);
     }
 
     @Override
